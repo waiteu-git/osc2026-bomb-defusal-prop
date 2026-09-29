@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-27T17:20:00",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/422a7cbc-5b90-4306-9bb1-d843957b5b37",
+            "violations": [
+                {
+                    "description": "ピンのタイプ Bidirectional と Power output が接続されています",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 38 [GND, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5715
+                            },
+                            "uuid": "e0ff0b66-22c1-42e7-be7a-4994ab4fc21e"
+                        },
+                        {
+                            "description": "Symbol #FLG01 ピン 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 1.1049
+                            },
+                            "uuid": "7d540132-6de7-4ab1-9a5e-b1980e80257d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        }
+    ],
+    "source": "host.kicad_sch"
+}

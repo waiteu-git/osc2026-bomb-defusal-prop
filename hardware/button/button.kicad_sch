@@ -1,0 +1,8142 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60")
+	(paper "A1")
+	(title_block
+		(title "Button module")
+		(comment 1 "OSC2026 bomb defusal prop - Button module (interpretation C: electrical gate)")
+	)
+	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x04"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Value" "Conn_01x04"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(symbol "Conn_01x04_1_1"
+				(rectangle (start -1.27 3.81) (end 1.27 -6.35)
+					(stroke (width 0.254) (type default)) (fill (type background)))
+				(rectangle (start -1.27 2.667) (end 0 2.413)
+					(stroke (width 0.1524) (type default)) (fill (type none)))
+				(rectangle (start -1.27 0.127) (end 0 -0.127)
+					(stroke (width 0.1524) (type default)) (fill (type none)))
+				(rectangle (start -1.27 -2.413) (end 0 -2.667)
+					(stroke (width 0.1524) (type default)) (fill (type none)))
+				(rectangle (start -1.27 -4.953) (end 0 -5.207)
+					(stroke (width 0.1524) (type default)) (fill (type none)))
+				(pin passive line (at -5.08 2.54 0) (length 3.81)
+					(name "Pin_1" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27))))
+				)
+				(pin passive line (at -5.08 0 0) (length 3.81)
+					(name "Pin_2" (effects (font (size 1.27 1.27))))
+					(number "2" (effects (font (size 1.27 1.27))))
+				)
+				(pin passive line (at -5.08 -2.54 0) (length 3.81)
+					(name "Pin_3" (effects (font (size 1.27 1.27))))
+					(number "3" (effects (font (size 1.27 1.27))))
+				)
+				(pin passive line (at -5.08 -5.08 0) (length 3.81)
+					(name "Pin_4" (effects (font (size 1.27 1.27))))
+					(number "4" (effects (font (size 1.27 1.27))))
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:LED"
+			(pin_numbers (hide yes))
+			(pin_names (offset 1.016) (hide yes))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Value" "LED" (at 0 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Light emitting diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Sim.Pins" "1=K 2=A" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "LED diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "LED_0_1"
+				(polyline (pts (xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy -1.27 0) (xy 1.27 0)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy -1.27 -1.27) (xy -1.27 1.27)) (stroke (width 0.254) (type default)) (fill (type none)))
+				(polyline (pts (xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)) (stroke (width 0.254) (type default)) (fill (type none)))
+			)
+			(symbol "LED_1_1"
+				(pin passive line (at -3.81 0 0) (length 2.54) (name "K" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin passive line (at 3.81 0 180) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers (hide yes))
+			(pin_names (offset 0))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R" (at 2.032 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Value" "R" (at 0 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at -1.778 0 90) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "R res resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_fp_filters" "R_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "R_0_1"
+				(rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))
+			)
+			(symbol "R_1_1"
+				(pin passive line (at 0 3.81 270) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin passive line (at 0 -3.81 90) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "RPi_Pico:Pico"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U" (at -13.97 27.94 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Value" "Pico" (at 0 19.05 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "RPi_Pico:RPi_Pico_SMD_TH" (at 0 0 90) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "Pico_0_0"
+				(text "Raspberry Pi Pico" (at 0 21.59 0) (effects (font (size 1.27 1.27))))
+			)
+			(symbol "Pico_0_1"
+				(rectangle (start -15.24 26.67) (end 15.24 -26.67) (stroke (width 0) (type default)) (fill (type background)))
+			)
+			(symbol "Pico_1_1"
+				(pin bidirectional line (at -17.78 24.13 0) (length 2.54)
+					(name "GPIO0" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 21.59 0) (length 2.54)
+					(name "GPIO1" (effects (font (size 1.27 1.27))))
+					(number "2" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at -17.78 19.05 0) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "3" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 16.51 0) (length 2.54)
+					(name "GPIO2" (effects (font (size 1.27 1.27))))
+					(number "4" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 13.97 0) (length 2.54)
+					(name "GPIO3" (effects (font (size 1.27 1.27))))
+					(number "5" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 11.43 0) (length 2.54)
+					(name "GPIO4" (effects (font (size 1.27 1.27))))
+					(number "6" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 8.89 0) (length 2.54)
+					(name "GPIO5" (effects (font (size 1.27 1.27))))
+					(number "7" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at -17.78 6.35 0) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "8" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 3.81 0) (length 2.54)
+					(name "GPIO6" (effects (font (size 1.27 1.27))))
+					(number "9" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 1.27 0) (length 2.54)
+					(name "GPIO7" (effects (font (size 1.27 1.27))))
+					(number "10" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -1.27 0) (length 2.54)
+					(name "GPIO8" (effects (font (size 1.27 1.27))))
+					(number "11" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -3.81 0) (length 2.54)
+					(name "GPIO9" (effects (font (size 1.27 1.27))))
+					(number "12" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at -17.78 -6.35 0) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "13" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -8.89 0) (length 2.54)
+					(name "GPIO10" (effects (font (size 1.27 1.27))))
+					(number "14" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -11.43 0) (length 2.54)
+					(name "GPIO11" (effects (font (size 1.27 1.27))))
+					(number "15" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -13.97 0) (length 2.54)
+					(name "GPIO12" (effects (font (size 1.27 1.27))))
+					(number "16" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -16.51 0) (length 2.54)
+					(name "GPIO13" (effects (font (size 1.27 1.27))))
+					(number "17" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at -17.78 -19.05 0) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "18" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -21.59 0) (length 2.54)
+					(name "GPIO14" (effects (font (size 1.27 1.27))))
+					(number "19" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at -17.78 -24.13 0) (length 2.54)
+					(name "GPIO15" (effects (font (size 1.27 1.27))))
+					(number "20" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -24.13 180) (length 2.54)
+					(name "GPIO16" (effects (font (size 1.27 1.27))))
+					(number "21" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -21.59 180) (length 2.54)
+					(name "GPIO17" (effects (font (size 1.27 1.27))))
+					(number "22" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 -19.05 180) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "23" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -16.51 180) (length 2.54)
+					(name "GPIO18" (effects (font (size 1.27 1.27))))
+					(number "24" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -13.97 180) (length 2.54)
+					(name "GPIO19" (effects (font (size 1.27 1.27))))
+					(number "25" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -11.43 180) (length 2.54)
+					(name "GPIO20" (effects (font (size 1.27 1.27))))
+					(number "26" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -8.89 180) (length 2.54)
+					(name "GPIO21" (effects (font (size 1.27 1.27))))
+					(number "27" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 -6.35 180) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "28" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 -3.81 180) (length 2.54)
+					(name "GPIO22" (effects (font (size 1.27 1.27))))
+					(number "29" (effects (font (size 1.27 1.27))))
+				)
+				(pin input line (at 17.78 -1.27 180) (length 2.54)
+					(name "RUN" (effects (font (size 1.27 1.27))))
+					(number "30" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 1.27 180) (length 2.54)
+					(name "GPIO26_ADC0" (effects (font (size 1.27 1.27))))
+					(number "31" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 3.81 180) (length 2.54)
+					(name "GPIO27_ADC1" (effects (font (size 1.27 1.27))))
+					(number "32" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 6.35 180) (length 2.54)
+					(name "AGND" (effects (font (size 1.27 1.27))))
+					(number "33" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 17.78 8.89 180) (length 2.54)
+					(name "GPIO28_ADC2" (effects (font (size 1.27 1.27))))
+					(number "34" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 11.43 180) (length 2.54)
+					(name "ADC_VREF" (effects (font (size 1.27 1.27))))
+					(number "35" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 13.97 180) (length 2.54)
+					(name "3V3" (effects (font (size 1.27 1.27))))
+					(number "36" (effects (font (size 1.27 1.27))))
+				)
+				(pin input line (at 17.78 16.51 180) (length 2.54)
+					(name "3V3_EN" (effects (font (size 1.27 1.27))))
+					(number "37" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 19.05 180) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "38" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 21.59 180) (length 2.54)
+					(name "VSYS" (effects (font (size 1.27 1.27))))
+					(number "39" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 17.78 24.13 180) (length 2.54)
+					(name "VBUS" (effects (font (size 1.27 1.27))))
+					(number "40" (effects (font (size 1.27 1.27))))
+				)
+				(pin input line (at -2.54 -29.21 90) (length 2.54)
+					(name "SWCLK" (effects (font (size 1.27 1.27))))
+					(number "41" (effects (font (size 1.27 1.27))))
+				)
+				(pin power_in line (at 0 -29.21 90) (length 2.54)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "42" (effects (font (size 1.27 1.27))))
+				)
+				(pin bidirectional line (at 2.54 -29.21 90) (length 2.54)
+					(name "SWDIO" (effects (font (size 1.27 1.27))))
+					(number "43" (effects (font (size 1.27 1.27))))
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers (hide yes))
+			(pin_names (offset 1.016) (hide yes))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW" (at 1.27 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left)))
+			(property "Value" "SW_Push" (at 0 -1.524 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 5.08 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 5.08 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Push button switch, generic, two pins" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "switch normally-open pushbutton push-button" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "SW_Push_0_1"
+				(circle (center -2.032 0) (radius 0.508) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0 1.27) (xy 0 3.048)) (stroke (width 0) (type default)) (fill (type none)))
+				(circle (center 2.032 0) (radius 0.508) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 2.54 1.27) (xy -2.54 1.27)) (stroke (width 0) (type default)) (fill (type none)))
+				(pin passive line (at -5.08 0 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin passive line (at 5.08 0 180) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Transistor_BJT:2SC1815"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects (font (size 1.27 1.27)) (justify left))
+			)
+			(property "Value" "2SC1815"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects (font (size 1.27 1.27)) (justify left))
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27) (italic yes)) (justify left))
+			)
+			(property "Datasheet" "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)) (justify left))
+			)
+			(property "Description" "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Sim.Device" "NPN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Sim.Pins" "1=E 2=C 3=B"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "ki_keywords" "Low Noise Audio NPN Transistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "ki_fp_filters" "TO?92*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects (font (size 1.27 1.27)))
+			)
+			(symbol "2SC1815_0_1"
+				(polyline (pts (xy -2.54 0) (xy 0.635 0)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0.635 1.905) (xy 0.635 -1.905)) (stroke (width 0.508) (type default)) (fill (type none)))
+				(circle (center 1.27 0) (radius 2.8194) (stroke (width 0.254) (type default)) (fill (type none)))
+			)
+			(symbol "2SC1815_1_1"
+				(polyline (pts (xy 0.635 0.635) (xy 2.54 2.54)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0.635 -0.635) (xy 2.54 -2.54)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778)) (stroke (width 0) (type default)) (fill (type outline)))
+				(pin passive line (at 2.54 -5.08 90) (length 2.54)
+					(name "E" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27))))
+				)
+				(pin passive line (at 2.54 5.08 270) (length 2.54)
+					(name "C" (effects (font (size 1.27 1.27))))
+					(number "2" (effects (font (size 1.27 1.27))))
+				)
+				(pin input line (at -5.08 0 0) (length 2.54)
+					(name "B" (effects (font (size 1.27 1.27))))
+					(number "3" (effects (font (size 1.27 1.27))))
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power global)
+			(pin_numbers (hide yes))
+			(pin_names (offset 0) (hide yes))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR" (at 0 -6.35 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Value" "GND" (at 0 -3.81 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "global power" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "GND_0_1"
+				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)) (stroke (width 0) (type default)) (fill (type none)))
+			)
+			(symbol "GND_1_1"
+				(pin power_in line (at 0 0 270) (length 0) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+3.3V"
+			(power global)
+			(pin_numbers (hide yes))
+			(pin_names (offset 0) (hide yes))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Value" "+3.3V" (at 0 3.556 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Power symbol creates a global label with name \"+3.3V\"" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "global power" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "+3.3V_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0 0) (xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none)))
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+5V"
+			(power global)
+			(pin_numbers (hide yes))
+			(pin_names (offset 0) (hide yes))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Value" "+5V" (at 0 3.556 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "Power symbol creates a global label with name \"+5V\"" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "ki_keywords" "global power" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "+5V_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0 2.54) (xy 0.762 1.27)) (stroke (width 0) (type default)) (fill (type none)))
+				(polyline (pts (xy 0 0) (xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none)))
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:PWR_FLAG"
+				(power global)
+				(pin_numbers
+					(hide yes)
+				)
+				(pin_names
+					(offset 0)
+					(hide yes)
+				)
+				(exclude_from_sim no)
+				(in_bom yes)
+				(on_board yes)
+				(in_pos_files yes)
+				(duplicate_pin_numbers_are_jumpers no)
+				(property "Reference" "#FLG"
+					(at 0 1.905 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Value" "PWR_FLAG"
+					(at 0 3.81 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Footprint" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Datasheet" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Description" "Special symbol for telling ERC where power comes from"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_keywords" "flag power"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(symbol "PWR_FLAG_0_0"
+					(pin power_out line
+						(at 0 0 90)
+						(length 0)
+						(name ""
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "1"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+				)
+				(symbol "PWR_FLAG_0_1"
+					(polyline
+						(pts
+							(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+				)
+				(embedded_fonts no)
+			)
+		(symbol "Device:C_Polarized"
+				(pin_numbers
+					(hide yes)
+				)
+				(pin_names
+					(offset 0.254)
+				)
+				(exclude_from_sim no)
+				(in_bom yes)
+				(on_board yes)
+				(in_pos_files yes)
+				(duplicate_pin_numbers_are_jumpers no)
+				(property "Reference" "C"
+					(at 0.635 2.54 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+						(justify left)
+					)
+				)
+				(property "Value" "C_Polarized"
+					(at 0.635 -2.54 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+						(justify left)
+					)
+				)
+				(property "Footprint" ""
+					(at 0.9652 -3.81 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Datasheet" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Description" "Polarized capacitor"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_keywords" "cap capacitor"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_fp_filters" "CP_*"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(symbol "C_Polarized_0_1"
+					(rectangle
+						(start -2.286 0.508)
+						(end 2.286 1.016)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy -1.778 2.286) (xy -0.762 2.286)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy -1.27 2.794) (xy -1.27 1.778)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(rectangle
+						(start 2.286 -0.508)
+						(end -2.286 -1.016)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type outline)
+						)
+					)
+				)
+				(symbol "C_Polarized_1_1"
+					(pin passive line
+						(at 0 3.81 270)
+						(length 2.794)
+						(name ""
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "1"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at 0 -3.81 90)
+						(length 2.794)
+						(name ""
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "2"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+				)
+				(embedded_fonts no)
+			)
+	)
+	(wire
+		(pts
+			(xy 568.96 52.07) (xy 617.22 52.07)
+		)
+		(stroke (width 0) (type default))
+		(uuid "15484ad8-54c0-45cc-a0ed-d9cb314649a7")
+	)
+	(wire
+		(pts
+			(xy 568.96 54.61) (xy 617.22 54.61)
+		)
+		(stroke (width 0) (type default))
+		(uuid "315bc4c0-1c65-44a4-8e3b-4e46688e4929")
+	)
+	(wire
+		(pts
+			(xy 579.12 59.69) (xy 617.22 59.69)
+		)
+		(stroke (width 0) (type default))
+		(uuid "35b85b71-9185-4f33-a946-18c84e164669")
+	)
+	(wire
+		(pts
+			(xy 579.12 62.23) (xy 617.22 62.23)
+		)
+		(stroke (width 0) (type default))
+		(uuid "3f230187-033f-44ea-834a-8f5934e1e7dd")
+	)
+	(wire
+		(pts
+			(xy 617.22 64.77) (xy 604.52 64.77)
+		)
+		(stroke (width 0) (type default))
+		(uuid "8dbbd3b4-3ba2-4dea-b53f-e48c6ae020bd")
+	)
+	(wire
+		(pts
+			(xy 604.52 64.77) (xy 604.52 190.5)
+		)
+		(stroke (width 0) (type default))
+		(uuid "d58fde9c-258a-4faa-9393-fa9ec41e0e1b")
+	)
+	(wire
+		(pts
+			(xy 604.52 190.5) (xy 530.86 190.5)
+		)
+		(stroke (width 0) (type default))
+		(uuid "7fb799a5-1c6f-4444-80b4-90c900803f86")
+	)
+	(wire
+		(pts
+			(xy 530.86 181.61) (xy 530.86 186.69)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6ce978db-6f97-49d4-af81-be31ca88c880")
+	)
+	(wire
+		(pts
+			(xy 530.86 186.69) (xy 530.86 190.5)
+		)
+		(stroke (width 0) (type default))
+		(uuid "a6f7741e-06bb-46bb-aa52-8ed370967f86")
+	)
+	(wire
+		(pts
+			(xy 530.86 190.5) (xy 530.86 194.31)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1cb530f5-7710-4193-ba92-bd50bd82cb47")
+	)
+	(wire
+		(pts
+			(xy 530.86 194.31) (xy 530.86 199.39)
+		)
+		(stroke (width 0) (type default))
+		(uuid "82f9bd19-59fc-452a-93aa-f746c453cb98")
+	)
+	(wire
+		(pts
+			(xy 530.86 181.61) (xy 535.94 181.61)
+		)
+		(stroke (width 0) (type default))
+		(uuid "8f39b534-2712-4046-b20d-e287e5cdbad5")
+	)
+	(wire
+		(pts
+			(xy 530.86 186.69) (xy 535.94 186.69)
+		)
+		(stroke (width 0) (type default))
+		(uuid "08828208-d7e3-4009-9d5c-5e06e51e0a98")
+	)
+	(wire
+		(pts
+			(xy 530.86 194.31) (xy 535.94 194.31)
+		)
+		(stroke (width 0) (type default))
+		(uuid "62b83f92-a6f8-4c1e-9d92-7c1df467b0b8")
+	)
+	(wire
+		(pts
+			(xy 530.86 199.39) (xy 535.94 199.39)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ef734760-e11d-4732-8c06-b97982a5a093")
+	)
+	(wire
+		(pts
+			(xy 617.22 67.31) (xy 472.44 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1465f94b-3b8c-4725-b952-43a46606145e")
+	)
+	(wire
+		(pts
+			(xy 472.44 287.02) (xy 477.52 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6b38931f-76a9-4647-a84a-48abf4bc172b")
+	)
+	(wire
+		(pts
+			(xy 485.14 281.94) (xy 492.76 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "c17a38e9-5187-460f-818a-d42e16e68206")
+	)
+	(wire
+		(pts
+			(xy 500.38 281.94) (xy 508 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "a0cee3a5-f5ed-4453-9201-8b498e580fc5")
+	)
+	(wire
+		(pts
+			(xy 617.22 72.39) (xy 523.24 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "dde5c225-6928-435b-b2ae-6ea23bdbed99")
+	)
+	(wire
+		(pts
+			(xy 523.24 287.02) (xy 528.32 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "72151b94-a6e0-4aaf-a831-4ee5a1d96ee7")
+	)
+	(wire
+		(pts
+			(xy 535.94 281.94) (xy 543.56 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "52f8b461-a159-4967-9384-9cf46eac60a6")
+	)
+	(wire
+		(pts
+			(xy 551.18 281.94) (xy 558.8 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "a9b93dd0-8d49-4ebb-ab47-30ad11f18ad0")
+	)
+	(wire
+		(pts
+			(xy 617.22 74.93) (xy 574.04 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1cbc0aba-153b-4e9c-9f2b-4d10d0a0ff01")
+	)
+	(wire
+		(pts
+			(xy 574.04 287.02) (xy 579.12 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "e240dd99-c8bd-4107-a40f-a42ce314b40b")
+	)
+	(wire
+		(pts
+			(xy 586.74 281.94) (xy 594.36 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9d24fcdd-9463-4551-9a0f-491e6e063a15")
+	)
+	(wire
+		(pts
+			(xy 601.98 281.94) (xy 609.6 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "2c29fbca-adc3-4317-a109-ac598e502c43")
+	)
+	(wire
+		(pts
+			(xy 617.22 77.47) (xy 624.84 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "c1d87641-fe6b-4cdc-94a4-e8000184bb33")
+	)
+	(wire
+		(pts
+			(xy 624.84 287.02) (xy 629.92 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "c1f66647-1892-4e21-bd0c-4e50f9332516")
+	)
+	(wire
+		(pts
+			(xy 637.54 281.94) (xy 645.16 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "08cb310b-9635-4548-b5ba-80a770d0e12b")
+	)
+	(wire
+		(pts
+			(xy 652.78 281.94) (xy 660.4 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "261f9bd3-a492-4b0a-9f76-03ff10ac74a3")
+	)
+	(wire
+		(pts
+			(xy 617.22 80.01) (xy 675.64 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9a1e378c-c951-4d82-ab4f-057705de1ae9")
+	)
+	(wire
+		(pts
+			(xy 675.64 287.02) (xy 680.72 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "42a2508a-2d16-4b6f-95b5-93219885c331")
+	)
+	(wire
+		(pts
+			(xy 688.34 281.94) (xy 695.96 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "7cf2b75a-6c7b-4071-9256-42a179187b49")
+	)
+	(wire
+		(pts
+			(xy 703.58 281.94) (xy 711.2 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "4d380966-7f8f-45f4-a16c-1adb6763d872")
+	)
+	(wire
+		(pts
+			(xy 617.22 85.09) (xy 726.44 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "15662d75-78a4-4b80-ac6d-d4d9a134f51a")
+	)
+	(wire
+		(pts
+			(xy 726.44 287.02) (xy 731.52 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "5016b765-406e-4459-bcd3-9cc0e7856dd6")
+	)
+	(wire
+		(pts
+			(xy 739.14 281.94) (xy 746.76 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "f6eab4a6-09e5-415c-a112-ccb9ccfcfbe4")
+	)
+	(wire
+		(pts
+			(xy 754.38 281.94) (xy 762 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "096a63fd-2336-40fb-9bfc-b5a13a73ba04")
+	)
+	(wire
+		(pts
+			(xy 617.22 87.63) (xy 777.24 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6d53328c-a2cf-4b5c-b23b-c04bd44fe4e7")
+	)
+	(wire
+		(pts
+			(xy 777.24 287.02) (xy 782.32 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "698f106c-fecd-4f56-9e62-58869daeee63")
+	)
+	(wire
+		(pts
+			(xy 789.94 281.94) (xy 797.56 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "f39f125b-8ff4-4a87-8474-e1c53cf5adf1")
+	)
+	(wire
+		(pts
+			(xy 805.18 281.94) (xy 812.8 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ed929152-96f9-4d7a-ad1e-ef27a648e68f")
+	)
+	(wire
+		(pts
+			(xy 617.22 90.17) (xy 828.04 279.4)
+		)
+		(stroke (width 0) (type default))
+		(uuid "125c1674-a4b7-4c7e-a2f5-8bbd9e97a867")
+	)
+	(wire
+		(pts
+			(xy 828.04 287.02) (xy 833.12 287.02)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9abb2002-671b-46a2-af67-16f9cdc8f7c9")
+	)
+	(wire
+		(pts
+			(xy 840.74 281.94) (xy 848.36 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "adbc56d3-ec82-4a26-b750-84072d5c9538")
+	)
+	(wire
+		(pts
+			(xy 855.98 281.94) (xy 863.6 281.94)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9e33c566-6504-41d0-a00a-56e6a485a3f6")
+	)
+	(wire
+		(pts
+			(xy 617.22 100.33) (xy 591.82 100.33)
+		)
+		(stroke (width 0) (type default))
+		(uuid "94a5e2d3-156e-49d9-a527-e1cad3db668c")
+	)
+	(wire
+		(pts
+			(xy 591.82 107.95) (xy 591.82 110.49)
+		)
+		(stroke (width 0) (type default))
+		(uuid "4b340c28-d895-49e7-8d34-04ea67cf2d72")
+	)
+	(symbol
+		(lib_id "RPi_Pico:Pico")
+		(at 635 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9b5065f-f6ba-4a14-b095-33f193782d7c")
+		(property "Reference" "U1"
+			(at 635 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pico"
+			(at 635 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "RPi_Pico:RPi_Pico_SMD_TH"
+			(at 635 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 635 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Button module MCU (Raspberry Pi Pico 2, RP2350, 3.3V)."
+			(at 635 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b44f15b2-7050-451b-9566-edf53c1409e2")
+		)
+		(pin "2"
+			(uuid "8d437b18-71f6-4e93-9374-e0ac6e3d04ac")
+		)
+		(pin "3"
+			(uuid "e699273a-75bc-4041-83d3-8e55b1548e5c")
+		)
+		(pin "4"
+			(uuid "27b0e160-6508-4a8d-bb3e-638451b15252")
+		)
+		(pin "5"
+			(uuid "1f7b8cea-c1a7-4a1d-9b18-236de6337507")
+		)
+		(pin "6"
+			(uuid "17650f26-8ed3-41b8-bab0-8b76f3ae41fd")
+		)
+		(pin "7"
+			(uuid "af444c70-e7e2-4bc8-9cdc-f0968d520b31")
+		)
+		(pin "8"
+			(uuid "45ca7676-d452-41e0-bcbe-cd251d5ed87b")
+		)
+		(pin "9"
+			(uuid "28b7d5df-d5fc-4a42-98a5-1b12022c41c4")
+		)
+		(pin "10"
+			(uuid "ee86f9c9-0e93-4b41-b879-e84eaffb0a51")
+		)
+		(pin "11"
+			(uuid "b62cbdd7-3350-4f43-8954-129a18f119d0")
+		)
+		(pin "12"
+			(uuid "6428e013-41f9-4fdf-869c-5f29c873146a")
+		)
+		(pin "13"
+			(uuid "52646aba-a46f-4fdd-b952-6e2e1d17c7f5")
+		)
+		(pin "14"
+			(uuid "c0973788-04bd-47a1-859f-55176ecc099a")
+		)
+		(pin "15"
+			(uuid "2ab8d646-5029-4726-a4bf-23b333364a08")
+		)
+		(pin "16"
+			(uuid "4a0fbbd7-0217-4c3e-8547-8f18f48b46de")
+		)
+		(pin "17"
+			(uuid "0e3395c8-2f46-4d7f-89b6-35a99c7c0bc6")
+		)
+		(pin "18"
+			(uuid "e5c8bd65-13f6-44b5-8983-5beb4bdb3237")
+		)
+		(pin "19"
+			(uuid "ebadb82a-f098-4e19-b7ed-9659f8d37e4a")
+		)
+		(pin "20"
+			(uuid "8e64aaf5-97ba-4fd3-8a2c-5e0ce7c14d77")
+		)
+		(pin "21"
+			(uuid "b89b9106-fb54-42f9-bc67-09b9fd11f088")
+		)
+		(pin "22"
+			(uuid "8a8ea895-0fbc-46de-bc46-c68220968d49")
+		)
+		(pin "23"
+			(uuid "0f2e6d05-3cfc-4ff8-9d23-35d6631b3888")
+		)
+		(pin "24"
+			(uuid "bac54b58-9ced-40d9-b279-a8932d123649")
+		)
+		(pin "25"
+			(uuid "58c8602c-2c42-48b1-891d-e35ad5e1ffc5")
+		)
+		(pin "26"
+			(uuid "706310ba-cdc5-4a20-aae3-0a65e1148585")
+		)
+		(pin "27"
+			(uuid "e61876e7-5335-43d5-afe2-f63361b91905")
+		)
+		(pin "28"
+			(uuid "4d8b72ff-e721-4d92-83b1-6b93116d8e11")
+		)
+		(pin "29"
+			(uuid "401be18d-1887-413f-bd7c-cad2d2a9646e")
+		)
+		(pin "30"
+			(uuid "0b89f707-fc80-4a9b-8790-50653d9c9658")
+		)
+		(pin "31"
+			(uuid "cd996bb7-0f95-4bb8-baad-d892140541a3")
+		)
+		(pin "32"
+			(uuid "8b7c5b87-2814-4232-bf8d-28b32fd80805")
+		)
+		(pin "33"
+			(uuid "95d7b4b8-3d22-4b35-969e-042f24e78963")
+		)
+		(pin "34"
+			(uuid "3e42cf8e-03c0-4c27-bda8-e96891014783")
+		)
+		(pin "35"
+			(uuid "c4bd1ade-621f-40e8-9a92-5b4ce964ded2")
+		)
+		(pin "36"
+			(uuid "80e88068-682f-46f5-8620-f9413197540f")
+		)
+		(pin "37"
+			(uuid "c5ed57c9-7621-42cb-a8c3-cb0e0dbaaec8")
+		)
+		(pin "38"
+			(uuid "278de7e7-d780-4efb-83f6-d3de7633cd3c")
+		)
+		(pin "39"
+			(uuid "5d1e7974-9526-41b6-8260-1f330a69c07d")
+		)
+		(pin "40"
+			(uuid "3c8b760a-7194-4d6d-bf82-29184660de9e")
+		)
+		(pin "41"
+			(uuid "200f640d-bf47-4f4f-8493-1268b5b53e44")
+		)
+		(pin "42"
+			(uuid "f9077a8f-070d-40d6-8f7b-3c95fb66d6f2")
+		)
+		(pin "43"
+			(uuid "d2759b4d-31b6-4964-b919-92fdeef6e5df")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 574.04 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "145084c9-9589-40d1-af7c-90113a333423")
+		(property "Reference" "J1"
+			(at 574.04 45.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MODULE_JST_XH_4P"
+			(at 574.04 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+			(at 574.04 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 574.04 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Host connector, JST XH 4-pole. Pin1=GPIO0(UART0 TX, module->host), Pin2=GPIO1(UART0 RX, host->module), Pin3=VCC(5V, from host per-slot polyfuse MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md)."
+			(at 574.04 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4acaeccb-56a2-4a4b-a6a6-8d34a45c2043")
+		)
+		(pin "2"
+			(uuid "ea3742ed-152a-476d-9828-9dea279c21d2")
+		)
+		(pin "3"
+			(uuid "b8259ff7-60e8-4892-bd95-abc007026dd6")
+		)
+		(pin "4"
+			(uuid "6d47b2fb-fb9c-4fa1-9227-cbb91257a7af")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 584.2 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75c5e831-c0b9-426e-a360-5dca304e6463")
+		(property "Reference" "J2"
+			(at 584.2 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "KEYTOP_DISPLAY_I2C"
+			(at 584.2 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+			(at 584.2 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 584.2 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Local wiring to the keytop-mounted word-label display (word: 中止/起爆/長押し/押す). Display part is not yet chosen by the user (2026-09-29: probably not the 0.96in SSD1315 OLED used elsewhere in the project; user is selecting parts and asked to design the board first) -- this header reserves I2C1 on Pin1=SDA(GP2), Pin2=SCL(GP3), Pin3=GND, Pin4=+3.3V (from Pico 3V3 OUT), which fits most small I2C displays. Because the display now sits on the moving keytop rather than a fixed panel window, this connector represents a flexible-cable link (exact connector/cable type TBD by user). If the chosen display needs SPI instead of I2C, reassign to spare GPIOs (GP13/14/16-22/26-28) and update this connector -- not yet done, since the part is unpicked."
+			(at 584.2 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e1777b0f-ed56-4eab-b979-f6ee7360ea92")
+		)
+		(pin "2"
+			(uuid "746121cc-7724-4bde-92eb-94ce2cc67a71")
+		)
+		(pin "3"
+			(uuid "3e32ee4c-0b2e-42b6-962d-7c1c39284256")
+		)
+		(pin "4"
+			(uuid "98a2cb55-4828-4b3f-b179-20efa14d8e2f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 530.86 181.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "563484d6-e35d-4104-a128-28227658f1c1")
+		(property "Reference" "SW1"
+			(at 541.02 180.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 530.86 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+			(at 530.86 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 530.86 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side."
+			(at 530.86 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6f436c71-90b6-49b4-a88b-b03f3c65033f")
+		)
+		(pin "2"
+			(uuid "a912e255-9fd2-48d6-82cb-6aaffb94cf12")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 530.86 186.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8262223-8eba-4bfc-9571-38b770523acb")
+		(property "Reference" "SW2"
+			(at 541.02 185.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 530.86 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+			(at 530.86 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 530.86 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side."
+			(at 530.86 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "45cc1d42-05b6-49cd-8bf2-70e34fc50ceb")
+		)
+		(pin "2"
+			(uuid "3f2614df-47f3-40d7-8139-9e9d9b8a9fa0")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 530.86 194.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "952f7dff-2a37-4e13-9e28-d817353fc792")
+		(property "Reference" "SW3"
+			(at 541.02 192.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 530.86 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+			(at 530.86 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 530.86 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side."
+			(at 530.86 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0dec600a-5bf8-4463-bb65-1937b44e11f1")
+		)
+		(pin "2"
+			(uuid "7c36b809-bfb4-4043-b841-a69579e9e7d7")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 530.86 199.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09b55a46-0331-4e99-b164-7e58913c5ac6")
+		(property "Reference" "SW4"
+			(at 541.02 197.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 530.86 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm"
+			(at 530.86 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 530.86 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side."
+			(at 530.86 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d139468e-ff0a-4eb8-bb24-3682a9d2298c")
+		)
+		(pin "2"
+			(uuid "557768cd-23a2-485b-b4ef-a592dffcabbe")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 472.44 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ed992a4-0b06-4741-9c8a-5ab6b9221b4d")
+		(property "Reference" "RB1"
+			(at 476.25 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 476.25 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 472.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 472.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Face LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 472.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ea7d073-8c70-4e66-9b2a-e435e73e2b1a")
+		)
+		(pin "2"
+			(uuid "74568fe2-a592-446d-9619-d18a4f47787f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 482.6 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a656cc31-7026-47ee-803e-a7fc53550519")
+		(property "Reference" "Q1"
+			(at 488.95 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 488.95 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 482.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 482.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Face LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB1)."
+			(at 482.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "becfceb3-3fe7-4b00-800f-e3c35050116e")
+		)
+		(pin "2"
+			(uuid "70fad64e-0c33-4875-adc2-34b366a0c1ae")
+		)
+		(pin "3"
+			(uuid "25962932-8b54-42c4-b6be-f4217e5ff04a")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 496.57 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea1aaec0-54e9-4b80-bbd6-6b5961ac5522")
+		(property "Reference" "LED1"
+			(at 496.57 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS4WMLA131A (White)"
+			(at 496.57 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 496.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 496.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Face LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q1 collector."
+			(at 496.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d52d2a86-c87c-4f5c-80d2-e62010fb5360")
+		)
+		(pin "2"
+			(uuid "3f3ec1ec-4a44-4058-aa94-a7fa1be36401")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 508 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f7a967a-4345-4a12-8f23-537c58019883")
+		(property "Reference" "R1"
+			(at 511.81 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 511.81 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 508 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 508 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED1 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 508 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8a5b488b-af01-4960-8a8d-0d1e77a05854")
+		)
+		(pin "2"
+			(uuid "7a530bd3-e706-442f-8a17-916611806781")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 523.24 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3aa32263-74fe-4b48-97b7-1b94683c2daa")
+		(property "Reference" "RB2"
+			(at 527.05 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 527.05 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 523.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 523.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Face LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 523.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dc6d5e6e-ca0e-43f2-a70c-7861772a42b8")
+		)
+		(pin "2"
+			(uuid "67fef0a5-889d-402f-a0f4-42fe489bef9f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 533.4 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34be9041-a69f-4a81-822e-3f9f64a26f2e")
+		(property "Reference" "Q2"
+			(at 539.75 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 539.75 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 533.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 533.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Face LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB2)."
+			(at 533.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d06a27fb-45ee-440c-aaf1-d097c7857e72")
+		)
+		(pin "2"
+			(uuid "8296eb92-93bd-47ff-bccc-020c14a148ca")
+		)
+		(pin "3"
+			(uuid "7221cf5d-1224-4198-ae62-48e328fa073f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 547.37 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0ddb43b4-4b87-4d36-8d5b-7a91de23440e")
+		(property "Reference" "LED2"
+			(at 547.37 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OSB56AA131A (Blue)"
+			(at 547.37 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 547.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 547.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Face LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q2 collector."
+			(at 547.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "596f9175-1da0-4bb7-9f81-d32780d1ec6e")
+		)
+		(pin "2"
+			(uuid "0f86b696-a245-46c9-b805-c1a10252a1ad")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 558.8 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f4708ab3-91a3-4e7f-b170-050f097a79de")
+		(property "Reference" "R2"
+			(at 562.61 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 562.61 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 558.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 558.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED2 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 558.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "28ef21f2-e676-4de5-842d-0a6fb429f5c9")
+		)
+		(pin "2"
+			(uuid "d04a6ccd-cca3-4399-a530-e99e00b4c9b0")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 574.04 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "76887d58-b0c2-4308-833d-e9a844377944")
+		(property "Reference" "RB3"
+			(at 577.85 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 577.85 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 574.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 574.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Face LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 574.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4930d786-c12b-4312-be03-ef6fb838f6e0")
+		)
+		(pin "2"
+			(uuid "8616edbc-78af-4944-990e-9f4edbd90678")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 584.2 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f665ec31-7f05-4a7b-9b74-04344f5a8946")
+		(property "Reference" "Q3"
+			(at 590.55 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 590.55 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 584.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 584.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Face LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB3)."
+			(at 584.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "229066c3-9b68-466d-a07a-47dbd7255b9f")
+		)
+		(pin "2"
+			(uuid "39b0686a-d9d6-4cd0-a6c2-bbc14c4d7c10")
+		)
+		(pin "3"
+			(uuid "1ece0267-c564-497c-ad6f-2ad772d7b852")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 598.17 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "67b5f3ce-0ed6-4666-aa3d-e983e79a6e36")
+		(property "Reference" "LED3"
+			(at 598.17 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS5RAAA131A (Red)"
+			(at 598.17 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 598.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 598.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Face LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q3 collector."
+			(at 598.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00bc4084-ca2a-4ab0-a5c1-8269ec8c79d1")
+		)
+		(pin "2"
+			(uuid "164fc6bd-4059-441e-a4f0-9594ef563e21")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 609.6 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1a87e11d-7c82-4547-94ae-46daeef3deb0")
+		(property "Reference" "R3"
+			(at 613.41 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150"
+			(at 613.41 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 609.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 609.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED3 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 609.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cd6e7f82-cb0b-4549-91aa-4f55fee8d729")
+		)
+		(pin "2"
+			(uuid "9e5081ac-b241-4bc1-9648-294626b928e7")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 624.84 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0aac7c49-c41c-4e7a-ad2b-800e9604670e")
+		(property "Reference" "RB4"
+			(at 628.65 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 628.65 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 624.84 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 624.84 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Face LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 624.84 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ae280c56-39bf-44f0-8c35-5e063fbf98bb")
+		)
+		(pin "2"
+			(uuid "985b0ae8-5e7f-4d00-abde-3659fe625692")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 635 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e19bc2b1-ded9-482a-8aa5-385115c7f735")
+		(property "Reference" "Q4"
+			(at 641.35 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 641.35 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 635 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 635 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Face LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB4)."
+			(at 635 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7450761b-16b1-4f01-ae14-3a8c2ae9e105")
+		)
+		(pin "2"
+			(uuid "f0da4b1f-dde1-4b3a-a7cb-6193b7923a3e")
+		)
+		(pin "3"
+			(uuid "99a37157-1f14-4ea6-8e0b-20a958e977f4")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 648.97 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7051d714-754c-4e51-98a6-263139edfac2")
+		(property "Reference" "LED4"
+			(at 648.97 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS5YAAA131A (Yellow)"
+			(at 648.97 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 648.97 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 648.97 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Face LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q4 collector."
+			(at 648.97 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a2aa38ff-22e3-4235-beaf-08bf95902836")
+		)
+		(pin "2"
+			(uuid "4062bfa3-fcb1-4607-99cd-5ce3e1387296")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 660.4 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e9fe4008-9df9-4ec7-b826-0dcba1d92844")
+		(property "Reference" "R4"
+			(at 664.21 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150"
+			(at 664.21 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 660.4 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 660.4 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED4 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 660.4 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5dd08b6f-b5f7-48dd-bcd6-da462392b92a")
+		)
+		(pin "2"
+			(uuid "6296a204-c301-495f-8c74-65f3a43408f7")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 675.64 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9391212-c5ac-494f-be21-f01d6d6ad603")
+		(property "Reference" "RB5"
+			(at 679.45 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 679.45 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 675.64 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 675.64 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Side strip LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 675.64 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9e12eb7f-b805-4510-9a03-f1509210f373")
+		)
+		(pin "2"
+			(uuid "c36b0b4a-6c7d-4e1e-a905-6261d95c5e3e")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 685.8 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56d6b602-1e5c-4e85-ab8b-305271c3a87b")
+		(property "Reference" "Q5"
+			(at 692.15 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 692.15 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 685.8 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 685.8 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Side strip LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB5)."
+			(at 685.8 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19f65664-7959-418f-9343-3c20f1634fdb")
+		)
+		(pin "2"
+			(uuid "610a52f9-96f9-465d-9af8-08984d421e1d")
+		)
+		(pin "3"
+			(uuid "866fc714-99f2-47c9-a2cd-b39f5c48705f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 699.77 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "007eb532-be23-4ebc-ba81-8772951af6f6")
+		(property "Reference" "LED5"
+			(at 699.77 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS4WMLA131A (White)"
+			(at 699.77 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 699.77 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 699.77 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Side strip LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q5 collector."
+			(at 699.77 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c737066-5bd0-4d97-a67f-1953286b774b")
+		)
+		(pin "2"
+			(uuid "caea7dfc-c9ea-4745-b7dd-9440d040aa19")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 711.2 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "61d26400-60d8-4e32-a4ad-da56921877b8")
+		(property "Reference" "R5"
+			(at 715.01 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 715.01 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 711.2 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 711.2 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED5 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 711.2 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1981a76f-242e-4484-bb41-d5935ab25fbd")
+		)
+		(pin "2"
+			(uuid "7aaa6818-9ded-43aa-b691-cdb4ec2cafa8")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 726.44 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9f719deb-2dd3-4d66-b8a0-da3daa3429bc")
+		(property "Reference" "RB6"
+			(at 730.25 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 730.25 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 726.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 726.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Side strip LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 726.44 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b9235a97-e2d9-4597-8b0f-5e559bcd0514")
+		)
+		(pin "2"
+			(uuid "9c7c2ffe-fbd9-4308-b28e-1828e8369b5a")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 736.6 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "188afb2f-5d47-4146-bc27-88b04693ec78")
+		(property "Reference" "Q6"
+			(at 742.95 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 742.95 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 736.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 736.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Side strip LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB6)."
+			(at 736.6 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "911bd5ee-10bd-4f35-aa1a-de04a14b7aba")
+		)
+		(pin "2"
+			(uuid "585a682c-067d-4efd-8c1d-6a58db98fed9")
+		)
+		(pin "3"
+			(uuid "58287f5a-64eb-4caa-9df6-d2efe6d7d1f1")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 750.57 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7dd56370-ae75-4427-b0fe-080401061710")
+		(property "Reference" "LED6"
+			(at 750.57 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OSB56AA131A (Blue)"
+			(at 750.57 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 750.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 750.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Side strip LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q6 collector."
+			(at 750.57 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "61bfc936-fb9c-4eb7-b314-9ae255a67e9c")
+		)
+		(pin "2"
+			(uuid "0246d8d7-667f-4019-9209-ecf9d3efb6b9")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 762 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "edd801a0-0303-4499-9a99-eb5bcd86d104")
+		(property "Reference" "R6"
+			(at 765.81 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 765.81 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 762 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 762 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED6 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 762 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c0dc019e-001c-4230-a99f-537572eff74d")
+		)
+		(pin "2"
+			(uuid "defb439a-f15a-4945-9f26-cdf36455fa01")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 777.24 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88a4e068-5ead-4443-b84f-cd3737bec143")
+		(property "Reference" "RB7"
+			(at 781.05 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 781.05 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 777.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 777.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Side strip LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 777.24 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ace18b73-e265-42d2-9d24-84bc6c54e525")
+		)
+		(pin "2"
+			(uuid "2eee864c-ea18-49df-9b6c-c7e595560e3b")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 787.4 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "688f9490-d251-404b-96b0-15cb72acc8e3")
+		(property "Reference" "Q7"
+			(at 793.75 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 793.75 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 787.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 787.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Side strip LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB7)."
+			(at 787.4 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d830e2c9-453d-4bc2-8509-010d7debb228")
+		)
+		(pin "2"
+			(uuid "123002a1-d49f-4d4c-9cb1-37d17cf1a80e")
+		)
+		(pin "3"
+			(uuid "d5c7b25d-a20c-4c23-aaf1-5d665fb873b3")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 801.37 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca687835-b9b7-4bba-804c-918beb59282b")
+		(property "Reference" "LED7"
+			(at 801.37 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS5RAAA131A (Red)"
+			(at 801.37 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 801.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 801.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Side strip LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q7 collector."
+			(at 801.37 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c9cbf229-4fd7-4b1e-929b-331b934d0064")
+		)
+		(pin "2"
+			(uuid "ed558b16-1a18-4184-ac95-2131bbcb95be")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 812.8 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "106fe291-e7e3-45e1-8f5e-bbccabbc3cab")
+		(property "Reference" "R7"
+			(at 816.61 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150"
+			(at 816.61 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 812.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 812.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED7 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 812.8 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6387d153-9f1d-4269-8c4b-f433f3a243a7")
+		)
+		(pin "2"
+			(uuid "da5b66e2-8480-4ba5-96c6-374684d6f7bb")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 828.04 283.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1703ccc2-c25b-4be0-951d-6c1a237286c2")
+		(property "Reference" "RB8"
+			(at 831.85 281.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 831.85 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 828.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 828.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Base resistor for Side strip LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27)."
+			(at 828.04 283.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e19c9c3-e6be-4981-b301-71277c18831e")
+		)
+		(pin "2"
+			(uuid "4a5c17f6-9081-4676-9cfa-e0f51af94515")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "RB8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:2SC1815")
+		(at 838.2 287.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fed90dbc-7195-4f3a-8a05-f6ff8012201e")
+		(property "Reference" "Q8"
+			(at 844.55 283.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC1815"
+			(at 844.55 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 838.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 838.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-side switch for Side strip LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB8)."
+			(at 838.2 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "011c01f8-ed0c-449f-8112-bac0f1895c95")
+		)
+		(pin "2"
+			(uuid "a2181cf8-3ea5-4c62-9d05-83c5251f1350")
+		)
+		(pin "3"
+			(uuid "fa395345-8230-49b0-b143-c3a6f9b619f1")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 852.17 281.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e6debde-a9b6-4d7b-93a3-b3fe39d87fc6")
+		(property "Reference" "LED8"
+			(at 852.17 278.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "OS5YAAA131A (Yellow)"
+			(at 852.17 285.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D10.0mm"
+			(at 852.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 852.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Side strip LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q8 collector."
+			(at 852.17 281.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9aa8af93-2049-47ec-bb02-7df5ef492a25")
+		)
+		(pin "2"
+			(uuid "c42c519b-20d3-43d7-a370-cabc5e304ef5")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 863.6 285.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "121defa6-a23f-4423-94b5-ba3a6e385650")
+		(property "Reference" "R8"
+			(at 867.41 284.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "150"
+			(at 867.41 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 863.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 863.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Series current-limiting resistor for LED8 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C)."
+			(at 863.6 285.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fbe521b9-fed9-47e8-9d85-808a308da850")
+		)
+		(pin "2"
+			(uuid "0a87f436-88e1-40c0-9cc7-5c20212c5128")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 591.82 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "476ec2ed-9244-42bc-9f84-8a0edb212c38")
+		(property "Reference" "R9"
+			(at 595.63 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "47"
+			(at 595.63 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 591.82 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 591.82 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Status LED current-limiting resistor, 47ohm (common spec, all puzzle modules)."
+			(at 591.82 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9a7c72a9-c634-458a-a57e-95feea639e12")
+		)
+		(pin "2"
+			(uuid "d6b7f940-8cad-487a-871a-a4a40ca92dcc")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 588.01 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e923680-9577-4aa0-a680-ac0d435340a6")
+		(property "Reference" "LED9"
+			(at 588.01 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED (status, green)"
+			(at 588.01 116.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm"
+			(at 588.01 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 588.01 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Module status LED, green = solved (manual p.4). Panel: top-right corner area, inset from the corner mounting hole (common spec, all puzzle modules)."
+			(at 588.01 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "583eb699-5696-4e13-bad9-db8d92616f94")
+		)
+		(pin "2"
+			(uuid "c1da74f5-104f-4653-887a-b4a8fb0da42e")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "LED9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 614.68 57.15 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9fb78b13-0f56-4e69-b6f5-e1682ff6596b")
+		(property "Reference" "#PWR01"
+			(at 614.68 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 617.22 57.15 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 614.68 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 614.68 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 614.68 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "183dfedb-38e2-4e90-aa7d-b9e8b873f191")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 617.22 57.15) (xy 614.68 57.15)
+		)
+		(stroke (width 0) (type default))
+		(uuid "0de1c83a-f823-465e-80ee-5180506806ae")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 614.68 69.85 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf2b88ba-caba-46ef-bcac-9e2d1b939ea8")
+		(property "Reference" "#PWR02"
+			(at 614.68 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 617.22 69.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 614.68 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 614.68 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 614.68 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "03307e48-c389-491c-b9eb-98c5f228fe7d")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 617.22 69.85) (xy 614.68 69.85)
+		)
+		(stroke (width 0) (type default))
+		(uuid "161df10e-0e07-4b0d-a662-9bffb3e5cb1c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 614.68 82.55 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e5fc5c2e-ca16-4ee7-a94a-f5a8b0b40795")
+		(property "Reference" "#PWR03"
+			(at 614.68 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 617.22 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 614.68 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 614.68 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 614.68 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4b37782d-0910-4b51-9f31-d8dfad5469a5")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 617.22 82.55) (xy 614.68 82.55)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1ad975d3-ccf6-4c3d-9ce5-bd768ec2ac8c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 614.68 95.25 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f0eb260e-b7c0-4ecb-a79c-477a8b82473d")
+		(property "Reference" "#PWR04"
+			(at 614.68 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 617.22 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 614.68 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 614.68 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 614.68 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "026feb41-f8c2-4522-88cc-901d0b032c87")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 617.22 95.25) (xy 614.68 95.25)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ad80f836-2313-4cc5-88a6-d76c15d25721")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 655.32 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d203dc02-6369-41e8-8c6c-a53d4cb6098d")
+		(property "Reference" "#PWR05"
+			(at 655.32 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 657.86 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 655.32 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "503d9727-c851-4591-a2a8-e5df4d091954")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 95.25) (xy 655.32 95.25)
+		)
+		(stroke (width 0) (type default))
+		(uuid "2a30e56d-a2b9-4492-b5d6-fb877becfdba")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 655.32 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4b1dc19-3566-4b69-b348-a722a7170987")
+		(property "Reference" "#PWR06"
+			(at 655.32 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 657.86 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 655.32 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf9d58f0-2f14-43cd-a159-ade320a67b46")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 82.55) (xy 655.32 82.55)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9bce08b3-aa5f-441c-9321-913b9370f3b3")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 655.32 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3254e7c-d370-4727-99a1-56c8ac119e02")
+		(property "Reference" "#PWR07"
+			(at 655.32 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 657.86 69.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 655.32 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6a6ae8cd-3e00-4033-b59c-56a9de6bd7fc")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 69.85) (xy 655.32 69.85)
+		)
+		(stroke (width 0) (type default))
+		(uuid "dd207808-0bd5-456e-8aef-611537c99127")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 655.32 57.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6dc9f953-29a4-45ef-b251-876e0230730b")
+		(property "Reference" "#PWR08"
+			(at 655.32 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 657.86 57.15 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 655.32 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "624f5f63-f667-45d8-bf2c-6659062de88b")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 57.15) (xy 655.32 57.15)
+		)
+		(stroke (width 0) (type default))
+		(uuid "3ddf5164-7609-4050-bdd4-e6a0e923c1ff")
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 655.32 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3ce614a-7825-4e8e-809a-1560e410e9e3")
+		(property "Reference" "#PWR09"
+			(at 655.32 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 657.86 62.23 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 655.32 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1ede6621-4960-401e-ac01-ac8c99c96ab1")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 62.23) (xy 655.32 62.23)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ea9f5514-9b91-4e96-b794-b2417165d5b7")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 655.32 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3c0a6550-527c-40b8-ab32-c7328dbb1095")
+		(property "Reference" "#PWR10"
+			(at 655.32 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 657.86 54.61 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 655.32 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 655.32 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 655.32 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "31b0f8dc-0d27-45cc-99ff-44e30585549a")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 652.78 54.61) (xy 655.32 54.61)
+		)
+		(stroke (width 0) (type default))
+		(uuid "00c2cf72-b31b-492c-9b71-2870e1a7ffb7")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 635 102.87 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "967bb21d-d085-469d-b43a-10df68311dbe")
+		(property "Reference" "#PWR11"
+			(at 635 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 637.54 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 635 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 635 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 635 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8173bd84-4adc-4773-a54b-54f0fbd6cfa0")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 635 105.41) (xy 635 102.87)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1be086bf-a13f-497c-8b66-57250ed97264")
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 563.88 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5030fd1d-d36a-46d7-90cf-abdae3cd3a87")
+		(property "Reference" "C1"
+			(at 558.8 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100uF/16V"
+			(at 558.8 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+			(at 563.88 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 563.88 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bulk capacitor on the 5V input (JST Pin3-Pin4), hub common rule 2026-09-27: 100uF/16V or larger electrolytic, one per module. Pin1(+)=+5V, pin2(-)=GND."
+			(at 563.88 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a534c489-0482-47fd-956f-00889eedd427")
+		)
+		(pin "2"
+			(uuid "d06259e1-cff2-48f7-b216-c3cd4682141d")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 568.96 57.15) (xy 563.88 57.15)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1606dad8-8638-480c-95a0-336c529094cf")
+	)
+	(wire
+		(pts
+			(xy 563.88 57.15) (xy 561.34 57.15)
+		)
+		(stroke (width 0) (type default))
+		(uuid "7cce3bb5-45eb-498a-938f-74d2ea322fcc")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 561.34 57.15 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0eb38c7e-bf7f-495b-925a-7bf0e9df591a")
+		(property "Reference" "#PWR12"
+			(at 561.34 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 563.88 57.15 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 561.34 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 561.34 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 561.34 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0cc3633a-0411-4d72-a8a7-898404b1e9ee")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 563.88 57.15) (xy 563.88 54.61)
+		)
+		(stroke (width 0) (type default))
+		(uuid "63a7efdf-8330-45e0-b13f-10709c930060")
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 563.88 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9df16d13-8c5d-4c9b-a810-46d0cb03a551")
+		(property "Reference" "#FLG01"
+			(at 563.88 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 566.42 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 563.88 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 563.88 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 563.88 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0dc98cdb-4edd-459b-b0e5-659b2734a5c9")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 568.96 59.69) (xy 566.42 59.69)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9791d94c-51e4-492e-9b43-0f8c080ce429")
+	)
+	(wire
+		(pts
+			(xy 566.42 59.69) (xy 566.42 64.77)
+		)
+		(stroke (width 0) (type default))
+		(uuid "4bbb051a-52db-422b-b650-21bc1a30a094")
+	)
+	(wire
+		(pts
+			(xy 566.42 64.77) (xy 563.88 64.77)
+		)
+		(stroke (width 0) (type default))
+		(uuid "93c7248a-81e0-43e6-b1aa-090b3f755258")
+	)
+	(wire
+		(pts
+			(xy 563.88 64.77) (xy 561.34 64.77)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6887c090-cfe5-45e4-bb47-3785f790b91c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 561.34 64.77 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e362e939-dbb3-487c-a5be-91c7790485bf")
+		(property "Reference" "#PWR13"
+			(at 561.34 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 563.88 64.77 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 561.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 561.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 561.34 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "13104d46-e5b6-439c-b3ea-eac39b79edf5")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 563.88 64.77) (xy 563.88 67.31)
+		)
+		(stroke (width 0) (type default))
+		(uuid "2c97318e-a163-403d-a596-72a92df67868")
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 563.88 67.31 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4a7a97f1-a9a5-47db-a6c4-d4b125296d28")
+		(property "Reference" "#FLG02"
+			(at 563.88 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 566.42 67.31 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 563.88 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 563.88 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 563.88 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2da7d688-e6d0-4bd0-9791-468b9b07173d")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 655.32 62.23) (xy 657.86 62.23)
+		)
+		(stroke (width 0) (type default))
+		(uuid "99e93732-a281-45c7-b14f-f0ff7f933c7a")
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 657.86 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f89911e-5478-4e2c-b279-44d95cd3b5ae")
+		(property "Reference" "#FLG03"
+			(at 657.86 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 660.4 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 657.86 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 657.86 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 657.86 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6d314498-19da-4b64-ae19-ed7ded9eff2a")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#FLG03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 574.04 64.77 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "96cad123-1444-43c6-814c-19f84689182e")
+		(property "Reference" "#PWR14"
+			(at 574.04 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 576.58 64.77 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 574.04 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 574.04 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 574.04 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "221864f6-3ef7-4913-b80a-67525c4f297f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 579.12 64.77) (xy 574.04 64.77)
+		)
+		(stroke (width 0) (type default))
+		(uuid "e790ca16-eb89-4630-95c9-9dd9a4743d03")
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 574.04 67.31 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dd56a095-603b-4a19-8721-6d2839dcd738")
+		(property "Reference" "#PWR15"
+			(at 574.04 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 576.58 67.31 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 574.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 574.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 574.04 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f29cd2bf-a117-4d59-9b80-f3a7be19b0b1")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 579.12 67.31) (xy 574.04 67.31)
+		)
+		(stroke (width 0) (type default))
+		(uuid "f0cb1492-4e2b-448a-9838-ad49f14de297")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 181.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2c9b87e2-6e7e-4b25-afef-5121ce979c85")
+		(property "Reference" "#PWR16"
+			(at 520.7 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 523.24 181.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 520.7 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 520.7 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 520.7 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dc13e816-970a-484e-9c11-a35bb589e6d7")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 525.78 181.61) (xy 520.7 181.61)
+		)
+		(stroke (width 0) (type default))
+		(uuid "9b923cfe-df9d-471a-a29a-1c5bdfe77d8f")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 186.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6224ddb4-0897-4c4e-b572-45f922e6e50d")
+		(property "Reference" "#PWR17"
+			(at 520.7 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 523.24 186.69 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 520.7 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 520.7 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 520.7 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "141cdc68-e444-4928-bdba-dca1f711b97f")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 525.78 186.69) (xy 520.7 186.69)
+		)
+		(stroke (width 0) (type default))
+		(uuid "f5450961-717e-41a2-b601-e0af6fccd7ed")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 194.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09ded9ab-9a6e-41c4-af6b-3878d5bdddbd")
+		(property "Reference" "#PWR18"
+			(at 520.7 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 523.24 194.31 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 520.7 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 520.7 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 520.7 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f9f81667-0f4c-4e80-a771-94740b44aa8c")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 525.78 194.31) (xy 520.7 194.31)
+		)
+		(stroke (width 0) (type default))
+		(uuid "b7a42df3-4e17-40a4-9fe6-503b443c8b74")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 199.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d15f9554-8b46-47d8-861b-d07e808a74c6")
+		(property "Reference" "#PWR19"
+			(at 520.7 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 523.24 199.39 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 520.7 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 520.7 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 520.7 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "874facb6-6a5c-4d5e-927a-3b4ea3c90bf4")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 525.78 199.39) (xy 520.7 199.39)
+		)
+		(stroke (width 0) (type default))
+		(uuid "3c59fdcc-1f6e-4af9-9cf5-8f68f04a2f5c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 485.14 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "859f90af-1051-4a57-98a5-f29d0de9ffb0")
+		(property "Reference" "#PWR20"
+			(at 485.14 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 487.68 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 485.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 485.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 485.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b8280768-4081-4642-a9ef-9117885937a6")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 485.14 292.1) (xy 485.14 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1b57d13f-f13b-45b0-a173-9491745d291c")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 508 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3063eed3-a63c-4393-a42c-77272b1cf361")
+		(property "Reference" "#PWR21"
+			(at 508 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 510.54 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 508 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 508 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 508 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3044d49-a75b-4dd9-bcdc-b9a244978c21")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 508 289.56) (xy 508 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6df3703b-5462-4599-bbbf-31c63238cc53")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 535.94 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad788e28-0a54-4468-b337-212001ae591f")
+		(property "Reference" "#PWR22"
+			(at 535.94 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 538.48 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 535.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 535.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 535.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b319f24c-bd16-4c58-9d8f-20aaaa31ecdb")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 535.94 292.1) (xy 535.94 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "84c77146-8750-4379-864d-f163f8db471e")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 558.8 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "71788e85-2d8c-49b0-85d6-81a5e71c6c73")
+		(property "Reference" "#PWR23"
+			(at 558.8 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 561.34 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 558.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 558.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 558.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "944668f9-6ed6-4c90-8f6e-d2e8a1fb2af0")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 558.8 289.56) (xy 558.8 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "a1a068d6-c950-452f-8d8d-926748e4a8ad")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 586.74 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a49930a7-267e-4a37-a495-598c1603fa3c")
+		(property "Reference" "#PWR24"
+			(at 586.74 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 589.28 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 586.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 586.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 586.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9bce6b81-2eb1-40ed-a927-18a49b1564ce")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 586.74 292.1) (xy 586.74 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "bbb258cf-c30b-4f58-b3ac-ced57efdcd46")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 609.6 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5c7fa800-5820-40d1-b6dd-0aae10e8e0dc")
+		(property "Reference" "#PWR25"
+			(at 609.6 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 612.14 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 609.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 609.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 609.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4e209fc8-ad48-4571-9111-c47152dada68")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 609.6 289.56) (xy 609.6 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "c6c0bce2-2c99-4221-a95f-d5e950fb432f")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 637.54 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5fbcd179-fb44-4825-8f43-d0cdf545b164")
+		(property "Reference" "#PWR26"
+			(at 637.54 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 640.08 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 637.54 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 637.54 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 637.54 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3593f541-d637-408c-9dbd-b58ecc8cef13")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 637.54 292.1) (xy 637.54 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "6b12afa7-a428-4e1a-ab96-a0a946d74e76")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 660.4 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "231deeb1-ab28-4f21-a537-ba9aec222e23")
+		(property "Reference" "#PWR27"
+			(at 660.4 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 662.94 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 660.4 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 660.4 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 660.4 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "acf0b57e-a90e-4642-86db-008b66137d8b")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 660.4 289.56) (xy 660.4 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "1b2c1ed5-f97d-47df-a55c-30a50bf4aa44")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 688.34 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32cf0a96-d9e9-4f36-bf6d-c5652235b0a9")
+		(property "Reference" "#PWR28"
+			(at 688.34 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 690.88 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 688.34 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 688.34 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 688.34 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e66dba53-9d8a-4147-980f-426deba3058e")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 688.34 292.1) (xy 688.34 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ba3a7b06-785c-437f-851f-a5f5c71f8f8b")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 711.2 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd54d3fe-51c1-4589-ad20-ab7fd759a995")
+		(property "Reference" "#PWR29"
+			(at 711.2 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 713.74 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 711.2 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 711.2 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 711.2 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "381521e8-9cde-4b60-980f-83d43d1763e4")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 711.2 289.56) (xy 711.2 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "ddbf6237-9ef1-4780-aae2-f3c90c4f2ea2")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 739.14 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab661c11-5b05-4eb4-af70-2e6750df6f9a")
+		(property "Reference" "#PWR30"
+			(at 739.14 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 741.68 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 739.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 739.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 739.14 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "491897c6-b9dc-4ef7-b86b-566b148cb59c")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 739.14 292.1) (xy 739.14 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "2e44ef3b-6b09-48c1-842c-43919a428575")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 762 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b18b684f-bf39-4709-b590-aca43200870e")
+		(property "Reference" "#PWR31"
+			(at 762 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 764.54 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 762 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 762 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 762 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7fc2fe8c-24c0-4294-a403-9981148adc91")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 762 289.56) (xy 762 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "471498df-a2d8-4e07-bafe-e11db3b0e86a")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 789.94 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bbb389ea-8c6d-4787-bb45-c5049b9ade6b")
+		(property "Reference" "#PWR32"
+			(at 789.94 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 792.48 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 789.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 789.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 789.94 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0fdb7032-ef3b-408d-9340-d3a9e412c6c3")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 789.94 292.1) (xy 789.94 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "e58bf3bd-e2d5-4c2d-b8d8-3dc8b666b960")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 812.8 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "866bde51-935f-402e-ad5b-7f39faccb06e")
+		(property "Reference" "#PWR33"
+			(at 812.8 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 815.34 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 812.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 812.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 812.8 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "62afaa9b-43c4-4a69-aa95-55640c114a18")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 812.8 289.56) (xy 812.8 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "a3e39034-813c-4a9e-9a83-64f7d69dd6c7")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 840.74 294.64 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "38724fb8-27f0-41ef-99ac-997a2c089d37")
+		(property "Reference" "#PWR34"
+			(at 840.74 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 843.28 294.64 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 840.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 840.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 840.74 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f1be5b8f-5364-46c9-a0d4-3732c43509e9")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 840.74 292.1) (xy 840.74 294.64)
+		)
+		(stroke (width 0) (type default))
+		(uuid "87411af5-4cc3-419f-b0bd-08d9c0132895")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 863.6 292.1 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a102fa7-9a6c-4032-83d8-4045af3aec7b")
+		(property "Reference" "#PWR35"
+			(at 863.6 288.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 866.14 292.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 863.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 863.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 863.6 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c410268-ed95-4a3d-ac8b-0768cb3279ae")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 863.6 289.56) (xy 863.6 292.1)
+		)
+		(stroke (width 0) (type default))
+		(uuid "14d3d1a1-4937-43a5-8c15-fadceacfd828")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 584.2 107.95 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "382a830a-cd03-43ee-989a-81e143419891")
+		(property "Reference" "#PWR36"
+			(at 584.2 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 586.74 107.95 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				) (justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 584.2 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 584.2 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\""
+			(at 584.2 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d8030fe9-367d-4b8c-ace2-7ae7a4ec6e6d")
+		)
+		(instances
+			(project "button"
+				(path "/b7e4a1c2-6f3d-4a9e-9c1b-2d5f8a3e7c60"
+					(reference "#PWR36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 584.2 110.49) (xy 584.2 107.95)
+		)
+		(stroke (width 0) (type default))
+		(uuid "f7d49943-1a86-4487-9c71-d846bff63d69")
+	)
+	(no_connect
+		(at 617.22 92.71)
+		(uuid "71a18ab0-e89e-4c8b-9c4d-fdd05edd4293")
+	)
+	(no_connect
+		(at 617.22 97.79)
+		(uuid "976dc430-762a-46c6-bdc8-23f9de0fb36b")
+	)
+	(no_connect
+		(at 652.78 100.33)
+		(uuid "05d9396f-ad31-4d89-998f-1638b3c1ed99")
+	)
+	(no_connect
+		(at 652.78 97.79)
+		(uuid "5dedad90-6359-495c-b18f-251f77e0b23a")
+	)
+	(no_connect
+		(at 652.78 92.71)
+		(uuid "b2eb4d77-f301-401b-81a0-c99d147cc175")
+	)
+	(no_connect
+		(at 652.78 90.17)
+		(uuid "e0546371-77e3-4eb7-87e2-01d0f84578fa")
+	)
+	(no_connect
+		(at 652.78 87.63)
+		(uuid "efe739b8-4e6e-42c3-9a6b-d02c7f84e86a")
+	)
+	(no_connect
+		(at 652.78 85.09)
+		(uuid "83737a94-bcef-493d-af5a-c7c711e37e48")
+	)
+	(no_connect
+		(at 652.78 80.01)
+		(uuid "747b3c92-3dae-4f25-98a8-c844551b7617")
+	)
+	(no_connect
+		(at 652.78 77.47)
+		(uuid "55362fc2-f118-41a3-af0d-903887e07f8e")
+	)
+	(no_connect
+		(at 652.78 74.93)
+		(uuid "09377cc7-cd2d-4abf-94d4-c16e0deb2c46")
+	)
+	(no_connect
+		(at 652.78 72.39)
+		(uuid "747b5b80-df91-4f84-bc58-a6b19d66d8cf")
+	)
+	(no_connect
+		(at 652.78 67.31)
+		(uuid "09afb1ab-1526-4f64-8c02-9e9ca48ac8ba")
+	)
+	(no_connect
+		(at 652.78 64.77)
+		(uuid "6af0d4d0-34da-4c2f-bb6f-f31f36afe847")
+	)
+	(no_connect
+		(at 652.78 59.69)
+		(uuid "631e84e5-27d9-4837-877f-82b1ec0abe3a")
+	)
+	(no_connect
+		(at 652.78 52.07)
+		(uuid "f669c259-4e07-4545-a866-81ab8081f821")
+	)
+	(no_connect
+		(at 632.46 105.41)
+		(uuid "5e8848c4-8d37-45f3-9ae6-33aa59910472")
+	)
+	(no_connect
+		(at 637.54 105.41)
+		(uuid "50084715-6f08-4351-866d-b812acdf3871")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,4033 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\ysou5\\OneDrive - 東京理科大学\\ドキュメント\\osc\\hardware\\button\\button.kicad_sch")
+		(date "2026-09-29T09:19:31")
+		(tool "Eeschema 10.0.3")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "Button module")
+				(company)
+				(rev)
+				(date)
+				(source "button.kicad_sch")
+				(comment
+					(number "1")
+					(value "OSC2026 bomb defusal prop - Button module (interpretation C: electrical gate)")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "100uF/16V")
+			(footprint "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
+			(description "Bulk capacitor on the 5V input (JST Pin3-Pin4), hub common rule 2026-09-27: 100uF/16V or larger electrolytic, one per module. Pin1(+)=+5V, pin2(-)=GND.")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Bulk capacitor on the 5V input (JST Pin3-Pin4), hub common rule 2026-09-27: 100uF/16V or larger electrolytic, one per module. Pin1(+)=+5V, pin2(-)=GND.")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "CP_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5030fd1d-d36a-46d7-90cf-abdae3cd3a87")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "MODULE_JST_XH_4P")
+			(footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+			(description "Host connector, JST XH 4-pole. Pin1=GPIO0(UART0 TX, module->host), Pin2=GPIO1(UART0 RX, host->module), Pin3=VCC(5V, from host per-slot polyfuse MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md).")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Host connector, JST XH 4-pole. Pin1=GPIO0(UART0 TX, module->host), Pin2=GPIO1(UART0 RX, host->module), Pin3=VCC(5V, from host per-slot polyfuse MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md).")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "145084c9-9589-40d1-af7c-90113a333423")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "KEYTOP_DISPLAY_I2C")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+			(description "Local wiring to the keytop-mounted word-label display (word: 中止/起爆/長押し/押す). Display part is not yet chosen by the user (2026-09-29: probably not the 0.96in SSD1315 OLED used elsewhere in the project; user is selecting parts and asked to design the board first) -- this header reserves I2C1 on Pin1=SDA(GP2), Pin2=SCL(GP3), Pin3=GND, Pin4=+3.3V (from Pico 3V3 OUT), which fits most small I2C displays. Because the display now sits on the moving keytop rather than a fixed panel window, this connector represents a flexible-cable link (exact connector/cable type TBD by user). If the chosen display needs SPI instead of I2C, reassign to spare GPIOs (GP13/14/16-22/26-28) and update this connector -- not yet done, since the part is unpicked.")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Local wiring to the keytop-mounted word-label display (word: 中止/起爆/長押し/押す). Display part is not yet chosen by the user (2026-09-29: probably not the 0.96in SSD1315 OLED used elsewhere in the project; user is selecting parts and asked to design the board first) -- this header reserves I2C1 on Pin1=SDA(GP2), Pin2=SCL(GP3), Pin3=GND, Pin4=+3.3V (from Pico 3V3 OUT), which fits most small I2C displays. Because the display now sits on the moving keytop rather than a fixed panel window, this connector represents a flexible-cable link (exact connector/cable type TBD by user). If the chosen display needs SPI instead of I2C, reassign to spare GPIOs (GP13/14/16-22/26-28) and update this connector -- not yet done, since the part is unpicked.")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "75c5e831-c0b9-426e-a360-5dca304e6463")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED1")
+			(value "OS4WMLA131A (White)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Face LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q1 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Face LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q1 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ea1aaec0-54e9-4b80-bbd6-6b5961ac5522")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED2")
+			(value "OSB56AA131A (Blue)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Face LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q2 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Face LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q2 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0ddb43b4-4b87-4d36-8d5b-7a91de23440e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED3")
+			(value "OS5RAAA131A (Red)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Face LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q3 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Face LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q3 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "67b5f3ce-0ed6-4666-aa3d-e983e79a6e36")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED4")
+			(value "OS5YAAA131A (Yellow)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Face LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q4 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Face LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q4 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7051d714-754c-4e51-98a6-263139edfac2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED5")
+			(value "OS4WMLA131A (White)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Side strip LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q5 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Side strip LED (white): OS4WMLA131A, White, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q5 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "007eb532-be23-4ebc-ba81-8772951af6f6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED6")
+			(value "OSB56AA131A (Blue)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Side strip LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q6 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Side strip LED (blue): OSB56AA131A, Blue, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q6 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7dd56370-ae75-4427-b0fe-080401061710")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED7")
+			(value "OS5RAAA131A (Red)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Side strip LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q7 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Side strip LED (red): OS5RAAA131A, Red, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q7 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ca687835-b9b7-4bba-804c-918beb59282b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED8")
+			(value "OS5YAAA131A (Yellow)")
+			(footprint "LED_THT:LED_D10.0mm")
+			(description "Side strip LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q8 collector.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D10.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Side strip LED (yellow): OS5YAAA131A, Yellow, 10mm THT, max brightness target ~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)->Q8 collector.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8e6debde-a9b6-4d7b-93a3-b3fe39d87fc6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED9")
+			(value "LED (status, green)")
+			(footprint "LED_THT:LED_D5.0mm")
+			(description "Module status LED, green = solved (manual p.4). Panel: top-right corner area, inset from the corner mounting hole (common spec, all puzzle modules).")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D5.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Module status LED, green = solved (manual p.4). Panel: top-right corner area, inset from the corner mounting hole (common spec, all puzzle modules).")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8e923680-9577-4aa0-a680-ac0d435340a6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q1")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Face LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB1).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Face LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB1).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a656cc31-7026-47ee-803e-a7fc53550519")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q2")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Face LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB2).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Face LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB2).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "34be9041-a69f-4a81-822e-3f9f64a26f2e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q3")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Face LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB3).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Face LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB3).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f665ec31-7f05-4a7b-9b74-04344f5a8946")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q4")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Face LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB4).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Face LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB4).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e19bc2b1-ded9-482a-8aa5-385115c7f735")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q5")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Side strip LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB5).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Side strip LED (white) (White). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB5).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "56d6b602-1e5c-4e85-ab8b-305271c3a87b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q6")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Side strip LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB6).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Side strip LED (blue) (Blue). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB6).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "188afb2f-5d47-4146-bc27-88b04693ec78")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q7")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Side strip LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB7).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Side strip LED (red) (Red). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB7).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "688f9490-d251-404b-96b0-15cb72acc8e3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q8")
+			(value "2SC1815")
+			(footprint "Package_TO_SOT_THT:TO-92_Inline")
+			(description "Low-side switch for Side strip LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB8).")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Low-side switch for Side strip LED (yellow) (Yellow). Pinout ECB (flat face toward you). Base driven from Pico GPIO via 4.7k (RB8).")
+			)
+			(libsource
+				(lib "Transistor_BJT")
+				(part "2SC1815")
+				(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "Low Noise Audio NPN Transistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO?92*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fed90dbc-7195-4f3a-8a05-f6ff8012201e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "100")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED1 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED1 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7f7a967a-4345-4a12-8f23-537c58019883")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "100")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED2 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED2 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f4708ab3-91a3-4e7f-b170-050f097a79de")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "150")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED3 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED3 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1a87e11d-7c82-4547-94ae-46daeef3deb0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "150")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED4 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED4 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e9fe4008-9df9-4ec7-b826-0dcba1d92844")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "100")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED5 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED5 (White), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "61d26400-60d8-4e32-a4ad-da56921877b8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "100")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED6 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED6 (Blue), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "edd801a0-0303-4499-9a99-eb5bcd86d104")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "150")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED7 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED7 (Red), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "106fe291-e7e3-45e1-8f5e-bbccabbc3cab")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "150")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Series current-limiting resistor for LED8 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series current-limiting resistor for LED8 (Yellow), targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per button_design_notes.md sec.3-C).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "121defa6-a23f-4423-94b5-ba3a6e385650")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "47")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Status LED current-limiting resistor, 47ohm (common spec, all puzzle modules).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Status LED current-limiting resistor, 47ohm (common spec, all puzzle modules).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "476ec2ed-9244-42bc-9f84-8a0edb212c38")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB1")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Face LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Face LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1ed992a4-0b06-4741-9c8a-5ab6b9221b4d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB2")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Face LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Face LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3aa32263-74fe-4b48-97b7-1b94683c2daa")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB3")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Face LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Face LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "76887d58-b0c2-4308-833d-e9a844377944")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB4")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Face LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Face LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0aac7c49-c41c-4e7a-ad2b-800e9604670e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB5")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Side strip LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Side strip LED (white) (White), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f9391212-c5ac-494f-be21-f01d6d6ad603")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB6")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Side strip LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Side strip LED (blue) (Blue), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9f719deb-2dd3-4d66-b8a0-da3daa3429bc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB7")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Side strip LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Side strip LED (red) (Red), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "88a4e068-5ead-4443-b84f-cd3737bec143")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RB8")
+			(value "4.7k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Base resistor for Side strip LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Base resistor for Side strip LED (yellow) (Yellow), NPN low-side switch. Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). No separate base pulldown (RP2350-E9 affects A2 stepping only; firmware drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1703ccc2-c25b-4be0-951d-6c1a237286c2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "SW_Push")
+			(footprint "Button_Switch_THT:SW_PUSH_6mm")
+			(description "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_THT:SW_PUSH_6mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "563484d6-e35d-4104-a128-28227658f1c1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW2")
+			(value "SW_Push")
+			(footprint "Button_Switch_THT:SW_PUSH_6mm")
+			(description "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_THT:SW_PUSH_6mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d8262223-8eba-4bfc-9571-38b770523acb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW3")
+			(value "SW_Push")
+			(footprint "Button_Switch_THT:SW_PUSH_6mm")
+			(description "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_THT:SW_PUSH_6mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "952f7dff-2a37-4e13-9e28-d817353fc792")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW4")
+			(value "SW_Push")
+			(footprint "Button_Switch_THT:SW_PUSH_6mm")
+			(description "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_THT:SW_PUSH_6mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Button press detection, one of 4 tacts around the dome rim, all wired in parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "09b55a46-0331-4e99-b164-7e58913c5ac6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "Pico")
+			(footprint "RPi_Pico:RPi_Pico_SMD_TH")
+			(description "Button module MCU (Raspberry Pi Pico 2, RP2350, 3.3V).")
+			(fields
+				(field
+					(name "Footprint") "RPi_Pico:RPi_Pico_SMD_TH")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Button module MCU (Raspberry Pi Pico 2, RP2350, 3.3V).")
+			)
+			(libsource
+				(lib "RPi_Pico")
+				(part "Pico")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "button.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a9b5065f-f6ba-4a14-b095-33f193782d7c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "41")
+						)
+						(pin
+							(num "42")
+						)
+						(pin
+							(num "43")
+						)
+						(pin
+							(num "40")
+						)
+						(pin
+							(num "39")
+						)
+						(pin
+							(num "38")
+						)
+						(pin
+							(num "37")
+						)
+						(pin
+							(num "36")
+						)
+						(pin
+							(num "35")
+						)
+						(pin
+							(num "34")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "21")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x04")
+			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x04")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C_Polarized")
+			(description "Polarized capacitor")
+			(footprints
+				(fp "CP_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Polarized")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Polarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "RPi_Pico")
+			(part "Pico")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Pico")
+				(field
+					(name "Footprint") "RPi_Pico:RPi_Pico_SMD_TH")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GPIO0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GPIO1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "GPIO2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "GPIO3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "GPIO4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GPIO5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "GPIO6")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "GPIO7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "GPIO8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "GPIO9")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "14")
+					(name "GPIO10")
+					(type "bidirectional")
+				)
+				(pin
+					(num "15")
+					(name "GPIO11")
+					(type "bidirectional")
+				)
+				(pin
+					(num "16")
+					(name "GPIO12")
+					(type "bidirectional")
+				)
+				(pin
+					(num "17")
+					(name "GPIO13")
+					(type "bidirectional")
+				)
+				(pin
+					(num "18")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "19")
+					(name "GPIO14")
+					(type "bidirectional")
+				)
+				(pin
+					(num "20")
+					(name "GPIO15")
+					(type "bidirectional")
+				)
+				(pin
+					(num "21")
+					(name "GPIO16")
+					(type "bidirectional")
+				)
+				(pin
+					(num "22")
+					(name "GPIO17")
+					(type "bidirectional")
+				)
+				(pin
+					(num "23")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "24")
+					(name "GPIO18")
+					(type "bidirectional")
+				)
+				(pin
+					(num "25")
+					(name "GPIO19")
+					(type "bidirectional")
+				)
+				(pin
+					(num "26")
+					(name "GPIO20")
+					(type "bidirectional")
+				)
+				(pin
+					(num "27")
+					(name "GPIO21")
+					(type "bidirectional")
+				)
+				(pin
+					(num "28")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "29")
+					(name "GPIO22")
+					(type "bidirectional")
+				)
+				(pin
+					(num "30")
+					(name "RUN")
+					(type "input")
+				)
+				(pin
+					(num "31")
+					(name "GPIO26_ADC0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "32")
+					(name "GPIO27_ADC1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "33")
+					(name "AGND")
+					(type "power_in")
+				)
+				(pin
+					(num "34")
+					(name "GPIO28_ADC2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "35")
+					(name "ADC_VREF")
+					(type "power_in")
+				)
+				(pin
+					(num "36")
+					(name "3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "37")
+					(name "3V3_EN")
+					(type "input")
+				)
+				(pin
+					(num "38")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "39")
+					(name "VSYS")
+					(type "power_in")
+				)
+				(pin
+					(num "40")
+					(name "VBUS")
+					(type "power_in")
+				)
+				(pin
+					(num "41")
+					(name "SWCLK")
+					(type "input")
+				)
+				(pin
+					(num "42")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "43")
+					(name "SWDIO")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Switch")
+			(part "SW_Push")
+			(description "Push button switch, generic, two pins")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_Push")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Push button switch, generic, two pins")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Transistor_BJT")
+			(part "2SC1815")
+			(description "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+			(docs "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf")
+			(footprints
+				(fp "TO?92*")
+			)
+			(fields
+				(field
+					(name "Reference") "Q")
+				(field
+					(name "Value") "2SC1815")
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+				(field
+					(name "Datasheet") "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf")
+				(field
+					(name "Description") "0.15A Ic, 50V Vce, Low Noise Audio NPN Transistor, TO-92")
+				(field
+					(name "Sim.Device") "NPN")
+				(field
+					(name "Sim.Pins") "1=E 2=C 3=B")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "E")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "C")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "B")
+					(type "input")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Connector_Generic")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "RPi_Pico")
+			(uri "C:/Users/ysou5/Documents/KiCad/10.0/3rdparty/KiCad-RP-Pico/RP-Pico Libraries/MCU_RaspberryPi_and_Boards.kicad_sym")
+		)
+		(library
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+		(library
+			(logical "Transistor_BJT")
+			(uri "${KICAD10_SYMBOL_DIR}/Transistor_BJT.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3.3V")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "36")
+				(pinfunction "3V3_36")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "+5V")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "39")
+				(pinfunction "VSYS_39")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "LED9")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q2")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q3")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q4")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q5")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q6")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q7")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q8")
+				(pin "1")
+				(pinfunction "E_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "GND_13")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "18")
+				(pinfunction "GND_18")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "GND_23")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "28")
+				(pinfunction "GND_28")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "33")
+				(pinfunction "AGND_33")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "38")
+				(pinfunction "GND_38")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "42")
+				(pinfunction "GND_42")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "GND_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "4")
+			(name "Net-(J1-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "GPIO0_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "Net-(J1-Pin_2)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "GPIO1_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "Net-(J2-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "GPIO2_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(J2-Pin_2)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "GPIO3_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "8")
+			(name "Net-(LED1-A)")
+			(class "Default")
+			(node
+				(ref "LED1")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "Net-(LED1-K)")
+			(class "Default")
+			(node
+				(ref "LED1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "10")
+			(name "Net-(LED2-A)")
+			(class "Default")
+			(node
+				(ref "LED2")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(LED2-K)")
+			(class "Default")
+			(node
+				(ref "LED2")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q2")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "Net-(LED3-A)")
+			(class "Default")
+			(node
+				(ref "LED3")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "Net-(LED3-K)")
+			(class "Default")
+			(node
+				(ref "LED3")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q3")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "Net-(LED4-A)")
+			(class "Default")
+			(node
+				(ref "LED4")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "15")
+			(name "Net-(LED4-K)")
+			(class "Default")
+			(node
+				(ref "LED4")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q4")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "16")
+			(name "Net-(LED5-A)")
+			(class "Default")
+			(node
+				(ref "LED5")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "17")
+			(name "Net-(LED5-K)")
+			(class "Default")
+			(node
+				(ref "LED5")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q5")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "18")
+			(name "Net-(LED6-A)")
+			(class "Default")
+			(node
+				(ref "LED6")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "Net-(LED6-K)")
+			(class "Default")
+			(node
+				(ref "LED6")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q6")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "Net-(LED7-A)")
+			(class "Default")
+			(node
+				(ref "LED7")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
+			(name "Net-(LED7-K)")
+			(class "Default")
+			(node
+				(ref "LED7")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q7")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "Net-(LED8-A)")
+			(class "Default")
+			(node
+				(ref "LED8")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "23")
+			(name "Net-(LED8-K)")
+			(class "Default")
+			(node
+				(ref "LED8")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q8")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(LED9-A)")
+			(class "Default")
+			(node
+				(ref "LED9")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "Net-(Q1-B)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB1")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "26")
+			(name "Net-(Q2-B)")
+			(class "Default")
+			(node
+				(ref "Q2")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB2")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "27")
+			(name "Net-(Q3-B)")
+			(class "Default")
+			(node
+				(ref "Q3")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB3")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "28")
+			(name "Net-(Q4-B)")
+			(class "Default")
+			(node
+				(ref "Q4")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB4")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "29")
+			(name "Net-(Q5-B)")
+			(class "Default")
+			(node
+				(ref "Q5")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB5")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "30")
+			(name "Net-(Q6-B)")
+			(class "Default")
+			(node
+				(ref "Q6")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB6")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "31")
+			(name "Net-(Q7-B)")
+			(class "Default")
+			(node
+				(ref "Q7")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB7")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "32")
+			(name "Net-(Q8-B)")
+			(class "Default")
+			(node
+				(ref "Q8")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "input")
+			)
+			(node
+				(ref "RB8")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "33")
+			(name "Net-(U1-GPIO4)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "GPIO4_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "34")
+			(name "Net-(U1-GPIO5)")
+			(class "Default")
+			(node
+				(ref "RB1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "GPIO5_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "35")
+			(name "Net-(U1-GPIO6)")
+			(class "Default")
+			(node
+				(ref "RB2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "GPIO6_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "36")
+			(name "Net-(U1-GPIO7)")
+			(class "Default")
+			(node
+				(ref "RB3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "GPIO7_10")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "37")
+			(name "Net-(U1-GPIO8)")
+			(class "Default")
+			(node
+				(ref "RB4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "GPIO8_11")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "38")
+			(name "Net-(U1-GPIO9)")
+			(class "Default")
+			(node
+				(ref "RB5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "GPIO9_12")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "39")
+			(name "Net-(U1-GPIO10)")
+			(class "Default")
+			(node
+				(ref "RB6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "GPIO10_14")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "40")
+			(name "Net-(U1-GPIO11)")
+			(class "Default")
+			(node
+				(ref "RB7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "GPIO11_15")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "41")
+			(name "Net-(U1-GPIO12)")
+			(class "Default")
+			(node
+				(ref "RB8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "GPIO12_16")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "42")
+			(name "Net-(U1-GPIO15)")
+			(class "Default")
+			(node
+				(ref "R9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "20")
+				(pinfunction "GPIO15_20")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(U1-3V3_EN-Pad37)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "37")
+				(pinfunction "3V3_EN_37")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(U1-ADC_VREF-Pad35)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "35")
+				(pinfunction "ADC_VREF_35")
+				(pintype "power_in+no_connect")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(U1-GPIO13-Pad17)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "GPIO13_17")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(U1-GPIO14-Pad19)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "19")
+				(pinfunction "GPIO14_19")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(U1-GPIO16-Pad21)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "21")
+				(pinfunction "GPIO16_21")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(U1-GPIO17-Pad22)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "22")
+				(pinfunction "GPIO17_22")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "49")
+			(name "unconnected-(U1-GPIO18-Pad24)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "24")
+				(pinfunction "GPIO18_24")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "50")
+			(name "unconnected-(U1-GPIO19-Pad25)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "25")
+				(pinfunction "GPIO19_25")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "51")
+			(name "unconnected-(U1-GPIO20-Pad26)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "26")
+				(pinfunction "GPIO20_26")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "52")
+			(name "unconnected-(U1-GPIO21-Pad27)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "27")
+				(pinfunction "GPIO21_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "53")
+			(name "unconnected-(U1-GPIO22-Pad29)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "29")
+				(pinfunction "GPIO22_29")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "54")
+			(name "unconnected-(U1-GPIO26_ADC0-Pad31)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "31")
+				(pinfunction "GPIO26_ADC0_31")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(U1-GPIO27_ADC1-Pad32)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "32")
+				(pinfunction "GPIO27_ADC1_32")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U1-GPIO28_ADC2-Pad34)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "34")
+				(pinfunction "GPIO28_ADC2_34")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(U1-RUN-Pad30)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "30")
+				(pinfunction "RUN_30")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "58")
+			(name "unconnected-(U1-SWCLK-Pad41)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "41")
+				(pinfunction "SWCLK_41")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "59")
+			(name "unconnected-(U1-SWDIO-Pad43)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "43")
+				(pinfunction "SWDIO_43")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U1-VBUS-Pad40)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "40")
+				(pinfunction "VBUS_40")
+				(pintype "power_in+no_connect")
+			)
+		)
+	)
+)

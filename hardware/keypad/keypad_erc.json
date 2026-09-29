@@ -1,0 +1,772 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-15T17:28:45",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/32e970cb-68e8-447a-b124-c4f106b77d48",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 3 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.5715
+                            },
+                            "uuid": "5f5ed9f6-0712-4386-89a6-188135d14624"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 3 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.5715
+                            },
+                            "uuid": "5f5ed9f6-0712-4386-89a6-188135d14624"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 8 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.6985
+                            },
+                            "uuid": "dff790d3-217b-46bd-9be6-7798a545b0e0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 8 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.6985
+                            },
+                            "uuid": "dff790d3-217b-46bd-9be6-7798a545b0e0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 10 [GPIO7, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.7493
+                            },
+                            "uuid": "67a9e0cc-513a-4819-8d6b-ab172ab35fbd"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 11 [GPIO8, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.7747
+                            },
+                            "uuid": "40974c98-38cd-49fe-94c2-6a8fc1464289"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 12 [GPIO9, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.8001
+                            },
+                            "uuid": "d9037006-ef16-4167-8277-ab34a8bec5af"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 13 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.8255
+                            },
+                            "uuid": "ae0f3bf5-46e9-479e-9c1a-111b70e75580"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 13 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.8255
+                            },
+                            "uuid": "ae0f3bf5-46e9-479e-9c1a-111b70e75580"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 14 [GPIO10, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.8509
+                            },
+                            "uuid": "fcc2acc1-ba3f-4edf-aca8-5a5533df3fb1"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 15 [GPIO11, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.8763
+                            },
+                            "uuid": "2ea6962e-9e55-4b0a-860c-21b34d9ee08a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 16 [GPIO12, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.9017
+                            },
+                            "uuid": "c360182b-5574-483a-8f99-3e1d3df419f4"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 17 [GPIO13, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.9271
+                            },
+                            "uuid": "445f5e17-d7a1-4271-b13e-125befe4bd96"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 18 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.9525
+                            },
+                            "uuid": "a26bce6d-7ea1-4d47-bfb2-3d673b317cda"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 18 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.9525
+                            },
+                            "uuid": "a26bce6d-7ea1-4d47-bfb2-3d673b317cda"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 19 [GPIO14, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.9779
+                            },
+                            "uuid": "62388b65-afa8-4052-8031-87e85180accc"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 20 [GPIO15, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 1.0033
+                            },
+                            "uuid": "a463fd4d-4b62-4639-8285-ae5a26ab0442"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 41 [SWCLK, Input, Line]",
+                            "pos": {
+                                "x": 1.4732,
+                                "y": 1.0541
+                            },
+                            "uuid": "15041367-cc42-45cc-a6ac-2a47a2558532"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 41 [SWCLK, Input, Line]",
+                            "pos": {
+                                "x": 1.4732,
+                                "y": 1.0541
+                            },
+                            "uuid": "15041367-cc42-45cc-a6ac-2a47a2558532"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 42 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 1.0541
+                            },
+                            "uuid": "8e7daeb4-e654-40f2-9ef1-20790196f60d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 42 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 1.0541
+                            },
+                            "uuid": "8e7daeb4-e654-40f2-9ef1-20790196f60d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 43 [SWDIO, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.524,
+                                "y": 1.0541
+                            },
+                            "uuid": "7fc41b21-d00c-44b6-8ac5-1299e37b7e91"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 40 [VBUS, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5207
+                            },
+                            "uuid": "3ab79347-a32e-47e9-a947-dfab99aa4f7a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 40 [VBUS, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5207
+                            },
+                            "uuid": "3ab79347-a32e-47e9-a947-dfab99aa4f7a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 39 [VSYS, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5461
+                            },
+                            "uuid": "204d5814-da24-4b61-bb30-d57e07f00ce6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 37 [3V3_EN, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5969
+                            },
+                            "uuid": "afdb32fa-f7ab-4eaf-ae6a-7f56644dadc0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 37 [3V3_EN, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5969
+                            },
+                            "uuid": "afdb32fa-f7ab-4eaf-ae6a-7f56644dadc0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 36 [3V3, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6223
+                            },
+                            "uuid": "f4460b15-be07-4449-9f2c-33989dcf6c4e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 35 [ADC_VREF, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6477
+                            },
+                            "uuid": "555af871-b8e4-4ae8-9934-5170e14486eb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 35 [ADC_VREF, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6477
+                            },
+                            "uuid": "555af871-b8e4-4ae8-9934-5170e14486eb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 34 [GPIO28_ADC2, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6731
+                            },
+                            "uuid": "2bbea61f-9821-46e2-8467-b37793f16260"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 33 [AGND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6985
+                            },
+                            "uuid": "3a29144e-022c-47c7-a6dc-078292232d4b"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 33 [AGND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.6985
+                            },
+                            "uuid": "3a29144e-022c-47c7-a6dc-078292232d4b"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 32 [GPIO27_ADC1, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7239
+                            },
+                            "uuid": "6fde1a7d-ea2d-4de6-abaf-bcfff147f0d6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 31 [GPIO26_ADC0, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7493
+                            },
+                            "uuid": "d2c119a4-07e6-49b8-8314-a9c1804496a9"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 30 [RUN, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7747
+                            },
+                            "uuid": "137358be-5545-49e9-9eef-219decd10029"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 30 [RUN, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7747
+                            },
+                            "uuid": "137358be-5545-49e9-9eef-219decd10029"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 29 [GPIO22, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8001
+                            },
+                            "uuid": "34599d9c-628c-4680-a45e-fb9d42dd796f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 28 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8255
+                            },
+                            "uuid": "5296351a-f075-433d-83cd-d53dee479291"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 28 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8255
+                            },
+                            "uuid": "5296351a-f075-433d-83cd-d53dee479291"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 27 [GPIO21, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8509
+                            },
+                            "uuid": "89c80515-34da-4b47-9265-f53413b16ba3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 26 [GPIO20, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8763
+                            },
+                            "uuid": "d2afb2ad-4937-4aee-a517-1c159034e063"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 25 [GPIO19, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.9017
+                            },
+                            "uuid": "543c2cb6-9cd5-4af1-af77-057617e73ac6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 24 [GPIO18, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.9271
+                            },
+                            "uuid": "d1d5e2b2-aa7b-4b08-bb29-f914f7b82524"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 23 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.9525
+                            },
+                            "uuid": "4d90b035-df55-4686-a6d6-2e29a16cbc52"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 23 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.9525
+                            },
+                            "uuid": "4d90b035-df55-4686-a6d6-2e29a16cbc52"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 22 [GPIO17, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.9779
+                            },
+                            "uuid": "d75d0824-937d-43ff-ab00-ac560e723d45"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 21 [GPIO16, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 1.0033
+                            },
+                            "uuid": "babe6815-7328-4938-a88b-a83a0bd64709"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR03 ピン 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.778,
+                                "y": 0.5715
+                            },
+                            "uuid": "370249f6-72d0-4913-a1f6-0dadf2f8cb05"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        }
+    ],
+    "source": "keypad.kicad_sch"
+}

@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Memory_Local") (type "KiCad") (uri "${KIPRJMOD}/Memory_Local.kicad_sym") (options "") (descr "Memory module local symbols (TM1637, OSL10391-IRA [in use]; A-551SRD, OSL10326-IRA [unused earlier candidates])"))
+)

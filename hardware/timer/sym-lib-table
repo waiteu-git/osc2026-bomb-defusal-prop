@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Timer_Local") (type "KiCad") (uri "${KIPRJMOD}/Timer_Local.kicad_sym") (options "") (descr "Timer module local symbols (TM1637, A-801SR)"))
+)

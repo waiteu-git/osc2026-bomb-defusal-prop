@@ -1,0 +1,20 @@
+# PDFs (manual translations, vendor datasheets) — excluded by team decision: copyright + size
+*.pdf
+
+# Per-file edit-history caches (some contain their own nested .git — must stay excluded)
+.history/
+
+# KiCad lock/autosave/backup noise
+*.lck
+~*.lck
+_autosave-*
+*-backups/
+fp-info-cache
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+
+# Claude Code local session state (not shared)
+.claude/

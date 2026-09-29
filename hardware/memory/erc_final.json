@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-24T18:59:18",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/1ad5b942-ee06-408a-b365-57c31b2823da",
+            "violations": [
+                {
+                    "description": "ピンのタイプ Bidirectional と Power output が接続されています",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 38 [GND, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5715
+                            },
+                            "uuid": "b10fca1e-d361-44e6-bdde-c03194e57fd0"
+                        },
+                        {
+                            "description": "Symbol #FLG01 ピン 1 [Power output, Line]",
+                            "pos": {
+                                "x": 2.0066,
+                                "y": 0.9779
+                            },
+                            "uuid": "be90a0cd-50ba-4c79-8548-a3f2c4e50712"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        }
+    ],
+    "source": "memory.kicad_sch"
+}

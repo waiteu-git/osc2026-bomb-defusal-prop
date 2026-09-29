@@ -1,0 +1,1133 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\ysou5\\OneDrive - 東京理科大学\\ドキュメント\\osc\\hardware\\shared_param_widget\\shared_param_widget.kicad_sch")
+		(date "2026-09-24T19:05:56")
+		(tool "Eeschema 10.0.3")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "OSC2026 爆弾解除ゲーム 共有パラメータウィジェット")
+				(company)
+				(rev)
+				(date)
+				(source "shared_param_widget.kicad_sch")
+				(comment
+					(number "1")
+					(value "OSC2026 bomb defusal prop - Shared parameter widget (mates with host J7/J8)")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "J7")
+			(value "JST_XH_HOST_I2C")
+			(footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+			(description "Mates with host J7 (I2C0 bus tap for OLED1, addr 0x3C). Pin1=SDA, Pin2=SCL, Pin3=3.3V(regulated), Pin4=GND.")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mates with host J7 (I2C0 bus tap for OLED1, addr 0x3C). Pin1=SDA, Pin2=SCL, Pin3=3.3V(regulated), Pin4=GND.")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3f7fc538-d371-4698-9654-7ce127c54513")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J8")
+			(value "JST_XH_HOST_GPIO")
+			(footprint "Connector_JST:JST_XH_B7B-XH-A_1x07_P2.50mm_Vertical")
+			(description "Mates with host J8 (direct GPIO tap). Pin1=GND, Pin2=SHARED_ODDEVEN, Pin3=SHARED_VOWEL, Pin4=SHARED_BATT2, Pin5=SHARED_BATT3, Pin6=SHARED_PORT, Pin7=SHARED_LED(host GPIO output).")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_XH_B7B-XH-A_1x07_P2.50mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mates with host J8 (direct GPIO tap). Pin1=GND, Pin2=SHARED_ODDEVEN, Pin3=SHARED_VOWEL, Pin4=SHARED_BATT2, Pin5=SHARED_BATT3, Pin6=SHARED_PORT, Pin7=SHARED_LED(host GPIO output).")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x07")
+				(description "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "61cfd641-3716-4d85-b49b-9135e6479612")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "LED1")
+			(value "OSW54K3131A")
+			(footprint "LED_THT:LED_D3.0mm")
+			(description "White LED, indicator unit. Anode<-R1<-SHARED_LED (host GPIO output). Cathode->GND.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D3.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "White LED, indicator unit. Anode<-R1<-SHARED_LED (host GPIO output). Cathode->GND.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d2b8bb0a-ba97-4173-9122-e5a5542fbe48")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "OLED1")
+			(value "SSD1315 0.96\" OLED (addr 0x3C)")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+			(description "Symbolic I2C OLED breakout (no exact KiCad symbol available). Pin1=GND, Pin2=VDD(3.3V), Pin3=SCL, Pin4=SDA (matches Akizuki 112031 module header order GND/VDD/SCK/SDA)")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Symbolic I2C OLED breakout (no exact KiCad symbol available). Pin1=GND, Pin2=VDD(3.3V), Pin3=SCL, Pin4=SDA (matches Akizuki 112031 module header order GND/VDD/SCK/SDA)")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "667232f0-3f8d-404f-82da-64e2150962ff")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "150R")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Current-limiting resistor for LED1 (design range 100-150R; 150R fixed default, trim after bring-up per design notes).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Current-limiting resistor for LED1 (design range 100-150R; 150R fixed default, trim after bring-up per design notes).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b66b0266-6cf3-4c82-9e7a-efe03a7bd65d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "SS-12D00G3")
+			(description "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_ODDEVEN. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_ODDEVEN. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "eeb33982-69a1-4496-a110-2b7ece97216f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW2")
+			(value "SS-12D00G3")
+			(description "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_VOWEL. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_VOWEL. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "16ce2ccd-093c-44b2-a077-0d1ee5eba850")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW3")
+			(value "SS-12D00G3")
+			(description "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_BATT2. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_BATT2. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "272770f2-6a08-4520-a995-87b5d3df3740")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW4")
+			(value "SS-12D00G3")
+			(description "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_BATT3. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_BATT3. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e3d600c1-ea6b-4c24-9bf6-62c83bacc8b7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW5")
+			(value "SS-12D00G3")
+			(description "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_PORT. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Slide switch SPDT (non-shorting). Common(pin2/B)->SHARED_PORT. Throw(pin1/A)->GND (Low=active, host internal pull-up). Throw(pin3/C)->NC (unused).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "shared_param_widget.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1d74398e-df77-49fc-a6fe-b72cf2537058")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x04")
+			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x04")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x07")
+			(description "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x07")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "Pin_5")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "Pin_6")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "Pin_7")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Switch")
+			(part "SW_SPDT")
+			(description "Switch, single pole double throw")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_SPDT")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Switch, single pole double throw")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "B")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "C")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Connector_Generic")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3.3V")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "OLED1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "2")
+			(name "/SCL")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "OLED1")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "3")
+			(name "/SDA")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "OLED1")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "4")
+			(name "/SHARED_BATT2")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "/SHARED_BATT3")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "/SHARED_LED")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "7")
+				(pinfunction "Pin_7_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "/SHARED_ODDEVEN")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "/SHARED_PORT")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW5")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "/SHARED_VOWEL")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "10")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "J7")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "LED1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "OLED1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW5")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(LED1-A)")
+			(class "Default")
+			(node
+				(ref "LED1")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "unconnected-(SW1-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "13")
+			(name "unconnected-(SW2-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW2")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "14")
+			(name "unconnected-(SW3-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW3")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "15")
+			(name "unconnected-(SW4-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW4")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "16")
+			(name "unconnected-(SW5-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW5")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+	)
+)

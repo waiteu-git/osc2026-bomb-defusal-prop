@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-27T17:57:16",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/aeb3289c-4790-4f75-b0d4-973e8ec2f552",
+            "violations": [
+                {
+                    "description": "ピンのタイプ Bidirectional と Power output が接続されています",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 38 [GND, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.5715
+                            },
+                            "uuid": "36f87d9b-87de-5b3d-8a78-6723fdc1ada5"
+                        },
+                        {
+                            "description": "Symbol #FLG02 ピン 1 [Power output, Line]",
+                            "pos": {
+                                "x": 2.3876,
+                                "y": 0.9398
+                            },
+                            "uuid": "02e00184-5691-5f16-b7d5-42548203d9f4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        }
+    ],
+    "source": "maze.kicad_sch"
+}
