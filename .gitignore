@@ -18,3 +18,17 @@ __pycache__/
 
 # Claude Code local session state (not shared)
 .claude/
+
+# Frozen modules (2026-09-29 meeting decision) — not part of the boards actually being
+# built, so kept out of the shared repo (still live on local disk/OneDrive; un-ignore
+# here if a module is unfrozen later).
+hardware/wire_sequence/
+hardware/password/
+hardware/morse_code/
+hardware/whos_on_first/
+hardware/memory/
+hardware/maze/
+hardware/shared_param_widget/
+# "wires" hardware is retired/merged into complicated_wires; its unique analysis was
+# already carried over, so it's dropped from the repo too.
+hardware/wires/

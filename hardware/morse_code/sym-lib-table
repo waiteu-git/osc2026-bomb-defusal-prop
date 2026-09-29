@@ -1,4 +1,0 @@
-(sym_lib_table
-	(version 7)
-	(lib (name "Morse_Local") (type "KiCad") (uri "${KIPRJMOD}/Morse_Local.kicad_sym") (options "") (descr "Morse Code module local symbols (TM1637, OSL40562-IR)"))
-)
