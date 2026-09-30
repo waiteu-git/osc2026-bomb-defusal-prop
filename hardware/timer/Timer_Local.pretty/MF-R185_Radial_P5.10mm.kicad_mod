@@ -1,0 +1,94 @@
+(footprint "MF-R185_Radial_P5.10mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Bourns MF-R185 PTC resettable fuse (1.85A hold), lead pitch 5.1mm, body max 12.0 x 3.0mm")
+	(tags "PTC resettable fuse polyfuse radial Bourns MF-R")
+	(property "Reference" "REF**"
+		(at 2.55 -3.1 0)
+		(layer "F.SilkS")
+		(uuid "1824bb36-3d6f-470f-8fde-71f11d6fc28d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "MF-R185_Radial_P5.10mm"
+		(at 2.55 3.1 0)
+		(layer "F.Fab")
+		(uuid "17769331-00ff-4151-9800-86423520478e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/mf-r.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "132ecf59-5ca6-4426-b499-ee9f61933bd7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Bourns MF-R185 PTC resettable fuse (1.85A hold), lead pitch 5.1mm, body max 12.0 x 3.0mm (mounted upright, height about 18.4mm above the board)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "08c0e304-8be3-4f16-b940-7c16da6b6aa2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -3.45 -1.5)
+		(end 8.55 1.5)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "3b073ae4-1884-4e99-b135-61aef8313d58")
+	)
+	(fp_rect
+		(start -3.7 -1.75)
+		(end 8.8 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "b83bb3e3-66f7-49b8-b037-27a71ae4e9ff")
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b5aa5dda-553f-4824-9f02-83b0398bd24d")
+	)
+	(pad "2" thru_hole circle
+		(at 5.1 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ec081944-782d-4ec2-998e-9e20cffdf8b9")
+	)
+)

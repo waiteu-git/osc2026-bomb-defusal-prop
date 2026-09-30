@@ -1,0 +1,94 @@
+(footprint "MF-RX030_Radial_P5.10mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Bourns MF-RX030/72-0 PTC resettable fuse, lead pitch 5.1mm, body max 7.4 x 3.1mm")
+	(tags "PTC resettable fuse polyfuse radial Bourns MF-R")
+	(property "Reference" "REF**"
+		(at 2.55 -3.1500000000000004 0)
+		(layer "F.SilkS")
+		(uuid "a226a06d-9857-4be1-a15e-d984ea01f2b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "MF-RX030_Radial_P5.10mm"
+		(at 2.55 3.1500000000000004 0)
+		(layer "F.Fab")
+		(uuid "43fa38a4-7ab8-4e8f-8f06-b248e3cfa889")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/mf-rx72.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2ae9f851-2e08-473c-8d01-721ad1e69916")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Bourns MF-RX030/72-0 PTC resettable fuse, lead pitch 5.1mm, body max 7.4 x 3.1mm (mounted upright, height about 13.4mm above the board)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fd17bc89-4569-4403-8a3d-e75fc8ef093f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.15 -1.55)
+		(end 6.25 1.55)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "138fbca9-fad6-4b74-a3c0-9080460004d9")
+	)
+	(fp_rect
+		(start -1.4 -1.8)
+		(end 6.5 1.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "20962f4e-2c9f-4d17-b503-121b81946208")
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e22c8856-fa9d-45b0-bd23-8969c730a727")
+	)
+	(pad "2" thru_hole circle
+		(at 5.1 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "415a5f07-3790-4a4a-bb94-c7a543343bf6")
+	)
+)
