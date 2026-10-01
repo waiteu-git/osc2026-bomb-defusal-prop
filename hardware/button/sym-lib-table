@@ -1,0 +1,5 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Button_Local") (type "KiCad") (uri "${KIPRJMOD}/Button_Local.kicad_sym") (options "") (descr "Button module local symbols"))
+	(lib (name "OSC_Shared") (type "KiCad") (uri "${KIPRJMOD}/../shared_lib/OSC_Shared.kicad_sym") (options "") (descr "OSC2026 shared symbols"))
+)

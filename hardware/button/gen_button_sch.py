@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Button module: button.kicad_sch の生成スクリプト(2026-09-27作成、C案=単色LED+NPNローサイド駆動+OLED)。
+# Button module: button.kicad_sch の生成スクリプト(2026-09-27作成、C案=単色LED+NPNローサイド駆動。2026-09-30: 面LED撤去、キートップ表示器=カラー液晶GC9A01のSPI 8ピンコネクタJ2)。
 # password/simon の生成手法(password/gen_password_sch.py)を踏襲: 全部品angle=0固定、abs_pt()はY反転のみ
 # (回転は考慮しない)、生成後に自動でワイヤー重なり・ピン/ワイヤー端の内部一致をチェックする。
 # 実行: python gen_button_sch.py  → button.kicad_sch を上書きする。
 # 生成後は必ず check_button_sch.py(ERC + ネットリストの機械照合)を実行すること。
+import os
 import uuid as uuidlib
 
 def U():
@@ -43,8 +44,7 @@ GRID = 1.27
 def G(n):
     return round(n * GRID, 4)
 
-PICO_POS = (G(500), G(60))  # =(635.0, 76.2)。全座標は1.27mm格子の整数倍(G(n))で統一する。
-                            # 8chの色LED列+J1/J2+SWバスを左側に展開するため広め(A1シート)に確保。
+PICO_POS = (G(120), G(70))  # =(152.4, 88.9)。A3シートに全体を収めるため、長距離配線は使わず名前付きラベルで結ぶ。
 
 def pico_abs(pin):
     lx, ly = PICO_PINS[pin]
@@ -59,30 +59,35 @@ Q_PINS = {1: (2.54, -5.08), 2: (2.54, 5.08), 3: (-5.08, 0.0)}  # 1=E, 2=C, 3=B (
 def abs_pt(placement, local):
     return (round(placement[0] + local[0], 4), round(placement[1] - local[1], 4))
 
-GND_PINS = [3, 8, 13, 18, 23, 28, 33, 38, 42]
-# 使用するPico物理ピン: 1,2(UART) 4,5(OLED I2C) 6(ボタン押下) 7,9,10,11,12,14,15,16(色LED8ch) 20(状態LED)
-USED_PINS = {1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 14, 15, 16, 20}
-NC_PINS = [p for p in range(1, 44) if p not in USED_PINS and p not in GND_PINS
+GND_PINS = [3, 8, 13, 18, 23, 28, 33, 38]
+# 使用するPico物理ピン: 1,2(UART) 6(ボタン押下) 12,14,15,16(ストリップLED4ch) 20(状態LED)
+# 22,24,25,26,27,29(キートップ表示器SPI0: GP17 CS, GP18 SCK, GP19 MOSI, GP20 DC, GP21 RST, GP22 BL)
+USED_PINS = {1, 2, 6, 12, 20, 22, 24, 25, 26, 27, 29}   # 12=GP9(NeoPixelデータ)
+NC_PINS = [p for p in range(1, 41) if p not in USED_PINS and p not in GND_PINS
            and p not in (36, 39)]  # 36=3V3, 39=VSYSはPWR_FLAGで処理(no_connectにしない)
 
 # ===========================================================================
 # 2) レイアウト定数(すべてG(n)=n*1.27で格子に厳密整列させる)
+#    可読性のため、Picoの各ピンからは短い引き出し線+名前付きラベルで各ブロックへ結ぶ
+#    (UARTのJ1だけは従来どおり直結)。ブロック: J1/C1(左上)、ストリップLED4ch(下)、
+#    押下スイッチ(右下)、状態LED(左)、J2 表示器コネクタ(右上)。
 # ===========================================================================
 PICO_LEFT_X = PICO_POS[0] - 17.78   # GP0-15側の列(左列)
 PICO_RIGHT_X = PICO_POS[0] + 17.78  # GP16以降の列(右列)
+STUB = G(6)                         # 引き出し線の長さ(7.62mm)
 
-J1_PIN_X = PICO_LEFT_X - G(38)    # UARTコネクタ(GP0/1)。password基準(132.08-83.82=48.26=38*1.27)を踏襲
-J2_PIN_X = J1_PIN_X + G(8)        # OLEDローカルI2C(GP2/3)。password基準(+10.16=8*1.27)を踏襲
-# BUS_XはPicoのすぐ左(J1/J2のX範囲に絶対入らない近さ)に置き、GP4からの水平引き出しを
-# J1/J2/C1のクラスタと交差させない。BUS_Xに着地した後はY方向にジャンプしてから、
-# J1/J2とは全く別のY帯(SW_ROW_Y)で左へ展開する(§5の配線コードを参照)。
-BUS_X = PICO_LEFT_X - G(10)
-SW_ROW_Y = PICO_POS[1] + G(90)    # J1/J2/C1のY帯(Pico上寄り)から十分離す
-SW_ENTRY_X = J1_PIN_X - G(30)     # ボタン押下スイッチ本体列(J1/J2よりさらに左、Y帯が別なので交差OK)
-CHANNEL_PITCH_X = G(40)           # =50.8mm。1ch分(R_base+Q+LED+R_led+flag、必要幅約45mm)より余裕を持たせる
-CHANNEL_X0 = SW_ENTRY_X - G(46)   # 色LEDチャンネル群の右端(ch0=白面)。左へ向かってch7まで並ぶ
-CHANNEL_ROW_Y = PICO_POS[1] + G(160)  # 8色LEDチャンネルの基準行(SW_ROW_Yからさらに下)
-STATUS_R_X = J2_PIN_X + G(10)     # 状態LED用抵抗(J2の右、Picoに近い側)
+J1_PIN_X = PICO_LEFT_X - G(30)      # UARTコネクタ(GP0/1)。直結
+STATUS_ANCHOR_X = G(45)             # 状態LED用抵抗の列
+CHANNEL_PITCH_X = G(38)             # =48.26mm。1ch分の幅(約36mm)より余裕を持たせる
+CHANNEL_X0 = G(28)                  # ストリップLED4chの左端(ch0=白 ... ch3=黄、右へ並ぶ)
+CHANNEL_ROW_Y = G(135)              # ストリップLEDチャンネルの基準行(Pico下端より十分下)
+SW_X = G(250)                       # 押下スイッチSW1の列(右下)
+SW_Y0 = G(105)
+STATUS_R_X = STATUS_ANCHOR_X
+
+# ピン名→ラベル(左列: GP0-15側 / 右列: GP16以降側)
+LEFT_STUBS = {6: "BTN", 12: "NEO_DIN", 20: "STATUS_LED"}
+RIGHT_STUBS = {22: "LCD_CS", 24: "LCD_CLK", 25: "LCD_DIN", 26: "LCD_DC", 27: "LCD_RST", 29: "LCD_BL"}
 
 tx_abs = pico_abs(1)
 rx_abs = pico_abs(2)
@@ -90,78 +95,83 @@ j1_place_y = round(tx_abs[1] + CONN01X04_PINS[1][1], 4)
 j1_place_x = round(J1_PIN_X + 5.08, 4)
 J1_POS = (j1_place_x, j1_place_y, 0)
 
-sda_abs = pico_abs(4)
-scl_abs = pico_abs(5)
-j2_place_y = round(sda_abs[1] + CONN01X04_PINS[1][1], 4)
-j2_place_x = round(J2_PIN_X + 5.08, 4)
-J2_POS = (j2_place_x, j2_place_y, 0)
+# --- J2: キートップ表示器(Waveshare 1.28インチ丸型 GC9A01)の8ピンSPIコネクタ ---------
+J2_PIN_X = G(200)
+J2_Y0 = G(45)
+J2_PINS8 = {i: (-5.08, round(7.62 - 2.54 * (i - 1), 4)) for i in range(1, 9)}
+J2_POS = (round(J2_PIN_X + 5.08, 4), round(J2_Y0 + 7.62, 4), 0)   # pin1が(J2_PIN_X, J2_Y0)に来る
+# 信号: J2ピン番号 -> (Pico物理ピン, GPIO名, ネット名)。ピン順はWaveshare付属ケーブル(VCC,GND,DIN,CLK,CS,DC,RST,BL)
+LCD_SIGNALS = {
+    3: (25, "GP19", "LCD_DIN"),   # MOSI
+    4: (24, "GP18", "LCD_CLK"),   # SCK
+    5: (22, "GP17", "LCD_CS"),
+    6: (26, "GP20", "LCD_DC"),
+    7: (27, "GP21", "LCD_RST"),
+    8: (29, "GP22", "LCD_BL"),
+}
 
-# --- ボタン押下スイッチ(SW1-4、GP4に並列) -----------------------------------
-# GP4の絶対Yはpin7/9等の他の実ピンと2.54mm間隔で近接しているため、Picoの列(X=PICO_LEFT_X)
-# ではGP4自身の1点以外を絶対に通らせない。BUS_Xまでは短い水平配線のみで抜け、そこから
-# J1/J2/C1のクラスタとは別のY帯(SW_ROW_Y)まで垂直移動してから、SW_ENTRY_X列で
-# 左へ展開する(この移動先Y帯は他のどの部品も使わないため、J1/J2のX範囲を横切っても安全)。
-btn_gpio_abs = pico_abs(6)  # GP4
-SW_Y = [SW_ROW_Y - G(7), SW_ROW_Y - G(3), SW_ROW_Y + G(3), SW_ROW_Y + G(7)]
-SW_REFS = ["SW1", "SW2", "SW3", "SW4"]
-sw_defs = {}
-for ref, y in zip(SW_REFS, SW_Y):
-    sw_defs[ref] = dict(place=(SW_ENTRY_X, y, 0))
-BUS_CHAIN_Y = [SW_Y[0], SW_Y[1], SW_ROW_Y, SW_Y[2], SW_Y[3]]  # 昇順にソート済み前提
+# --- ボタン押下スイッチ(SW1、GP4に並列。各スイッチのpin2から同名ラベル"BTN"で結ぶ) ----
+SW_REFS = ["SW1"]
+sw_defs = {ref: dict(place=(SW_X, round(SW_Y0 + G(10) * i, 4), 0)) for i, ref in enumerate(SW_REFS)}
 
-# --- 色LEDチャンネル(8ch: 面White/Blue/Red/Yellow, ストリップWhite/Blue/Red/Yellow) --
-CHANNELS = [
-    ("Q1", "R1", "LED1", "GP5", 7,  "White", "OS4WMLA131A", "100", "Face LED (white)"),
-    ("Q2", "R2", "LED2", "GP6", 9,  "Blue",  "OSB56AA131A", "100", "Face LED (blue)"),
-    ("Q3", "R3", "LED3", "GP7", 10, "Red",   "OS5RAAA131A", "150", "Face LED (red)"),
-    ("Q4", "R4", "LED4", "GP8", 11, "Yellow","OS5YAAA131A", "150", "Face LED (yellow)"),
-    ("Q5", "R5", "LED5", "GP9", 12, "White", "OS4WMLA131A", "100", "Side strip LED (white)"),
-    ("Q6", "R6", "LED6", "GP10",14, "Blue",  "OSB56AA131A", "100", "Side strip LED (blue)"),
-    ("Q7", "R7", "LED7", "GP11",15, "Red",   "OS5RAAA131A", "150", "Side strip LED (red)"),
-    ("Q8", "R8", "LED8", "GP12",16, "Yellow","OS5YAAA131A", "150", "Side strip LED (yellow)"),
-]
-RBASE_REFS = ["RB1", "RB2", "RB3", "RB4", "RB5", "RB6", "RB7", "RB8"]
+# --- ストリップLEDチャンネル(4ch: White/Blue/Red/Yellow) --
+# 2026-09-30: 面LED4色は、キートップにカラー液晶(GC9A01)を載せて色と文言を液晶に任せるため撤去した。
+# 2026-09-30: 側面ストリップはNeoPixel(WS2812系)に変更。単色LED4ch+NPN(Q1-4/RB/R)は撤去。
+CHANNELS = []
+RBASE_REFS = ["RB1", "RB2", "RB3", "RB4"]
+STRIP_LABELS = {12: "STRIP_W", 14: "STRIP_B", 15: "STRIP_R", 16: "STRIP_Y"}
+
+# --- NeoPixel: GP9 -> R10(330) -> NP1.DIN、NP1.DOUT -> NP2.DIN ... (WS2812B 5050 x6、縦に約4cm分。2026-10-01、J3は廃止) ---
+NEO_X = CHANNEL_X0
+NP_REFS = [f"NP{i}" for i in range(1, 7)]
+NP_PINS = {1: (0.0, 7.62), 2: (7.62, 0.0), 3: (0.0, -7.62), 4: (-7.62, 0.0)}   # 1=VDD(上) 2=DOUT(右) 3=VSS(下) 4=DIN(左)
+NP_PITCH = G(16)
+R10_POS = (NEO_X, CHANNEL_ROW_Y + R_PINS[1][1], 0)
+r10_pin1 = abs_pt(R10_POS[:2], R_PINS[1])
+r10_pin2 = abs_pt(R10_POS[:2], R_PINS[2])
+r10_label_pt = (NEO_X, round(CHANNEL_ROW_Y - G(4), 4))
+NP_X0 = round(NEO_X + G(8) + 7.62, 4)       # NP1のDINがR10のpin2から右へ10.16mmの位置に来る
+NP_POS = {ref: (round(NP_X0 + i * NP_PITCH, 4), r10_pin2[1], 0) for i, ref in enumerate(NP_REFS)}
 
 ch_geo = {}
 for k, (qref, rref, lref, gpio_name, pin, color, part, rval, desc) in enumerate(CHANNELS):
     cx = CHANNEL_X0 + k * CHANNEL_PITCH_X
-    gpio_abs = pico_abs(pin)
-    # R_base: pin1のYがCHANNEL_ROW_Yに一致するよう配置(GPIOからの垂直ドロップの着地点)
+    # R_base: pin1のYがCHANNEL_ROW_Yに一致するよう配置(上へ短い枝を出してラベルSTRIP_*につなぐ)
     rb_place = (cx, CHANNEL_ROW_Y + R_PINS[1][1], 0)
     rb_pin1 = abs_pt(rb_place[:2], R_PINS[1])   # = (cx, CHANNEL_ROW_Y)
     rb_pin2 = abs_pt(rb_place[:2], R_PINS[2])   # = (cx, CHANNEL_ROW_Y + 7.62)
+    rb_label_pt = (cx, round(CHANNEL_ROW_Y - G(4), 4))
     # Q: baseのYがrb_pin2のYに一致
     q_x = cx + 10.16
     q_place = (q_x, rb_pin2[1], 0)
-    q_base = abs_pt(q_place[:2], Q_PINS[3])     # (q_x-5.08, rb_pin2.y)
-    q_coll = abs_pt(q_place[:2], Q_PINS[2])     # (q_x+2.54, rb_pin2.y-5.08)
-    q_emit = abs_pt(q_place[:2], Q_PINS[1])     # (q_x+2.54, rb_pin2.y+5.08)
+    q_base = abs_pt(q_place[:2], Q_PINS[3])
+    q_coll = abs_pt(q_place[:2], Q_PINS[2])
+    q_emit = abs_pt(q_place[:2], Q_PINS[1])
     # LED: KのYがq_collのYに一致(cathode = collector側)
-    led_x = q_x + G(11)   # =13.97
+    led_x = q_x + G(11)
     led_place = (led_x, q_coll[1], 0)
-    led_k = abs_pt(led_place[:2], LED_PINS[1])  # (led_x-3.81, q_coll.y)
-    led_a = abs_pt(led_place[:2], LED_PINS[2])  # (led_x+3.81, q_coll.y)
+    led_k = abs_pt(led_place[:2], LED_PINS[1])
+    led_a = abs_pt(led_place[:2], LED_PINS[2])
     # R_led: pin1のYがled_aのYに一致(anode側、+5Vへ)
-    rled_x = led_x + G(9)   # =11.43
+    rled_x = led_x + G(9)
     rled_place = (rled_x, led_a[1] + R_PINS[1][1], 0)
-    rled_pin1 = abs_pt(rled_place[:2], R_PINS[1])  # (rled_x, led_a.y)
-    rled_pin2 = abs_pt(rled_place[:2], R_PINS[2])  # (rled_x, led_a.y+7.62)
+    rled_pin1 = abs_pt(rled_place[:2], R_PINS[1])
+    rled_pin2 = abs_pt(rled_place[:2], R_PINS[2])
     ch_geo[k] = dict(
         qref=qref, rref=rref, lref=lref, gpio_name=gpio_name, pin=pin, color=color, part=part,
-        rval=rval, desc=desc, cx=cx, gpio_abs=gpio_abs,
-        rb_place=rb_place, rb_pin1=rb_pin1, rb_pin2=rb_pin2,
+        rval=rval, desc=desc, cx=cx, gpio_abs=pico_abs(pin),
+        rb_place=rb_place, rb_pin1=rb_pin1, rb_pin2=rb_pin2, rb_label_pt=rb_label_pt,
         q_place=q_place, q_base=q_base, q_coll=q_coll, q_emit=q_emit,
         led_place=led_place, led_k=led_k, led_a=led_a,
         rled_place=rled_place, rled_pin1=rled_pin1, rled_pin2=rled_pin2,
     )
 
-# --- 状態LED(緑、GP15) -------------------------------------------------------
-led_gpio_abs = pico_abs(20)
-r_place_x = STATUS_R_X
-r_place_y = round(led_gpio_abs[1] + R_PINS[1][1], 4)
-RSTATUS_POS = (r_place_x, r_place_y, 0)
+# --- 状態LED(緑、GP15): R9のpin1から上へ枝を出し、ラベルSTATUS_LEDでPicoへ結ぶ ---------
+STATUS_R_Y1 = G(80)
+RSTATUS_POS = (STATUS_R_X, round(STATUS_R_Y1 + R_PINS[1][1], 4), 0)
 rstatus_pin1 = abs_pt(RSTATUS_POS[:2], R_PINS[1])
 rstatus_pin2 = abs_pt(RSTATUS_POS[:2], R_PINS[2])
+rstatus_label_pt = (rstatus_pin1[0], round(rstatus_pin1[1] - G(4), 4))
 led_status_target = (rstatus_pin2[0], round(rstatus_pin2[1] + 2.54, 4))
 led_status_place_x = round(led_status_target[0] - LED_PINS[2][0], 4)
 LEDSTATUS_POS = (led_status_place_x, led_status_target[1], 0)
@@ -339,7 +349,7 @@ LIB_SW = r'''(symbol "Switch:SW_Push"
 	(embedded_fonts no)
 )'''
 
-LIB_2SC1815 = r'''(symbol "Transistor_BJT:2SC1815"
+LIB_2SC1815 = r'''(symbol "Button_Local:2SC1815"
 	(pin_names
 		(offset 0)
 		(hide yes)
@@ -361,7 +371,7 @@ LIB_2SC1815 = r'''(symbol "Transistor_BJT:2SC1815"
 		(do_not_autoplace no)
 		(effects (font (size 1.27 1.27)) (justify left))
 	)
-	(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+	(property "Footprint" "Button_Local:TO-92_Inline_D065"
 		(at 5.08 -1.905 0)
 		(show_name no)
 		(do_not_autoplace no)
@@ -584,7 +594,11 @@ def _extract_stock(path, name, new_name):
 
 LIB_PWRFLAG = _extract_stock(KICAD_SYM + "power.kicad_sym", "PWR_FLAG", "power:PWR_FLAG")
 LIB_CP = _extract_stock(KICAD_SYM + "Device.kicad_sym", "C_Polarized", "Device:C_Polarized")
-LIB_SYMBOLS_ALL = [LIB_CONN01X04, LIB_LED, LIB_R, LIB_PICO, LIB_SW, LIB_2SC1815,
+LIB_CONN01X08 = _extract_stock(KICAD_SYM + "Connector_Generic.kicad_sym", "Conn_01x08", "Connector_Generic:Conn_01x08")
+LIB_CONN01X03 = _extract_stock(KICAD_SYM + "Connector_Generic.kicad_sym", "Conn_01x03", "Connector_Generic:Conn_01x03")
+LIB_PICO = _extract_stock("C:/Users/ysou5/OneDrive - 東京理科大学/ドキュメント/osc/hardware/shared_lib/OSC_Shared.kicad_sym", "Pico_TH40", "OSC_Shared:Pico_TH40")
+LIB_WS2812B = _extract_stock(KICAD_SYM + "LED.kicad_sym", "WS2812B", "LED:WS2812B")
+LIB_SYMBOLS_ALL = [LIB_CONN01X04, LIB_WS2812B, LIB_CONN01X08, LIB_LED, LIB_R, LIB_PICO, LIB_SW, LIB_2SC1815,
                    LIB_GND, LIB_3V3, LIB_5V, LIB_PWRFLAG, LIB_CP]
 
 def reindent(block, base_tabs):
@@ -705,6 +719,36 @@ def no_connect_block(pt):
         f'{T})'
     )
 
+def label_block(name, at_xy, angle):
+    just = "right bottom" if angle == 180 else "left bottom"
+    return "\n".join([
+        f'{T}(label "{name}"',
+        f'{T*2}(at {at_xy[0]:g} {at_xy[1]:g} {angle})',
+        f'{T*2}(effects',
+        f'{T*3}(font',
+        f'{T*4}(size 1.27 1.27)',
+        f'{T*3})',
+        f'{T*3}(justify {just})',
+        f'{T*2})',
+        f'{T*2}(uuid "{U()}")',
+        f'{T})',
+    ])
+
+def text_block(s, at_xy, size=2.54):
+    return "\n".join([
+        f'{T}(text "{esc(s)}"',
+        f'{T*2}(exclude_from_sim no)',
+        f'{T*2}(at {at_xy[0]:g} {at_xy[1]:g} 0)',
+        f'{T*2}(effects',
+        f'{T*3}(font',
+        f'{T*4}(size {size:g} {size:g})',
+        f'{T*3})',
+        f'{T*3}(justify left bottom)',
+        f'{T*2})',
+        f'{T*2}(uuid "{U()}")',
+        f'{T})',
+    ])
+
 # ===========================================================================
 # 5) 組み立て
 # ===========================================================================
@@ -714,10 +758,10 @@ lines.append(f'{T}(version 20260306)')
 lines.append(f'{T}(generator "eeschema")')
 lines.append(f'{T}(generator_version "10.0")')
 lines.append(f'{T}(uuid "{ROOT_UUID}")')
-lines.append(f'{T}(paper "A1")')
+lines.append(f'{T}(paper "A3")')
 lines.append(f'{T}(title_block')
 lines.append(f'{T*2}(title "Button module")')
-lines.append(f'{T*2}(comment 1 "OSC2026 bomb defusal prop - Button module (interpretation C: electrical gate)")')
+lines.append(f'{T*2}(comment 1 "OSC2026 Button module (colour LCD keytop)")')
 lines.append(f'{T})')
 lines.append(f'{T}(lib_symbols')
 for blk in LIB_SYMBOLS_ALL:
@@ -730,41 +774,56 @@ def wire(p1, p2, net):
     lines.append(wire_block(p1, p2))
     ALL_SEGMENTS.append((p1, p2, net))
 
-# --- UART(J1)・OLED I2C(J2) -------------------------------------------------
+# --- 名前付きラベルで結ぶ引き出し線 ---------------------------------------------
+LABELS = []   # (name, xy, angle)
+
+def stub(p_from, p_to, net, angle):
+    wire(p_from, p_to, net)
+    LABELS.append((net, p_to, angle))
+
+# --- UART(J1): Picoへ直結 ------------------------------------------------------
 wire(abs_pt(J1_POS[:2], CONN01X04_PINS[1]), tx_abs, "UART0_TX")
 wire(abs_pt(J1_POS[:2], CONN01X04_PINS[2]), rx_abs, "UART0_RX")
-wire(abs_pt(J2_POS[:2], CONN01X04_PINS[1]), sda_abs, "OLED_SDA")
-wire(abs_pt(J2_POS[:2], CONN01X04_PINS[2]), scl_abs, "OLED_SCL")
 
-# --- ボタン押下スイッチ(SW1-4、GP4に並列。BUS_Xを経由してSW_ROW_Y帯に抜ける) ---
-# Picoの列(X=PICO_LEFT_X)に触れるのはGP4自身の1点だけ。そこから短い水平配線でBUS_X列へ抜け、
-# BUS_X列上を垂直にSW_ROW_Y帯まで移動する(この区間はBUS_X上に他の部品が無いので安全)。
-# SW_ROW_Y帯に入ってからSW_ENTRY_X列まで水平移動し(J1/J2のX範囲を横切るが、Y帯が別なので
-# 交差しても安全)、SW_ENTRY_X列上でのみ縦の数珠つなぎ(隣接ノードだけを結ぶ)を行う。
+# --- Picoの左列: 押下検出・ストリップLED・状態LED -------------------------------------
+for pin, net in LEFT_STUBS.items():
+    p = pico_abs(pin)
+    stub(p, (round(PICO_LEFT_X - STUB, 4), p[1]), net, 180)
+# --- Picoの右列: 表示器SPI -----------------------------------------------------------
+for pin, net in RIGHT_STUBS.items():
+    p = pico_abs(pin)
+    stub(p, (round(PICO_RIGHT_X + STUB, 4), p[1]), net, 0)
+# --- J2: 表示器コネクタの信号ピン3〜8 ---------------------------------------------------
+for pin_j, (pico_pin, gp_name, net) in LCD_SIGNALS.items():
+    p_j2 = abs_pt(J2_POS[:2], J2_PINS8[pin_j])
+    stub(p_j2, (round(p_j2[0] - STUB, 4), p_j2[1]), net, 180)
+
+# --- ボタン押下スイッチ(SW1): pin2から右へ短い枝を出し、ラベルBTNで結ぶ --------------------
 sw_pin2 = {ref: abs_pt(sw_defs[ref]["place"][:2], SW_PUSH_PINS[2]) for ref in SW_REFS}
-wire(btn_gpio_abs, (BUS_X, btn_gpio_abs[1]), "BTN")            # Pico実ピン(GP4)一点のみ -> BUS_X列
-wire((BUS_X, btn_gpio_abs[1]), (BUS_X, SW_ROW_Y), "BTN")       # BUS_X列上を垂直にSW_ROW_Y帯へ
-wire((BUS_X, SW_ROW_Y), (SW_ENTRY_X, SW_ROW_Y), "BTN")         # SW_ROW_Y帯を水平にSW_ENTRY_X列へ
-for y1, y2 in zip(BUS_CHAIN_Y[:-1], BUS_CHAIN_Y[1:]):
-    wire((SW_ENTRY_X, y1), (SW_ENTRY_X, y2), "BTN")            # SW_ENTRY_X列上の隣接ノードだけを縦につなぐ
 for ref in SW_REFS:
-    wire((SW_ENTRY_X, sw_defs[ref]["place"][1]), sw_pin2[ref], "BTN")  # 同列上の枝(SW自身のpin2)
+    p = sw_pin2[ref]
+    stub(p, (round(p[0] + G(4), 4), p[1]), "BTN", 0)
 
-# --- 8色LEDチャンネル ---------------------------------------------------------
+# --- ストリップLED 4色チャンネル -------------------------------------------------
+stub(r10_pin1, r10_label_pt, "NEO_DIN", 0)
+wire(r10_pin2, abs_pt(NP_POS["NP1"][:2], NP_PINS[4]), "NEO_DIN_R")
+for i in range(len(NP_REFS) - 1):
+    wire(abs_pt(NP_POS[NP_REFS[i]][:2], NP_PINS[2]), abs_pt(NP_POS[NP_REFS[i + 1]][:2], NP_PINS[4]), f"NEO_CHAIN{i + 1}")
 for k, g in ch_geo.items():
-    wire(g["gpio_abs"], g["rb_pin1"], f"GPIO_{g['gpio_name']}")
+    net_label = STRIP_LABELS[g["pin"]]
+    stub(g["rb_pin1"], g["rb_label_pt"], net_label, 0)
     wire(g["rb_pin2"], g["q_base"], f"BASE{k+1}")
     wire(g["q_coll"], g["led_k"], f"COLL{k+1}")
     wire(g["led_a"], g["rled_pin1"], f"ANODE{k+1}")
 
 # --- 状態LED(緑) -------------------------------------------------------------
-wire(led_gpio_abs, rstatus_pin1, "STATUS_LED_GPIO")
+stub(rstatus_pin1, rstatus_label_pt, "STATUS_LED", 0)
 wire(rstatus_pin2, led_status_anode, "STATUS_LED_ANODE")
 
 # --- 部品配置: Pico -----------------------------------------------------------
-lines.append(placed_symbol("RPi_Pico:Pico", "U1", "Pico", "RPi_Pico:RPi_Pico_SMD_TH",
-                            (PICO_POS[0], PICO_POS[1], 0), list(range(1, 44)),
-                            "Button module MCU (Raspberry Pi Pico 2, RP2350, 3.3V)."))
+lines.append(placed_symbol("OSC_Shared:Pico_TH40", "U1", "Pico 2 H", "OSC_Shared:RPi_Pico_TH_Headers",
+                            (PICO_POS[0], PICO_POS[1], 0), list(range(1, 41)),
+                            "Button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; 40 header pins only, hub decision 2026-09-30)."))
 
 # --- J1(UART) -----------------------------------------------------------------
 lines.append(placed_symbol("Connector_Generic:Conn_01x04", "J1", "MODULE_JST_XH_4P",
@@ -774,34 +833,50 @@ lines.append(placed_symbol("Connector_Generic:Conn_01x04", "J1", "MODULE_JST_XH_
                             "MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md).",
                             ref_at=(J1_POS[0], J1_POS[1] - 8.89, 0), val_at=(J1_POS[0], J1_POS[1] - 6.35, 0)))
 
-# --- J2(キートップ表示器 ローカルI2C、部品未定) --------------------------------
-lines.append(placed_symbol("Connector_Generic:Conn_01x04", "J2", "KEYTOP_DISPLAY_I2C",
-                            "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical", J2_POS, [1, 2, 3, 4],
-                            "Local wiring to the keytop-mounted word-label display (word: 中止/起爆/長押し/押す). "
-                            "Display part is not yet chosen by the user (2026-09-29: probably not the 0.96in "
-                            "SSD1315 OLED used elsewhere in the project; user is selecting parts and asked to "
-                            "design the board first) -- this header reserves I2C1 on Pin1=SDA(GP2), Pin2=SCL(GP3), "
-                            "Pin3=GND, Pin4=+3.3V (from Pico 3V3 OUT), which fits most small I2C displays. Because "
-                            "the display now sits on the moving keytop rather than a fixed panel window, this "
-                            "connector represents a flexible-cable link (exact connector/cable type TBD by user). "
-                            "If the chosen display needs SPI instead of I2C, reassign to spare GPIOs (GP13/14/16-22/"
-                            "26-28) and update this connector -- not yet done, since the part is unpicked.",
-                            ref_at=(J2_POS[0], J2_POS[1] + 10.16, 0), val_at=(J2_POS[0], J2_POS[1] + 12.7, 0)))
+# --- J2(キートップ表示器: Waveshare 1.28インチ丸型 GC9A01 の8ピンSPI) -----------
+lines.append(placed_symbol("Connector_Generic:Conn_01x08", "J2", "KEYTOP_LCD_SPI",
+                            "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical", J2_POS, list(range(1, 9)),
+                            "Connector to the keytop color LCD (Waveshare 1.28in round GC9A01, Akizuki 118048, "
+                            "8-pin PH2.0 cable included; the far end of that cable is NOT verified -- if it is PH2.0 8P, swap this "
+                            "footprint/part for JST B8B-PH-K-S (Akizuki 112808, 15 yen); a 2.54mm 1x8 header is the default for "
+                            "Dupont-style ends). Pin order follows the Waveshare pin list (to be "
+                            "verified against the cable in hand): Pin1=VCC(+3.3V), Pin2=GND, Pin3=DIN(MOSI, "
+                            "GP19), Pin4=CLK(SCK, GP18), Pin5=CS(GP17), Pin6=DC(GP20), Pin7=RST(GP21), "
+                            "Pin8=BL(GP22, backlight; PWM-dimmable). Pico SPI0 (GP16-19). The keytop mechanism "
+                            "and display mounting are designed by the user; this board only provides the "
+                            "connector (2026-09-30).",
+                            ref_at=(J2_POS[0], J2_POS[1] + 15.24, 0), val_at=(J2_POS[0], J2_POS[1] + 17.78, 0)))
 
-# --- SW1-4(押下検出、ドーム縁4点を想定・全て並列) -------------------------------
+# --- SW1(押下検出、ドーム縁4点を想定・全て並列) -------------------------------
 for ref in SW_REFS:
     place = sw_defs[ref]["place"]
-    lines.append(placed_symbol("Switch:SW_Push", ref, "SW_Push", "Button_Switch_THT:SW_PUSH_6mm",
+    lines.append(placed_symbol("Switch:SW_Push", ref, "SW_Push", "Button_Local:Kailh_socket_MX",
                                 place, [1, 2],
-                                f"Button press detection, one of 4 tacts around the dome rim, all wired in "
-                                f"parallel onto GP4 (single logical button). Pico physical pin 6 (GPIO4), "
+                                f"Button press detection, one Kailh MX hot-swap socket under the keytop (2026-10-01; same switch/socket as the four_button module; MX-compatible switch plugs in; replaces the 12mm tact). "
+                                f"Wired onto GP4. Pico physical pin 6 (GPIO4), "
                                 f"internal pull-up, no external resistor. Pin1=GND side, Pin2=GPIO side.",
-                                ref_at=(round(SW_ENTRY_X + 10.16, 4), round(place[1] - 1.4, 4), 0), hide_value=True))
+                                ref_at=(round(SW_X, 4), round(place[1] - 5.08, 4), 0), hide_value=True))
 
-# --- 8色LEDチャンネル: R_base, Q, LED, R_led --------------------------------
+# --- NeoPixel: R10(データ直列抵抗)とJ3 ---------------------------------------------
+lines.append(placed_symbol("Device:R", "R10", "330", "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+                            R10_POS, [1, 2],
+                            "Series resistor on the NeoPixel data line (GP9 -> NP1 DIN), 300-470ohm typical; damps "
+                            "ringing on long leads. Value not yet verified against the actual pixel part.",
+                            ref_at=(R10_POS[0] + 3.81, R10_POS[1] - 1.27, 0),
+                            val_at=(R10_POS[0] + 3.81, R10_POS[1] + 1.27, 0)))
+for ref in NP_REFS:
+    pl = NP_POS[ref]
+    lines.append(placed_symbol("LED:WS2812B", ref, "WS2812B", "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm", pl, [1, 2, 3, 4],
+                                "Side-strip NeoPixel pixel (WS2812B-compatible 5050; SK6812 has the same footprint but a different pinout, so "
+                                "check the symbol before swapping). 6 pixels in a vertical line, about 42 mm. DIN of the first pixel "
+                                "comes from GP9 via R10. No per-pixel bypass capacitor (user decision 2026-10-01; datasheet recommends 0.1uF each). "
+                                "DIN high level >=0.7*VDD (3.5V) is marginal at 3.3V; verify on the real part. Cap brightness in firmware.",
+                                ref_at=(pl[0], round(pl[1] - 1.27, 4), 0), hide_value=True))
+
+# --- (旧)ストリップLED4chのチャンネル: 現在は空 ----------------------------- --------------------------------
 for k, g in ch_geo.items():
     lines.append(placed_symbol("Device:R", RBASE_REFS[k], "4.7k",
-                                "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal",
+                                "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
                                 g["rb_place"], [1, 2],
                                 f"Base resistor for {g['desc']} ({g['color']}), NPN low-side switch. "
                                 f"Ib=(3.3-0.7)/4.7k=0.55mA, forced beta well under 2SC1815-GR min hFE(200). "
@@ -809,8 +884,8 @@ for k, g in ch_geo.items():
                                 f"drives this pin output-low from boot, per ハブ連絡事項.md 2026-09-27).",
                                 ref_at=(g["rb_place"][0] + 3.81, g["rb_place"][1] - 1.27, 0),
                                 val_at=(g["rb_place"][0] + 3.81, g["rb_place"][1] + 1.27, 0)))
-    lines.append(placed_symbol("Transistor_BJT:2SC1815", g["qref"], "2SC1815",
-                                "Package_TO_SOT_THT:TO-92_Inline", g["q_place"], [1, 2, 3],
+    lines.append(placed_symbol("Button_Local:2SC1815", g["qref"], "2SC1815",
+                                "Button_Local:TO-92_Inline_D065", g["q_place"], [1, 2, 3],
                                 f"Low-side switch for {g['desc']} ({g['color']}). Pinout ECB (flat face "
                                 f"toward you). Base driven from Pico GPIO via 4.7k ({RBASE_REFS[k]}).",
                                 ref_at=(g["q_place"][0] + 6.35, g["q_place"][1] - 3.81, 0),
@@ -821,9 +896,9 @@ for k, g in ch_geo.items():
                                 f"~18-20mA. Anode(right, pin2)->series resistor->+5V; cathode(left, pin1)"
                                 f"->{g['qref']} collector.",
                                 ref_at=(g["led_place"][0], g["led_place"][1] - 3.81, 0),
-                                val_at=(g["led_place"][0], g["led_place"][1] + 3.81, 0)))
+                                val_at=(g["led_place"][0], g["led_place"][1] - 6.35, 0)))
     lines.append(placed_symbol("Device:R", g["rref"], g["rval"],
-                                "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal",
+                                "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
                                 g["rled_place"], [1, 2],
                                 f"Series current-limiting resistor for {g['lref']} ({g['color']}), "
                                 f"targets ~18-20mA from +5V (I=(5-Vf-0.1)/R; trim by measurement, per "
@@ -832,12 +907,12 @@ for k, g in ch_geo.items():
                                 val_at=(g["rled_place"][0] + 3.81, g["rled_place"][1] + 1.27, 0)))
 
 # --- 状態LED(緑) --------------------------------------------------------------
-lines.append(placed_symbol("Device:R", "R9", "47", "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal",
+lines.append(placed_symbol("Device:R", "R9", "47", "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
                             RSTATUS_POS, [1, 2], "Status LED current-limiting resistor, 47ohm (common spec, "
                                             "all puzzle modules).",
                             ref_at=(RSTATUS_POS[0] + 3.81, RSTATUS_POS[1] - 1.27, 0),
                             val_at=(RSTATUS_POS[0] + 3.81, RSTATUS_POS[1] + 1.27, 0)))
-lines.append(placed_symbol("Device:LED", "LED9", "LED (status, green)", "LED_THT:LED_D5.0mm",
+lines.append(placed_symbol("Device:LED", "LED9", "LED (status, green)", "LED_THT:LED_D3.0mm",
                             LEDSTATUS_POS, [1, 2],
                             "Module status LED, green = solved (manual p.4). Panel: top-right corner area, "
                             "inset from the corner mounting hole (common spec, all puzzle modules).",
@@ -877,8 +952,6 @@ for pin in (23, 28, 33, 38):
 add_power_flag("power:+3.3V", pico_abs(36), 0, RIGHT_COL_OFFSET)
 add_power_flag("power:+5V", pico_abs(39), 0, RIGHT_COL_OFFSET)
 
-# Pico BOTTOM row
-add_power_flag("power:GND", pico_abs(42), 270, (0.0, -2.54), hide_value=True)
 
 # J1 pin3(+5V)/pin4(GND) -> バルクコンデンサC1 -> +5V/GND宣言+PWR_FLAG
 C1_POS = (round(J1_PIN_X - 5.08, 4), round(abs_pt(J1_POS[:2], CONN01X04_PINS[3])[1] + 3.81, 4), 0)
@@ -917,18 +990,24 @@ flag33 = (round(v33_sym[0] + 2.54, 4), v33_sym[1])
 wire(v33_sym, flag33, "+3.3V")
 lines.append(power_symbol_block("power:PWR_FLAG", flag33, 0, next_flg_ref(), desc="Special symbol for telling ERC where power comes from", hide_value=True))
 
-# J2(GND/+3.3V)
-J2_FLAG_OFFSET = (-5.08, 0.0)   # BUS_X(420)・Pico列(452.22)から離す(-X側)
-add_power_flag("power:GND", abs_pt(J2_POS[:2], CONN01X04_PINS[3]), 270, J2_FLAG_OFFSET)
-add_power_flag("power:+3.3V", abs_pt(J2_POS[:2], CONN01X04_PINS[4]), 90, J2_FLAG_OFFSET)
+# J2(Pin1=+3.3V, Pin2=GND)。信号線は3〜8ピンのY(Pin1,2より下)にしか来ないので、-X側へ短い枝を出す。
+J2_FLAG_OFFSET = (-5.08, 0.0)
+add_power_flag("power:+3.3V", abs_pt(J2_POS[:2], J2_PINS8[1]), 90, J2_FLAG_OFFSET)
+add_power_flag("power:GND", abs_pt(J2_POS[:2], J2_PINS8[2]), 270, J2_FLAG_OFFSET)
 
-# SW1-4のGND側(pin1)
+# SW1のGND側(pin1)
 SW_GND_OFFSET = (-5.08, 0.0)   # Pico(452.22)・BUS_X(420)から離れる側(-X)
 for ref in SW_REFS:
     sw_pin1_abs = abs_pt(sw_defs[ref]["place"][:2], SW_PUSH_PINS[1])
     add_power_flag("power:GND", sw_pin1_abs, 0, SW_GND_OFFSET, hide_value=True)
 
-# 8チャンネル: NPNエミッタ->GND、Rled出力->+5V
+# NeoPixel: VDD(上)=+5V、VSS(下)=GND、最後のDOUTは未接続
+for ref in NP_REFS:
+    add_power_flag("power:+5V", abs_pt(NP_POS[ref][:2], NP_PINS[1]), 0, (0.0, -2.54))
+    add_power_flag("power:GND", abs_pt(NP_POS[ref][:2], NP_PINS[3]), 0, (0.0, 2.54), hide_value=True)
+lines.append(no_connect_block(abs_pt(NP_POS[NP_REFS[-1]][:2], NP_PINS[2])))
+
+# (旧)チャンネル: NPNエミッタ->GND、Rled出力->+5V
 for k, g in ch_geo.items():
     add_power_flag("power:GND", g["q_emit"], 270, (0.0, 2.54), hide_value=True)
     add_power_flag("power:+5V", g["rled_pin2"], 90, (0.0, 2.54))
@@ -939,6 +1018,19 @@ add_power_flag("power:GND", led_status_cathode, 270, (0.0, -2.54), hide_value=Tr
 # no_connects
 for pin in NC_PINS:
     lines.append(no_connect_block(pico_abs(pin)))
+
+# ラベル(引き出し線の先端)とブロック見出し
+for name, xy, angle in LABELS:
+    lines.append(label_block(name, xy, angle))
+TITLES = [
+    ("J1: host link (UART0 + 5V), bulk cap C1", (J1_PIN_X - 12.7, j1_place_y - 12.7)),
+    ("Side strip: 6x WS2812B NeoPixel (GP9 -> 330R -> DIN chain)", (CHANNEL_X0 - 5.08, CHANNEL_ROW_Y - 25.4)),
+    ("Press detect: one MX hot-swap switch, GP4", (SW_X - 25.4, SW_Y0 - 12.7)),
+    ("J2: keytop colour LCD (GC9A01, SPI0)", (J2_PIN_X - 25.4, J2_Y0 - 10.16)),
+    ("Status LED", (STATUS_R_X - 5.08, STATUS_R_Y1 - 15.24)),
+]
+for s_, xy in TITLES:
+    lines.append(text_block(s_, xy, 1.905))
 
 # Footer
 lines.append(f'{T}(sheet_instances')
@@ -997,9 +1089,9 @@ def strictly_inside(pt, p1, p2):
         return min(p1[0], p2[0]) + EPS < x < max(p1[0], p2[0]) - EPS
     return False
 
-component_pins = [(f"U1.{k}", pico_abs(k)) for k in range(1, 44)]
+component_pins = [(f"U1.{k}", pico_abs(k)) for k in range(1, 41)]
 component_pins += [(f"J1.{k}", abs_pt(J1_POS[:2], CONN01X04_PINS[k])) for k in range(1, 5)]
-component_pins += [(f"J2.{k}", abs_pt(J2_POS[:2], CONN01X04_PINS[k])) for k in range(1, 5)]
+component_pins += [(f"J2.{k}", abs_pt(J2_POS[:2], J2_PINS8[k])) for k in range(1, 9)]
 for ref in SW_REFS:
     component_pins += [(f"{ref}.1", abs_pt(sw_defs[ref]["place"][:2], SW_PUSH_PINS[1])),
                         (f"{ref}.2", abs_pt(sw_defs[ref]["place"][:2], SW_PUSH_PINS[2]))]
@@ -1010,6 +1102,7 @@ for k, g in ch_geo.items():
         (f"{g['lref']}.K", g["led_k"]), (f"{g['lref']}.A", g["led_a"]),
         (f"{g['rref']}.1", g["rled_pin1"]), (f"{g['rref']}.2", g["rled_pin2"]),
     ]
+component_pins += [("R10.1", r10_pin1), ("R10.2", r10_pin2)] + [(f"{r}.{k}", abs_pt(NP_POS[r][:2], NP_PINS[k])) for r in NP_REFS for k in range(1, 5)]
 component_pins += [("R9.1", rstatus_pin1), ("R9.2", rstatus_pin2),
                     ("LED9.A", led_status_anode), ("LED9.K", led_status_cathode),
                     ("C1.+", c1_plus), ("C1.-", c1_minus)]
@@ -1034,6 +1127,15 @@ else:
     print(f"No pin or wire end lies on a wire interior ({len(component_pins)} component pins, {len(ALL_SEGMENTS)} wires).")
 
 doc = "\n".join(lines) + "\n"
+
+# --- プロジェクト専用シンボルライブラリ(2SC1815: フットプリントをドリル0.65mm版に差し替え) -----------
+SYM_OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Button_Local.kicad_sym")
+_blk = LIB_2SC1815.replace('(symbol "Button_Local:2SC1815"', '(symbol "2SC1815"', 1)
+with open(SYM_OUT, "w", encoding="utf-8", newline="\n") as f:
+    f.write('(kicad_symbol_lib\n\t(version 20251024)\n\t(generator "gen_button_sch")\n\t(generator_version "10.0")\n')
+    f.write(reindent(_blk, 1) + "\n)\n")
+with open(os.path.join(os.path.dirname(SYM_OUT), "sym-lib-table"), "w", encoding="utf-8", newline="\n") as f:
+    f.write('(sym_lib_table\n\t(version 7)\n\t(lib (name "Button_Local") (type "KiCad") (uri "${KIPRJMOD}/Button_Local.kicad_sym") (options "") (descr "Button module local symbols"))\n\t(lib (name "OSC_Shared") (type "KiCad") (uri "${KIPRJMOD}/../shared_lib/OSC_Shared.kicad_sym") (options "") (descr "OSC2026 shared symbols"))\n)\n')
 
 OUT = r"C:\Users\ysou5\OneDrive - 東京理科大学\ドキュメント\osc\hardware\button\button.kicad_sch"
 with open(OUT, "w", encoding="utf-8", newline="\n") as f:

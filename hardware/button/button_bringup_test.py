@@ -1,53 +1,40 @@
 # Button module - hardware bring-up test (MicroPython, Raspberry Pi Pico 2)
 # 目的: 配線確認のみ。本番のファームウェア(ゲームロジック・タイマー連携)はソフト担当が別途実装する。
 #
-# 配線(button.kicad_sch / button_design_notes.md で確定、interpretation C: 電気的ゲート):
+# 配線(button.kicad_sch / button_design_notes.md で確定、2026-09-30: 面LED撤去・カラー液晶GC9A01):
 #   GPIO0/1 (UART0 TX/RX) : ホストとの通信専用(このテストでは未使用、配線不要)
-#   GPIO2 (I2C1 SDA), GPIO3 (I2C1 SCL) : 0.96インチOLED(SSD1315, アドレス0x3C, モジュール内蔵プルアップ)
-#   GPIO4 (BTN) : 押下検出用タクトスイッチ4個を並列(内部プルアップ、もう片方はGND直結)
-#   GPIO5-8  : 面LED(白/青/赤/黄)、NPN(2SC1815)ローサイド駆動、HIGHで点灯
-#   GPIO9-12 : 側面ストリップLED(白/青/赤/黄)、同上
-#   GPIO15   : 状態LED(緑)、47Ω経由でLED->GND、解除済みの間だけ点灯する想定
+#   GPIO4 (BTN)          : 押下検出用タクトスイッチ4個を並列(内部プルアップ、もう片方はGND直結)
+#   GPIO9-12             : 側面ストリップLED(白/青/赤/黄)、NPN(2SC1815)ローサイド駆動、HIGHで点灯
+#   GPIO15               : 状態LED(緑)、47Ω経由でLED->GND
+#   GPIO17-22 (SPI0)     : キートップ表示器(Waveshare 1.28インチ丸型 GC9A01)
+#                          CS=GP17, SCK=GP18, MOSI(DIN)=GP19, DC=GP20, RST=GP21, BL=GP22
+#                          コネクタJ2のピン順: 1=VCC(3.3V) 2=GND 3=DIN 4=CLK 5=CS 6=DC 7=RST 8=BL
+#                          (付属ケーブルの色・ピン順は現物で要確認)
 #
 # 準備:
-#   1. MicroPython公式の定番ssd1306ドライバ(ssd1306.py)を、このファイルと同じ場所に
-#      一緒にアップロードしておくこと(password/host_i2c_oled_test.py等と同じもの)
-#   2. 上記の配線を行う(白/青LEDは電流が個体差でVfのばらつきを受けやすいので、
-#      R1/R2/R5/R6=100ohm付近から実測して調整する前提。button_design_notes.md §3-C参照)
+#   1. GC9A01用のMicroPythonドライバを、このファイルと同じ場所にアップロードする
+#      (例: russhughes/gc9a01_mpy の gc9a01.py。※このスクリプトのAPI呼び出しは記憶に基づく仮のもので
+#       未検証。ドライバによって初期化・fillの書き方が違うので、手元のドライバに合わせて直すこと)
+#   2. 上記の配線を行う
 #
 # 使い方: Thonny等でPicoに書き込んで実行。
-#   1. 起動時に状態LEDが3回点滅すればLED回路の生存確認OK。同時に面/ストリップLEDが
-#      点灯しない(起動直後に出力Lowになっている)ことを目視確認する(RP2350-E9対策の確認)
-#   2. i2c.scan()の結果に0x3Cが出て、OLEDに文言テスト表示が出ればOLED回路もOK
-#   3. GPIO4のタクトスイッチのいずれかを押すと、REPLに"BTN pressed"と表示され、
-#      押している間だけ側面ストリップLEDが点灯する(実際の色ルール判定はソフト担当の実装範囲、
-#      このテストでは白固定で「押されている」ことだけを示す)
-#   4. 面LED・ストリップLEDを1色ずつ順番に点灯し、対応する色・GPIOをREPLに表示する
-#      (USBパワーメーターで各色点灯時の電流を実測し、button_design_notes.md §4の見積りと
-#      比較・記録すること)
+#   1. 起動時に状態LEDが3回点滅し、NeoPixelが点灯していないこと(ちらつきの有無を目視で記録)
+#   2. 液晶に赤/緑/青/黄/白/黒を順に全面表示(ボタンの色5種の見え方を確認)
+#   3. NeoPixelを白/青/赤/黄で1色ずつ2秒点灯(明るさ20%、USBパワーメーターで電流を記録。点かない・色化けならDINの3.3V問題を疑う)
+#   4. タクトスイッチを押すと液晶が「押下」の色に変わる(押下検出GP4の確認)
 
-from machine import Pin, I2C
+from machine import Pin, SPI, PWM
 import time
 
-try:
-    import ssd1306
-except ImportError:
-    print("ssd1306.py が見つかりません。事前にPicoへアップロードしてください。")
-    raise
-
-FACE_PINS = {"White": 5, "Blue": 6, "Red": 7, "Yellow": 8}
-STRIP_PINS = {"White": 9, "Blue": 10, "Red": 11, "Yellow": 12}
-face_leds = {c: Pin(gp, Pin.OUT, value=0) for c, gp in FACE_PINS.items()}
-strip_leds = {c: Pin(gp, Pin.OUT, value=0) for c, gp in STRIP_PINS.items()}
-
+import neopixel
+NEO_PIN = 9        # GP9 -> R10(330) -> J3 pin2(DIN)
+NEO_COUNT = 8      # つないだテープ/スティックの画素数に合わせる(要調整)
+BRIGHT = 0.2       # 明るさ(1.0=最大。全白最大は1画素50〜60mA程度でパネル予算200mAを超える)
+np = neopixel.NeoPixel(Pin(NEO_PIN), NEO_COUNT)
 btn = Pin(4, Pin.IN, Pin.PULL_UP)
 status_led = Pin(15, Pin.OUT, value=0)
 
-I2C_ID = 1
-SDA_PIN = 2
-SCL_PIN = 3
-FREQ = 400000
-OLED_ADDR = 0x3C
+CS, SCK, MOSI, DC, RST, BL = 17, 18, 19, 20, 21, 22
 
 
 def blink(n, interval=0.15):
@@ -58,55 +45,55 @@ def blink(n, interval=0.15):
         time.sleep(interval)
 
 
-def draw(oled, line1, line2=""):
-    oled.fill(0)
-    oled.text("BUTTON TEST", 0, 0)
-    oled.text(line1, 0, 24)
-    if line2:
-        oled.text(line2, 0, 40)
-    oled.show()
-
-
 print("=== Button module bring-up test start ===")
-# 起動直後は全LEDが出力Low(=消灯)であることをまず確認(RP2350-E9対策、button_design_notes.md参照)
-assert all(p.value() == 0 for p in list(face_leds.values()) + list(strip_leds.values())), \
-    "起動直後にLEDが点灯しています。GPIO初期化順を確認してください。"
-blink(3)  # 状態LED回路の生存確認
+np.fill((0, 0, 0))
+np.write()
+blink(3)
 
-i2c = I2C(I2C_ID, sda=Pin(SDA_PIN), scl=Pin(SCL_PIN), freq=FREQ)
-addrs = i2c.scan()
-print("Found I2C devices:", ["0x{:02X}".format(a) for a in addrs])
+backlight = PWM(Pin(BL))
+backlight.freq(1000)
+backlight.duty_u16(65535)  # バックライト最大(約40mA級、電流を実測して記録)
 
-oled = None
-if OLED_ADDR not in addrs:
-    print("OLED(0x3C)が見つかりません。SDA(GPIO2)/SCL(GPIO3)の配線を確認してください。")
-else:
-    oled = ssd1306.SSD1306_I2C(128, 64, i2c)
-    draw(oled, "READY")
-    print("OLEDに表示しました。READYが見えればOLED回路は正常です。")
+tft = None
+try:
+    import gc9a01
+    spi = SPI(0, baudrate=40_000_000, sck=Pin(SCK), mosi=Pin(MOSI))
+    tft = gc9a01.GC9A01(spi, 240, 240, reset=Pin(RST, Pin.OUT), cs=Pin(CS, Pin.OUT),
+                        dc=Pin(DC, Pin.OUT), rotation=0)
+    tft.init()
+except ImportError:
+    print("gc9a01.py が見つかりません。ドライバをアップロードしてください(液晶以外のテストは続行)。")
 
-print("--- 面LED・ストリップLEDの単灯確認(1色ずつ2秒点灯、USBパワーメーターで電流を記録) ---")
-for group_name, group in (("Face", face_leds), ("Strip", strip_leds)):
-    for color, pin in group.items():
-        print("{} LED {} (GPIO{}) ON".format(group_name, color, pin))
-        pin.value(1)
-        time.sleep(2.0)
-        pin.value(0)
-        time.sleep(0.3)
+COLORS = {"RED": 0xF800, "GREEN": 0x07E0, "BLUE": 0x001F, "YELLOW": 0xFFE0,
+          "WHITE": 0xFFFF, "BLACK": 0x0000}
+if tft is not None:
+    for name, c in COLORS.items():
+        print("LCD fill", name)
+        tft.fill(c)
+        time.sleep(1.0)
 
-print("--- ボタン押下検出(GPIO4、内部プルアップ)。押すとストリップが白で点灯 ---")
+print("--- NeoPixelの色確認(1色ずつ2秒、USBパワーメーターで電流を記録) ---")
+STRIP_COLORS = {"White": (255, 255, 255), "Blue": (0, 0, 255), "Red": (255, 0, 0), "Yellow": (255, 200, 0)}
+for name, (r, g, b) in STRIP_COLORS.items():
+    print("NeoPixel", name)
+    np.fill((int(r * BRIGHT), int(g * BRIGHT), int(b * BRIGHT)))
+    np.write()
+    time.sleep(2.0)
+    np.fill((0, 0, 0))
+    np.write()
+    time.sleep(0.3)
+
+print("--- ボタン押下検出(GPIO4、内部プルアップ)。押すと液晶が赤、離すと黒 ---")
 prev = 1
 while True:
     val = btn.value()
     if val == 0 and prev == 1:
         print("BTN pressed")
-        strip_leds["White"].value(1)
-        if oled is not None:
-            draw(oled, "PRESSED")
+        if tft is not None:
+            tft.fill(COLORS["RED"])
     elif val == 1 and prev == 0:
         print("BTN released")
-        strip_leds["White"].value(0)
-        if oled is not None:
-            draw(oled, "READY")
+        if tft is not None:
+            tft.fill(COLORS["BLACK"])
     prev = val
     time.sleep(0.02)
