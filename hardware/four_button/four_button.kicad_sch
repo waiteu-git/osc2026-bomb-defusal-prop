@@ -2018,7 +2018,7 @@
 				)
 				(embedded_fonts no)
 			)
-		(symbol "LED:WS2812B"
+		(symbol "LED:SK6812"
 				(pin_names
 					(offset 0.254)
 				)
@@ -2038,7 +2038,7 @@
 						(justify right bottom)
 					)
 				)
-				(property "Value" "WS2812B"
+				(property "Value" "SK6812"
 					(at 1.27 -5.715 0)
 					(show_name no)
 					(do_not_autoplace no)
@@ -2049,7 +2049,7 @@
 						(justify left top)
 					)
 				)
-				(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+				(property "Footprint" "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm"
 					(at 1.27 -7.62 0)
 					(show_name no)
 					(do_not_autoplace no)
@@ -2061,7 +2061,7 @@
 						(justify left top)
 					)
 				)
-				(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+				(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf"
 					(at 2.54 -9.525 0)
 					(show_name no)
 					(do_not_autoplace no)
@@ -2095,7 +2095,7 @@
 						)
 					)
 				)
-				(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
+				(property "ki_fp_filters" "LED*SK6812*PLCC*5.0x5.0mm*P3.2mm*"
 					(at 0 0 0)
 					(show_name no)
 					(do_not_autoplace no)
@@ -2106,7 +2106,7 @@
 						)
 					)
 				)
-				(symbol "WS2812B_0_0"
+				(symbol "SK6812_0_0"
 					(text "RGB"
 						(at 2.286 -4.191 0)
 						(effects
@@ -2116,7 +2116,7 @@
 						)
 					)
 				)
-				(symbol "WS2812B_0_1"
+				(symbol "SK6812_0_1"
 					(polyline
 						(pts
 							(xy 1.27 -2.54) (xy 1.778 -2.54)
@@ -2213,11 +2213,11 @@
 						)
 					)
 				)
-				(symbol "WS2812B_1_1"
+				(symbol "SK6812_1_1"
 					(pin power_in line
-						(at 0 7.62 270)
+						(at 0 -7.62 90)
 						(length 2.54)
-						(name "VDD"
+						(name "VSS"
 							(effects
 								(font
 									(size 1.27 1.27)
@@ -2232,10 +2232,10 @@
 							)
 						)
 					)
-					(pin output line
-						(at 7.62 0 180)
+					(pin input line
+						(at -7.62 0 0)
 						(length 2.54)
-						(name "DOUT"
+						(name "DIN"
 							(effects
 								(font
 									(size 1.27 1.27)
@@ -2251,9 +2251,9 @@
 						)
 					)
 					(pin power_in line
-						(at 0 -7.62 90)
+						(at 0 7.62 270)
 						(length 2.54)
-						(name "VSS"
+						(name "VDD"
 							(effects
 								(font
 									(size 1.27 1.27)
@@ -2268,10 +2268,10 @@
 							)
 						)
 					)
-					(pin input line
-						(at -7.62 0 0)
+					(pin output line
+						(at 7.62 0 180)
 						(length 2.54)
-						(name "DIN"
+						(name "DOUT"
 							(effects
 								(font
 									(size 1.27 1.27)
@@ -3055,7 +3055,7 @@
 				)
 			)
 		)
-		(property "Description" "Four-button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; 40 header pins only, hub decision 2026-09-30). GP2-5=button inputs (shared between grid and diamond sockets, only one set populated at a time). GP6=NeoPixel data (WS2812B x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused (freed up by the 2026-10-01 NeoPixel switch, previously LEDDRV_B/G/Y). GP10=status LED. GP11=mode-select switch."
+		(property "Description" "Four-button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; 40 header pins only, hub decision 2026-09-30). GP2-5=button inputs (shared between grid and diamond sockets, only one set populated at a time). GP6=NeoPixel data (SK6812 x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused (freed up by the 2026-10-01 NeoPixel switch, previously LEDDRV_B/G/Y). GP10=status LED. GP11=mode-select switch."
 			(at 152.4 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -4010,7 +4010,7 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
+		(lib_id "LED:SK6812")
 		(at 342.9 177.8 0)
 		(unit 1)
 		(body_style 1)
@@ -4031,7 +4031,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B Red"
+		(property "Value" "SK6812 Red"
 			(at 342.9 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4041,7 +4041,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm"
 			(at 342.9 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4063,7 +4063,7 @@
 				)
 			)
 		)
-		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Red key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Red(left) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
+		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Red key. Replaces the discrete LED+2SC1815+resistor driver. 2026-10-01: initially chose WS2812B 5050 SMD over SK6812MINI-E (the latter used in complicated_wires but hard to hand-solder); later changed to the full-size SK6812 5050 (same PLCC4 5.0x5.0mm package/footprint as WS2812B, same physical pin layout, but KiCad's stock SK6812 symbol numbers the pins differently -- pin1=VSS,2=DIN,3=VDD,4=DOUT vs WS2812B's 1=VDD,2=DOUT,3=VSS,4=DIN; verified against both stock library symbols before patching). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VSS(GND), pin2=DIN, pin3=VDD(+5V), pin4=DOUT. Placed near the Red(left) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
 			(at 342.9 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4176,7 +4176,7 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
+		(lib_id "LED:SK6812")
 		(at 363.22 177.8 0)
 		(unit 1)
 		(body_style 1)
@@ -4197,7 +4197,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B Blue"
+		(property "Value" "SK6812 Blue"
 			(at 363.22 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4207,7 +4207,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm"
 			(at 363.22 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4229,7 +4229,7 @@
 				)
 			)
 		)
-		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Blue key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Blue(top) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
+		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Blue key. Replaces the discrete LED+2SC1815+resistor driver. 2026-10-01: initially chose WS2812B 5050 SMD over SK6812MINI-E (the latter used in complicated_wires but hard to hand-solder); later changed to the full-size SK6812 5050 (same PLCC4 5.0x5.0mm package/footprint as WS2812B, same physical pin layout, but KiCad's stock SK6812 symbol numbers the pins differently -- pin1=VSS,2=DIN,3=VDD,4=DOUT vs WS2812B's 1=VDD,2=DOUT,3=VSS,4=DIN; verified against both stock library symbols before patching). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VSS(GND), pin2=DIN, pin3=VDD(+5V), pin4=DOUT. Placed near the Blue(top) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
 			(at 363.22 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4262,7 +4262,7 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
+		(lib_id "LED:SK6812")
 		(at 383.54 177.8 0)
 		(unit 1)
 		(body_style 1)
@@ -4283,7 +4283,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B Green"
+		(property "Value" "SK6812 Green"
 			(at 383.54 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4293,7 +4293,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm"
 			(at 383.54 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4315,7 +4315,7 @@
 				)
 			)
 		)
-		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Green key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Green(bottom) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
+		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Green key. Replaces the discrete LED+2SC1815+resistor driver. 2026-10-01: initially chose WS2812B 5050 SMD over SK6812MINI-E (the latter used in complicated_wires but hard to hand-solder); later changed to the full-size SK6812 5050 (same PLCC4 5.0x5.0mm package/footprint as WS2812B, same physical pin layout, but KiCad's stock SK6812 symbol numbers the pins differently -- pin1=VSS,2=DIN,3=VDD,4=DOUT vs WS2812B's 1=VDD,2=DOUT,3=VSS,4=DIN; verified against both stock library symbols before patching). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VSS(GND), pin2=DIN, pin3=VDD(+5V), pin4=DOUT. Placed near the Green(bottom) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
 			(at 383.54 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4348,7 +4348,7 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
+		(lib_id "LED:SK6812")
 		(at 403.86 177.8 0)
 		(unit 1)
 		(body_style 1)
@@ -4369,7 +4369,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B Yellow"
+		(property "Value" "SK6812 Yellow"
 			(at 403.86 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4379,7 +4379,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm"
 			(at 403.86 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -4401,7 +4401,7 @@
 				)
 			)
 		)
-		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Yellow key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Yellow(right) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
+		(property "Description" "Addressable RGB LED (NeoPixel-compatible), Yellow key. Replaces the discrete LED+2SC1815+resistor driver. 2026-10-01: initially chose WS2812B 5050 SMD over SK6812MINI-E (the latter used in complicated_wires but hard to hand-solder); later changed to the full-size SK6812 5050 (same PLCC4 5.0x5.0mm package/footprint as WS2812B, same physical pin layout, but KiCad's stock SK6812 symbol numbers the pins differently -- pin1=VSS,2=DIN,3=VDD,4=DOUT vs WS2812B's 1=VDD,2=DOUT,3=VSS,4=DIN; verified against both stock library symbols before patching). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VSS(GND), pin2=DIN, pin3=VDD(+5V), pin4=DOUT. Placed near the Yellow(right) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md)."
 			(at 403.86 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -8079,7 +8079,7 @@
 		)
 		(uuid "5f627bb2-6906-46d8-ae78-d0f64af81c59")
 	)
-	(text "NeoPixel chain (WS2812B x4, red/blue/green/yellow), GP6 via R10"
+	(text "NeoPixel chain (SK6812 x4, red/blue/green/yellow), GP6 via R10"
 		(exclude_from_sim no)
 		(at 312.42 165.1 0)
 		(effects

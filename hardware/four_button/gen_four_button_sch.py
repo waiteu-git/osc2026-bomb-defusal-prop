@@ -52,13 +52,16 @@ CONN01X04_PINS = {1: (-5.08, 2.54), 2: (-5.08, 0.0), 3: (-5.08, -2.54), 4: (-5.0
 SW_PINS = {1: (-5.08, 0.0), 2: (5.08, 0.0)}          # ホットスワップソケット(汎用2端子として配線)
 LED_PINS = {1: (-3.81, 0.0), 2: (3.81, 0.0)}          # pin1=K, pin2=A
 R_PINS = {1: (0.0, 3.81), 2: (0.0, -3.81)}             # Device:R・Device:C共通(縦2端子)
-WS_PINS = {1: (0.0, 7.62), 2: (7.62, 0.0), 3: (0.0, -7.62), 4: (-7.62, 0.0)}  # 1=VDD,2=DOUT,3=VSS,4=DIN
+# SK6812のピン番号配置はWS2812Bと物理位置(VDD上/DOUT右/VSS下/DIN左)は同じだが番号が違う
+# (WS2812B: 1=VDD,2=DOUT,3=VSS,4=DIN / SK6812: 1=VSS,2=DIN,3=VDD,4=DOUT、KiCad標準ライブラリで実測確認)。
+# 2026-10-01: ユーザー決定でWS2812B->SK6812に変更したため、このマッピングに合わせてある。
+WS_PINS = {1: (0.0, -7.62), 2: (-7.62, 0.0), 3: (0.0, 7.62), 4: (7.62, 0.0)}  # 1=VSS,2=DIN,3=VDD,4=DOUT
 
 def abs_pt(placement, local):
     return (round(placement[0] + local[0], 4), round(placement[1] - local[1], 4))
 
 GND_PINS = [3, 8, 13, 18, 23, 28, 33, 38]
-# 使用ピン: 1,2(UART) / 4,5,6,7(ボタン共用GP2-5) / 9(NeoPixelデータ GP6、WS2812B x4を1本で数珠つなぎ) /
+# 使用ピン: 1,2(UART) / 4,5,6,7(ボタン共用GP2-5) / 9(NeoPixelデータ GP6、SK6812 x4を1本で数珠つなぎ) /
 # 14(状態LED GP10) / 15(モード選択 GP11)。GP7-9(旧LEDDRV_B/G/Y)はNeoPixel化で不要になり予備(未接続)。
 USED_PINS = {1, 2, 4, 5, 6, 7, 9, 14, 15}
 NC_PINS = [p for p in range(1, 41) if p not in USED_PINS and p not in GND_PINS and p not in (36, 39)]
@@ -78,7 +81,7 @@ j1_place_x = round(J1_PIN_X + 5.08, 4)
 J1_POS = (j1_place_x, j1_place_y, 0)
 
 # 左列(GP2-5): ボタン共用ネット BTN_R/BTN_B/BTN_G/BTN_Y (=グリッドA-D と ひし形Red/Blue/Green/Yellow を並列)
-# GP6=NeoPixel(WS2812B x4直列)のデータ入力。GP7-9は未使用(予備)。
+# GP6=NeoPixel(SK6812 x4直列)のデータ入力。GP7-9は未使用(予備)。
 LEFT_STUBS = {4: "BTN_R", 5: "BTN_B", 6: "BTN_G", 7: "BTN_Y", 9: "NEOPIXEL_DATA",
               14: "STATUS_LED", 15: "MODE_SEL"}
 
@@ -86,7 +89,7 @@ LEFT_STUBS = {4: "BTN_R", 5: "BTN_B", 6: "BTN_G", 7: "BTN_Y", 9: "NEOPIXEL_DATA"
 # 中心(0,0)基準の相対座標(mm)。実際のシート配置はブロックごとにオフセットして描く(格子1.27mm)。
 GRID_SW = {"SW1": ("A(top-left)", -19, -19, "BTN_R"), "SW2": ("B(top-right)", 19, -19, "BTN_B"),
            "SW3": ("C(bottom-left)", -19, 19, "BTN_G"), "SW4": ("D(bottom-right)", 19, 19, "BTN_Y")}
-# dref=WS2812B参照符号、cref=隣の0.1uFデコップリングコンデンサ(Noneなら省略)。鎖の順序はdict順
+# dref=SK6812参照符号、cref=隣の0.1uFデコップリングコンデンサ(Noneなら省略)。鎖の順序はdict順
 # (Red->Blue->Green->Yellow)。2026-10-01: complicated_wiresモジュール(20個中1個だけ"(optional)"で
 # デコップリング)に倣い、チェーン先頭のD1(Red)だけC2を残し、D2-D4は省略(ユーザー決定)。
 DIAMOND_SW = {"SW5": ("Red(left)", -17, 0, "BTN_R", "Red", "D1", "C2"),
@@ -109,14 +112,14 @@ diamond_place = {}
 for i, ref in enumerate(["SW5", "SW6", "SW7", "SW8"]):
     diamond_place[ref] = (round(DIAMOND_BLOCK_X0, 4), round(GRID_BLOCK_Y0 + i * GRID_PITCH, 4), 0)
 
-# NeoPixel(WS2812B)4個を横一列に、各LEDの下にデコップリングコンデンサ。GP6からR10(直列抵抗)経由で
+# NeoPixel(SK6812)4個を横一列に、各LEDの下にデコップリングコンデンサ。GP6からR10(直列抵抗)経由で
 # D1->D2->D3->D4の順に数珠つなぎ(DOUT->次のDIN)。
 CHAIN_Y0 = G(140)
 CHAIN_PITCH = G(16)
 chain_place = {}
 for i, swref in enumerate(DIAMOND_SW.keys()):
     cx = round(GRID_BLOCK_X0 + G(20) + i * CHAIN_PITCH, 4)
-    # WS2812Bのピンはローカル中心から上下左右7.62mm伸びるため、コンデンサ(cのPIN2)は
+    # SK6812のピンはローカル中心から上下左右7.62mm伸びるため、コンデンサ(cのPIN2)は
     # VSS側(下、+7.62)からさらに十分離す(電源フラグの延長ぶんも込みで+G(10)=12.7mm追加)。
     chain_place[swref] = dict(d=(cx, CHAIN_Y0, 0), c=(cx, round(CHAIN_Y0 + G(24), 4), 0))
 R10_POS = (GRID_BLOCK_X0, CHAIN_Y0, 0)
@@ -155,7 +158,7 @@ LIB_LED = _extract_stock(KICAD_SYM + "Device.kicad_sym", "LED", "Device:LED")
 LIB_R = _extract_stock(KICAD_SYM + "Device.kicad_sym", "R", "Device:R")
 LIB_C = _extract_stock(KICAD_SYM + "Device.kicad_sym", "C", "Device:C")
 LIB_CP = _extract_stock(KICAD_SYM + "Device.kicad_sym", "C_Polarized", "Device:C_Polarized")
-LIB_WS2812B = _extract_stock(KICAD_SYM + "LED.kicad_sym", "WS2812B", "LED:WS2812B")
+LIB_SK6812 = _extract_stock(KICAD_SYM + "LED.kicad_sym", "SK6812", "LED:SK6812")
 LIB_SW = _extract_stock(KICAD_SYM + "Switch.kicad_sym", "SW_Push", "Switch:SW_Push")
 LIB_SW_SPST = _extract_stock(KICAD_SYM + "Switch.kicad_sym", "SW_SPST", "Switch:SW_SPST")
 LIB_GND = _extract_stock(KICAD_SYM + "power.kicad_sym", "GND", "power:GND")
@@ -192,7 +195,7 @@ LIB_SOCKET = r'''(symbol "FourButton_Local:Kailh_socket_MX"
 	(embedded_fonts no)
 )'''
 
-LIB_SYMBOLS_ALL = [LIB_CONN01X04, LIB_LED, LIB_R, LIB_C, LIB_CP, LIB_SW, LIB_SW_SPST, LIB_PICO, LIB_WS2812B,
+LIB_SYMBOLS_ALL = [LIB_CONN01X04, LIB_LED, LIB_R, LIB_C, LIB_CP, LIB_SW, LIB_SW_SPST, LIB_PICO, LIB_SK6812,
                    LIB_SOCKET, LIB_GND, LIB_3V3, LIB_5V, LIB_PWRFLAG]
 
 def reindent(block, base_tabs):
@@ -402,8 +405,8 @@ for ref, (label, dx, dy, btn_net, color, dref, cref) in DIAMOND_SW.items():
     stub(p2, (round(p2[0] + G(4), 4), p2[1]), btn_net, 0)
     component_pins += [(f"{ref}.1", p1), (f"{ref}.2", p2)]
 
-# --- NeoPixel(WS2812B x4)の数珠つなぎ: GP6--R10(直列抵抗)-->D1.DIN->D1.DOUT->D2.DIN->...->D4.DOUT(終端、未接続) ---
-# 各WS2812BのVDD/VSSにはデコップリングコンデンサ(0.1uF)を1個ずつ並列配置。
+# --- NeoPixel(SK6812 x4)の数珠つなぎ: GP6--R10(直列抵抗)-->D1.DIN->D1.DOUT->D2.DIN->...->D4.DOUT(終端、未接続) ---
+# 各SK6812のVDD/VSSにはデコップリングコンデンサ(0.1uF)を1個ずつ並列配置。
 r10_pin1 = abs_pt(R10_POS[:2], R_PINS[1])
 r10_pin2 = abs_pt(R10_POS[:2], R_PINS[2])
 stub(r10_pin1, (r10_pin1[0], round(r10_pin1[1] - G(4), 4)), "NEOPIXEL_DATA", 0)
@@ -414,10 +417,10 @@ prev_dout = r10_pin2  # R10の出口から鎖がスタート
 for idx, (ref, (label, dx, dy, btn_net, color, dref, cref)) in enumerate(chain_refs):
     g = chain_place[ref]
     d_place = g["d"]
-    vdd = abs_pt(d_place[:2], WS_PINS[1])
-    dout = abs_pt(d_place[:2], WS_PINS[2])
-    vss = abs_pt(d_place[:2], WS_PINS[3])
-    din = abs_pt(d_place[:2], WS_PINS[4])
+    vdd = abs_pt(d_place[:2], WS_PINS[3])
+    dout = abs_pt(d_place[:2], WS_PINS[4])
+    vss = abs_pt(d_place[:2], WS_PINS[1])
+    din = abs_pt(d_place[:2], WS_PINS[2])
     wire(prev_dout, din, f"NEOPIXEL_D{idx}")
     # D・Cそれぞれに独立した電源シンボルを付ける(button/simon踏襲のadd_power_flag方式、下の電源セクション参照)。
     # 物理的な配線では繋がずnet名(+5V/GND)だけで結合するため、長距離配線のクロスを避けられる。
@@ -454,7 +457,7 @@ lines.append(placed_symbol("OSC_Shared:Pico_TH40", "U1", "Pico 2 H", "OSC_Shared
                             "Four-button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; "
                             "40 header pins only, hub decision 2026-09-30). GP2-5=button inputs (shared between "
                             "grid and diamond sockets, only one set populated at a time). GP6=NeoPixel data "
-                            "(WS2812B x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused "
+                            "(SK6812 x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused "
                             "(freed up by the 2026-10-01 NeoPixel switch, previously LEDDRV_B/G/Y). GP10=status "
                             "LED. GP11=mode-select switch."))
 
@@ -496,15 +499,18 @@ lines.append(placed_symbol("Device:R", "R10", "330",
 
 for ref, (label, dx, dy, btn_net, color, dref, cref) in DIAMOND_SW.items():
     g = chain_place[ref]
-    lines.append(placed_symbol("LED:WS2812B", dref, f"WS2812B {color}", "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm",
+    lines.append(placed_symbol("LED:SK6812", dref, f"SK6812 {color}", "LED_SMD:LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm",
                                 g["d"], [1, 2, 3, 4],
                                 f"Addressable RGB LED (NeoPixel-compatible), {color} key. Replaces the discrete "
-                                f"LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen "
-                                f"over SK6812MINI-E -- the latter is already used in complicated_wires but judged "
-                                f"too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained "
+                                f"LED+2SC1815+resistor driver. 2026-10-01: initially chose WS2812B 5050 SMD over "
+                                f"SK6812MINI-E (the latter used in complicated_wires but hard to hand-solder); "
+                                f"later changed to the full-size SK6812 5050 (same PLCC4 5.0x5.0mm package/footprint "
+                                f"as WS2812B, same physical pin layout, but KiCad's stock SK6812 symbol numbers the "
+                                f"pins differently -- pin1=VSS,2=DIN,3=VDD,4=DOUT vs WS2812B's 1=VDD,2=DOUT,3=VSS,"
+                                f"4=DIN; verified against both stock library symbols before wiring). Daisy-chained "
                                 f"GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); "
                                 f"firmware addresses each LED by chain position, colour is software-assigned (not "
-                                f"fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. "
+                                f"fixed by the LED itself). Pin1=VSS(GND), pin2=DIN, pin3=VDD(+5V), pin4=DOUT. "
                                 f"Placed near the {label} key (not aligned to the switch's LED window -- user "
                                 f"decision: thin keycap + indirect lighting, see four_button_design_notes.md).",
                                 ref_at=(g["d"][0], g["d"][1] - 5.08, 0),
@@ -621,12 +627,12 @@ for ref in DIAMOND_SW:
     p1 = abs_pt(diamond_place[ref][:2], SW_PINS[1])
     add_power_flag("power:GND", p1, 0, GRID_GND_OFFSET, hide_value=True)
 
-# NeoPixel各LED(WS2812B)のVDD/VSS、およびデコップリングコンデンサ両端 -> +5V/GND
+# NeoPixel各LED(SK6812)のVDD/VSS、およびデコップリングコンデンサ両端 -> +5V/GND
 # (D-C間は直接配線せず、net名だけで結合: 両者とも独立した電源シンボルを持つ。button/simon踏襲の方式。)
 for ref, (label, dx, dy, btn_net, color, dref, cref) in DIAMOND_SW.items():
     g = chain_place[ref]
-    vdd = abs_pt(g["d"][:2], WS_PINS[1])
-    vss = abs_pt(g["d"][:2], WS_PINS[3])
+    vdd = abs_pt(g["d"][:2], WS_PINS[3])
+    vss = abs_pt(g["d"][:2], WS_PINS[1])
     add_power_flag("power:+5V", vdd, 90, (0.0, -2.54))
     add_power_flag("power:GND", vss, 270, (0.0, 2.54), hide_value=True)
     if cref is not None:
@@ -652,7 +658,7 @@ TITLES = [
     ("J1: host link (UART0 + 5V), bulk cap C1", (J1_PIN_X - 12.7, j1_place_y - 12.7)),
     ("Grid sockets SW1-4 (keypad mode, diagonal +-19mm)", (GRID_BLOCK_X0 - 5.08, GRID_BLOCK_Y0 - 12.7)),
     ("Diamond sockets SW5-8 (simon mode, axis 17mm)", (DIAMOND_BLOCK_X0 - 5.08, GRID_BLOCK_Y0 - 12.7)),
-    ("NeoPixel chain (WS2812B x4, red/blue/green/yellow), GP6 via R10", (GRID_BLOCK_X0 - 5.08, CHAIN_Y0 - 12.7)),
+    ("NeoPixel chain (SK6812 x4, red/blue/green/yellow), GP6 via R10", (GRID_BLOCK_X0 - 5.08, CHAIN_Y0 - 12.7)),
     ("Status LED (GP10) / Mode select SW9 (GP11)", (STATUS_R_POS[0] - 12.7, STATUS_R_POS[1] - 15.24)),
 ]
 for s_, xy in TITLES:
