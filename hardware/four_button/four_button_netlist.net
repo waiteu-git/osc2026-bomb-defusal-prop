@@ -1,0 +1,2685 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\ysou5\\OneDrive - 東京理科大学\\ドキュメント\\osc\\hardware\\four_button\\four_button.kicad_sch")
+		(date "2026-10-01T11:24:19")
+		(tool "Eeschema 10.0.3")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "Four-button module (keypad + simon, hotswap-shared board)")
+				(company)
+				(rev)
+				(date)
+				(source "four_button.kicad_sch")
+				(comment
+					(number "1")
+					(value "OSC2026 bomb defusal prop - shared board, grid+diamond hotswap sockets")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "100uF/16V")
+			(footprint "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
+			(description "Bulk capacitor on the 5V input (JST Pin3-Pin4), hub common rule 2026-09-27: 100uF/16V or larger electrolytic, one per module. Pin1(+)=+5V, pin2(-)=GND.")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Bulk capacitor on the 5V input (JST Pin3-Pin4), hub common rule 2026-09-27: 100uF/16V or larger electrolytic, one per module. Pin1(+)=+5V, pin2(-)=GND.")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Polarized")
+				(description "Polarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "CP_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "83a3ec30-0946-4e69-8a7b-44e9a7dc7690")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "100nF")
+			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+			(description "Local decoupling capacitor for D1 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Local decoupling capacitor for D1 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bb5ba120-137f-4a61-9358-98134bc5cead")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "100nF")
+			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+			(description "Local decoupling capacitor for D2 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Local decoupling capacitor for D2 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b79c3be9-f822-4fa1-b229-882aec9f918e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "100nF")
+			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+			(description "Local decoupling capacitor for D3 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Local decoupling capacitor for D3 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "356c65bc-dcd7-4254-8e9d-b59ce9c24f8b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "100nF")
+			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+			(description "Local decoupling capacitor for D4 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Local decoupling capacitor for D4 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fd5a357a-385c-47d6-8b3a-553205bea166")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D1")
+			(value "WS2812B Red")
+			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(description "Addressable RGB LED (NeoPixel-compatible), Red key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Red(left) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			(fields
+				(field
+					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Addressable RGB LED (NeoPixel-compatible), Red key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Red(left) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			)
+			(libsource
+				(lib "LED")
+				(part "WS2812B")
+				(description "RGB LED with integrated controller")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "RGB LED NeoPixel addressable")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "057593af-ec9d-47c1-8586-8786907577cf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D2")
+			(value "WS2812B Blue")
+			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(description "Addressable RGB LED (NeoPixel-compatible), Blue key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Blue(top) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			(fields
+				(field
+					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Addressable RGB LED (NeoPixel-compatible), Blue key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Blue(top) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			)
+			(libsource
+				(lib "LED")
+				(part "WS2812B")
+				(description "RGB LED with integrated controller")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "RGB LED NeoPixel addressable")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0aefb4bb-b39b-4294-8177-87c5e06b8212")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D3")
+			(value "WS2812B Green")
+			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(description "Addressable RGB LED (NeoPixel-compatible), Green key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Green(bottom) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			(fields
+				(field
+					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Addressable RGB LED (NeoPixel-compatible), Green key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Green(bottom) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			)
+			(libsource
+				(lib "LED")
+				(part "WS2812B")
+				(description "RGB LED with integrated controller")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "RGB LED NeoPixel addressable")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b06c2c28-ec42-49e8-b376-4172fae32462")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D4")
+			(value "WS2812B Yellow")
+			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(description "Addressable RGB LED (NeoPixel-compatible), Yellow key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Yellow(right) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			(fields
+				(field
+					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Addressable RGB LED (NeoPixel-compatible), Yellow key. Replaces the discrete LED+2SC1815+resistor driver (2026-10-01, user decision: WS2812B 5050 SMD chosen over SK6812MINI-E -- the latter is already used in complicated_wires but judged too hard to hand-solder; commonising on WS2812B going forward). Daisy-chained GP6->R10->D1->D2->D3->D4 (chain order = dict order Red/Blue/Green/Yellow); firmware addresses each LED by chain position, colour is software-assigned (not fixed by the LED itself). Pin1=VDD(+5V), pin2=DOUT, pin3=VSS(GND), pin4=DIN. Placed near the Yellow(right) key (not aligned to the switch's LED window -- user decision: thin keycap + indirect lighting, see four_button_design_notes.md).")
+			)
+			(libsource
+				(lib "LED")
+				(part "WS2812B")
+				(description "RGB LED with integrated controller")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "RGB LED NeoPixel addressable")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d5ae5f56-d667-49e1-bfa6-93be5e68807e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D5")
+			(value "LED status green OSG58A3131A")
+			(footprint "LED_THT:LED_D3.0mm")
+			(description "Module status LED, green = solved (manual p.4). Panel position (60,6) absolute (centre-relative +20,-34) -- see four_button_coordinate_proposal.md sec.3.")
+			(fields
+				(field
+					(name "Footprint") "LED_THT:LED_D3.0mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Module status LED, green = solved (manual p.4). Panel position (60,6) absolute (centre-relative +20,-34) -- see four_button_coordinate_proposal.md sec.3.")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bef16b56-4514-4739-8f80-f2a642a950b5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "MODULE_JST_XH_4P")
+			(footprint "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+			(description "Host connector, JST XH 4-pole. Pin1=GPIO0(UART0 TX, module->host), Pin2=GPIO1(UART0 RX, host->module), Pin3=VCC(5V, from host per-slot polyfuse MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md).")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Host connector, JST XH 4-pole. Pin1=GPIO0(UART0 TX, module->host), Pin2=GPIO1(UART0 RX, host->module), Pin3=VCC(5V, from host per-slot polyfuse MF-RX030/72-0 0.3A hold), Pin4=GND. Common to all puzzle modules (see ハブ連絡事項.md).")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7f3279c2-5dcf-43c1-b8b6-86290882a1f6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "47")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
+			(description "Status LED current-limiting resistor, 47ohm (common spec, all puzzle modules).")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Status LED current-limiting resistor, 47ohm (common spec, all puzzle modules).")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "23ccacea-ba9a-4f21-8920-21978cd9d24e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "330")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
+			(description "Series/damping resistor on the NeoPixel data line (GP6 -> D1.DIN), common WS2812x practice to limit ringing/reflection on the one-wire protocol line. ~300-500R typical.")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Series/damping resistor on the NeoPixel data line (GP6 -> D1.DIN), common WS2812x practice to limit ringing/reflection on the one-wire protocol line. ~300-500R typical.")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7af9e79e-3684-4cac-99f2-aefc3af3baad")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Keypad-mode hotswap socket, grid position A(top-left), panel coords (relative to board centre, y-down) (-19,-19) mm. Wired onto BTN_R (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Keypad-mode hotswap socket, grid position A(top-left), panel coords (relative to board centre, y-down) (-19,-19) mm. Wired onto BTN_R (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dddb8d8b-bdd5-45f5-8870-5ce3be058865")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW2")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Keypad-mode hotswap socket, grid position B(top-right), panel coords (relative to board centre, y-down) (19,-19) mm. Wired onto BTN_B (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Keypad-mode hotswap socket, grid position B(top-right), panel coords (relative to board centre, y-down) (19,-19) mm. Wired onto BTN_B (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f3df5baf-9549-4265-b472-0d66548b91fe")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW3")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Keypad-mode hotswap socket, grid position C(bottom-left), panel coords (relative to board centre, y-down) (-19,19) mm. Wired onto BTN_G (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Keypad-mode hotswap socket, grid position C(bottom-left), panel coords (relative to board centre, y-down) (-19,19) mm. Wired onto BTN_G (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "11ad2389-ea43-4237-9afd-cd74ed03b785")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW4")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Keypad-mode hotswap socket, grid position D(bottom-right), panel coords (relative to board centre, y-down) (19,19) mm. Wired onto BTN_Y (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Keypad-mode hotswap socket, grid position D(bottom-right), panel coords (relative to board centre, y-down) (19,19) mm. Wired onto BTN_Y (shared with the diamond-mode socket on the same GPIO; only one set of switches is plugged in at a time -- see four_button_coordinate_proposal.md). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "21b3431a-38d1-4f57-8f5d-7cf062ed5230")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW5")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Simon-mode hotswap socket, diamond position Red(left), panel coords (relative to board centre, y-down) (-17,0) mm. Wired onto BTN_R (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Simon-mode hotswap socket, diamond position Red(left), panel coords (relative to board centre, y-down) (-17,0) mm. Wired onto BTN_R (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "99ccde19-c736-4180-aa83-bb5016841ee9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW6")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Simon-mode hotswap socket, diamond position Blue(top), panel coords (relative to board centre, y-down) (0,-17) mm. Wired onto BTN_B (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Simon-mode hotswap socket, diamond position Blue(top), panel coords (relative to board centre, y-down) (0,-17) mm. Wired onto BTN_B (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0df563c5-8f38-4bad-9a02-7950d1558c05")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW7")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Simon-mode hotswap socket, diamond position Green(bottom), panel coords (relative to board centre, y-down) (0,17) mm. Wired onto BTN_G (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Simon-mode hotswap socket, diamond position Green(bottom), panel coords (relative to board centre, y-down) (0,17) mm. Wired onto BTN_G (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7accfba2-133f-4816-af84-faaeb845c026")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW8")
+			(value "Kailh_socket_MX")
+			(footprint "FourButton_Local:Kailh_socket_MX")
+			(description "Simon-mode hotswap socket, diamond position Yellow(right), panel coords (relative to board centre, y-down) (17,0) mm. Wired onto BTN_Y (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Simon-mode hotswap socket, diamond position Yellow(right), panel coords (relative to board centre, y-down) (17,0) mm. Wired onto BTN_Y (shared with the grid-mode socket on the same GPIO). Pin1=GND side, Pin2=GPIO side.")
+			)
+			(libsource
+				(lib "FourButton_Local")
+				(part "Kailh_socket_MX")
+				(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch hotswap kailh mx")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "65473748-82a7-4d97-b3d9-13256aa44511")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW9")
+			(value "Mode select")
+			(footprint "FourButton_Local:SW_Slide_2P")
+			(description "Hardware mode-select switch (2-position slide/toggle, proposal per hub discussion 2026-10-01): GP11 internal pull-up, GND = one mode (e.g. diamond/Simon), open = the other (grid/Keypad). Lets one firmware image serve both modes; final adoption is a software-team decision (re-flashing per mode is the hardware-free alternative).")
+			(fields
+				(field
+					(name "Footprint") "FourButton_Local:SW_Slide_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Hardware mode-select switch (2-position slide/toggle, proposal per hub discussion 2026-10-01): GP11 internal pull-up, GND = one mode (e.g. diamond/Simon), open = the other (grid/Keypad). Lets one firmware image serve both modes; final adoption is a software-team decision (re-flashing per mode is the hardware-free alternative).")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPST")
+				(description "Single Pole Single Throw (SPST) switch")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch lever")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a9e20f96-de53-4be3-8bdd-4acaf8c60ee0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "Pico 2 H")
+			(footprint "OSC_Shared:RPi_Pico_TH_Headers")
+			(description "Four-button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; 40 header pins only, hub decision 2026-09-30). GP2-5=button inputs (shared between grid and diamond sockets, only one set populated at a time). GP6=NeoPixel data (WS2812B x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused (freed up by the 2026-10-01 NeoPixel switch, previously LEDDRV_B/G/Y). GP10=status LED. GP11=mode-select switch.")
+			(fields
+				(field
+					(name "Footprint") "OSC_Shared:RPi_Pico_TH_Headers")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Four-button module MCU (Raspberry Pi Pico 2 H on 2.54mm headers, floating ~2.5mm; 40 header pins only, hub decision 2026-09-30). GP2-5=button inputs (shared between grid and diamond sockets, only one set populated at a time). GP6=NeoPixel data (WS2812B x4 daisy-chained via R10, unused in grid/keypad mode). GP7-9=spare/unused (freed up by the 2026-10-01 NeoPixel switch, previously LEDDRV_B/G/Y). GP10=status LED. GP11=mode-select switch.")
+			)
+			(libsource
+				(lib "OSC_Shared")
+				(part "Pico_TH40")
+				(description "Raspberry Pi Pico 2 H on header pins: only the 40 through-hole header pins (no SWD/debug pins 41-43; the module floats above the board)")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "four_button.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1a9ed8f2-ddd0-4bc7-8636-2fa9f52aeb12")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "40")
+						)
+						(pin
+							(num "39")
+						)
+						(pin
+							(num "38")
+						)
+						(pin
+							(num "37")
+						)
+						(pin
+							(num "36")
+						)
+						(pin
+							(num "35")
+						)
+						(pin
+							(num "34")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "21")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x04")
+			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x04")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C")
+			(description "Unpolarized capacitor")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C_Polarized")
+			(description "Polarized capacitor")
+			(footprints
+				(fp "CP_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Polarized")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Polarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "FourButton_Local")
+			(part "Kailh_socket_MX")
+			(description "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "Kailh_socket_MX")
+				(field
+					(name "Footprint") "FourButton_Local:Kailh_socket_MX")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Kailh MX-compatible hotswap socket (daprice keyswitches.pretty). 2-terminal, no inherent GND/signal side.")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "LED")
+			(part "WS2812B")
+			(description "RGB LED with integrated controller")
+			(docs "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+			(footprints
+				(fp "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "WS2812B")
+				(field
+					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+				(field
+					(name "Datasheet") "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+				(field
+					(name "Description") "RGB LED with integrated controller")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "DOUT")
+					(type "output")
+				)
+				(pin
+					(num "3")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "DIN")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "OSC_Shared")
+			(part "Pico_TH40")
+			(description "Raspberry Pi Pico 2 H on header pins: only the 40 through-hole header pins (no SWD/debug pins 41-43; the module floats above the board)")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Pico")
+				(field
+					(name "Footprint") "Timer_Local:RPi_Pico_TH_Headers")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Raspberry Pi Pico 2 H on header pins: only the 40 through-hole header pins (no SWD/debug pins 41-43; the module floats above the board)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GPIO0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GPIO1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "GPIO2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "GPIO3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "GPIO4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GPIO5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "GPIO6")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "GPIO7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "GPIO8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "GPIO9")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "14")
+					(name "GPIO10")
+					(type "bidirectional")
+				)
+				(pin
+					(num "15")
+					(name "GPIO11")
+					(type "bidirectional")
+				)
+				(pin
+					(num "16")
+					(name "GPIO12")
+					(type "bidirectional")
+				)
+				(pin
+					(num "17")
+					(name "GPIO13")
+					(type "bidirectional")
+				)
+				(pin
+					(num "18")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "19")
+					(name "GPIO14")
+					(type "bidirectional")
+				)
+				(pin
+					(num "20")
+					(name "GPIO15")
+					(type "bidirectional")
+				)
+				(pin
+					(num "21")
+					(name "GPIO16")
+					(type "bidirectional")
+				)
+				(pin
+					(num "22")
+					(name "GPIO17")
+					(type "bidirectional")
+				)
+				(pin
+					(num "23")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "24")
+					(name "GPIO18")
+					(type "bidirectional")
+				)
+				(pin
+					(num "25")
+					(name "GPIO19")
+					(type "bidirectional")
+				)
+				(pin
+					(num "26")
+					(name "GPIO20")
+					(type "bidirectional")
+				)
+				(pin
+					(num "27")
+					(name "GPIO21")
+					(type "bidirectional")
+				)
+				(pin
+					(num "28")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "29")
+					(name "GPIO22")
+					(type "bidirectional")
+				)
+				(pin
+					(num "30")
+					(name "RUN")
+					(type "input")
+				)
+				(pin
+					(num "31")
+					(name "GPIO26_ADC0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "32")
+					(name "GPIO27_ADC1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "33")
+					(name "AGND")
+					(type "power_in")
+				)
+				(pin
+					(num "34")
+					(name "GPIO28_ADC2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "35")
+					(name "ADC_VREF")
+					(type "power_in")
+				)
+				(pin
+					(num "36")
+					(name "3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "37")
+					(name "3V3_EN")
+					(type "input")
+				)
+				(pin
+					(num "38")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "39")
+					(name "VSYS")
+					(type "power_in")
+				)
+				(pin
+					(num "40")
+					(name "VBUS")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Switch")
+			(part "SW_SPST")
+			(description "Single Pole Single Throw (SPST) switch")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_SPST")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Single Pole Single Throw (SPST) switch")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "B")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Connector_Generic")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "FourButton_Local")
+			(uri "${KIPRJMOD}/FourButton_Local.kicad_sym")
+		)
+		(library
+			(logical "LED")
+			(uri "${KICAD10_SYMBOL_DIR}/LED.kicad_sym")
+		)
+		(library
+			(logical "OSC_Shared")
+			(uri "${KIPRJMOD}/../shared_lib/OSC_Shared.kicad_sym")
+		)
+		(library
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3.3V")
+			(class "Power")
+			(node
+				(ref "U1")
+				(pin "36")
+				(pinfunction "3V3_36")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "+5V")
+			(class "Power")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D2")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D3")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D4")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J1")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "39")
+				(pinfunction "VSYS_39")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "/BTN_B")
+			(class "Default")
+			(node
+				(ref "SW2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW6")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "GPIO3_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
+			(name "/BTN_G")
+			(class "Default")
+			(node
+				(ref "SW3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW7")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "GPIO4_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "/BTN_R")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "GPIO2_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "/BTN_Y")
+			(class "Default")
+			(node
+				(ref "SW4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW8")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "GPIO5_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
+			(name "/MODE_SEL")
+			(class "Default")
+			(node
+				(ref "SW9")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "GPIO11_15")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "8")
+			(name "/NEOPIXEL_DATA")
+			(class "Default")
+			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "GPIO6_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "9")
+			(name "/STATUS_LED")
+			(class "Default")
+			(node
+				(ref "R9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "GPIO10_14")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "10")
+			(name "GND")
+			(class "Power")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D1")
+				(pin "3")
+				(pinfunction "VSS_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D2")
+				(pin "3")
+				(pinfunction "VSS_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D3")
+				(pin "3")
+				(pinfunction "VSS_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D4")
+				(pin "3")
+				(pinfunction "VSS_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "D5")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW7")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW8")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW9")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "GND_13")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "18")
+				(pinfunction "GND_18")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "GND_23")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "28")
+				(pinfunction "GND_28")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "33")
+				(pinfunction "AGND_33")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "38")
+				(pinfunction "GND_38")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "GND_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(D1-DIN)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "4")
+				(pinfunction "DIN_4")
+				(pintype "input")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "Net-(D1-DOUT)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "2")
+				(pinfunction "DOUT_2")
+				(pintype "output")
+			)
+			(node
+				(ref "D2")
+				(pin "4")
+				(pinfunction "DIN_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "13")
+			(name "Net-(D2-DOUT)")
+			(class "Default")
+			(node
+				(ref "D2")
+				(pin "2")
+				(pinfunction "DOUT_2")
+				(pintype "output")
+			)
+			(node
+				(ref "D3")
+				(pin "4")
+				(pinfunction "DIN_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "14")
+			(name "Net-(D3-DOUT)")
+			(class "Default")
+			(node
+				(ref "D3")
+				(pin "2")
+				(pinfunction "DOUT_2")
+				(pintype "output")
+			)
+			(node
+				(ref "D4")
+				(pin "4")
+				(pinfunction "DIN_4")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "Net-(D5-A)")
+			(class "Default")
+			(node
+				(ref "D5")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "16")
+			(name "Net-(J1-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "GPIO0_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "17")
+			(name "Net-(J1-Pin_2)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "GPIO1_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(D4-DOUT-Pad2)")
+			(class "Default")
+			(node
+				(ref "D4")
+				(pin "2")
+				(pinfunction "DOUT_2")
+				(pintype "output+no_connect")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(U1-3V3_EN-Pad37)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "37")
+				(pinfunction "3V3_EN_37")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "20")
+			(name "unconnected-(U1-ADC_VREF-Pad35)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "35")
+				(pinfunction "ADC_VREF_35")
+				(pintype "power_in+no_connect")
+			)
+		)
+		(net
+			(code "21")
+			(name "unconnected-(U1-GPIO7-Pad10)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "GPIO7_10")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "22")
+			(name "unconnected-(U1-GPIO8-Pad11)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "GPIO8_11")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "23")
+			(name "unconnected-(U1-GPIO9-Pad12)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "GPIO9_12")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "24")
+			(name "unconnected-(U1-GPIO12-Pad16)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "GPIO12_16")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(U1-GPIO13-Pad17)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "GPIO13_17")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(U1-GPIO14-Pad19)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "19")
+				(pinfunction "GPIO14_19")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "27")
+			(name "unconnected-(U1-GPIO15-Pad20)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "20")
+				(pinfunction "GPIO15_20")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(U1-GPIO16-Pad21)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "21")
+				(pinfunction "GPIO16_21")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "29")
+			(name "unconnected-(U1-GPIO17-Pad22)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "22")
+				(pinfunction "GPIO17_22")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "30")
+			(name "unconnected-(U1-GPIO18-Pad24)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "24")
+				(pinfunction "GPIO18_24")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(U1-GPIO19-Pad25)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "25")
+				(pinfunction "GPIO19_25")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(U1-GPIO20-Pad26)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "26")
+				(pinfunction "GPIO20_26")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(U1-GPIO21-Pad27)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "27")
+				(pinfunction "GPIO21_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(U1-GPIO22-Pad29)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "29")
+				(pinfunction "GPIO22_29")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(U1-GPIO26_ADC0-Pad31)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "31")
+				(pinfunction "GPIO26_ADC0_31")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(U1-GPIO27_ADC1-Pad32)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "32")
+				(pinfunction "GPIO27_ADC1_32")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(U1-GPIO28_ADC2-Pad34)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "34")
+				(pinfunction "GPIO28_ADC2_34")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(U1-RUN-Pad30)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "30")
+				(pinfunction "RUN_30")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(U1-VBUS-Pad40)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "40")
+				(pinfunction "VBUS_40")
+				(pintype "power_in+no_connect")
+			)
+		)
+	)
+)

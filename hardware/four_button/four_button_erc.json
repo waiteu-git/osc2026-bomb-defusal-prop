@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-01T13:49:50",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/f4b7c1a0-6e5d-4c2b-9a8f-1d3e5c7b9a60",
+            "violations": [
+                {
+                    "description": "ピンのタイプ Bidirectional と Power output が接続されています",
+                    "items": [
+                        {
+                            "description": "Symbol U1 ピン 38 [GND, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.7018,
+                                "y": 0.6985
+                            },
+                            "uuid": "f3db592f-d832-4518-9fd9-7b04a12f7170"
+                        },
+                        {
+                            "description": "Symbol #FLG03 ピン 1 [Power output, Line]",
+                            "pos": {
+                                "x": 0.9144,
+                                "y": 0.8001
+                            },
+                            "uuid": "9dc15e1e-bd52-4224-b1cb-d34f50402d6d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        }
+    ],
+    "source": "four_button.kicad_sch"
+}
