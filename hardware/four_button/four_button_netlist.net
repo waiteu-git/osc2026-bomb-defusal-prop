@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\ysou5\\OneDrive - 東京理科大学\\ドキュメント\\osc\\hardware\\four_button\\four_button.kicad_sch")
-		(date "2026-10-01T11:24:19")
+		(date "2026-10-01T16:45:31")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "83a3ec30-0946-4e69-8a7b-44e9a7dc7690")
+			(tstamps "fa9db744-46ca-4201-bb2d-ea72b49dfd14")
 			(units
 				(unit
 					(name "A")
@@ -112,7 +112,7 @@
 			(ref "C2")
 			(value "100nF")
 			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-			(description "Local decoupling capacitor for D1 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+			(description "Local decoupling capacitor for D1 (VDD-VSS). WS2812x datasheet reference circuit puts one per LED, but 2026-10-01 user decision (matching complicated_wires' precedent of a single 'optional' cap on a 20-LED chain) keeps only this one, on the chain's first/most signal-sensitive LED; D2-D4 omit theirs.")
 			(fields
 				(field
 					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
@@ -120,7 +120,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Local decoupling capacitor for D1 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
+					(name "Description") "Local decoupling capacitor for D1 (VDD-VSS). WS2812x datasheet reference circuit puts one per LED, but 2026-10-01 user decision (matching complicated_wires' precedent of a single 'optional' cap on a 20-LED chain) keeps only this one, on the chain's first/most signal-sensitive LED; D2-D4 omit theirs.")
 			)
 			(libsource
 				(lib "Device")
@@ -147,169 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bb5ba120-137f-4a61-9358-98134bc5cead")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C3")
-			(value "100nF")
-			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-			(description "Local decoupling capacitor for D2 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Local decoupling capacitor for D2 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			)
-			(libsource
-				(lib "Device")
-				(part "C")
-				(description "Unpolarized capacitor")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "four_button.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "cap capacitor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "b79c3be9-f822-4fa1-b229-882aec9f918e")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C4")
-			(value "100nF")
-			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-			(description "Local decoupling capacitor for D3 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Local decoupling capacitor for D3 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			)
-			(libsource
-				(lib "Device")
-				(part "C")
-				(description "Unpolarized capacitor")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "four_button.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "cap capacitor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "356c65bc-dcd7-4254-8e9d-b59ce9c24f8b")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C5")
-			(value "100nF")
-			(footprint "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-			(description "Local decoupling capacitor for D4 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Local decoupling capacitor for D4 (VDD-VSS), standard WS2812x practice (0.1uF ceramic close to each LED).")
-			)
-			(libsource
-				(lib "Device")
-				(part "C")
-				(description "Unpolarized capacitor")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "four_button.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "cap capacitor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "fd5a357a-385c-47d6-8b3a-553205bea166")
+			(tstamps "d52b026b-bcba-4412-ba8b-7892794f5028")
 			(units
 				(unit
 					(name "A")
@@ -363,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "057593af-ec9d-47c1-8586-8786907577cf")
+			(tstamps "5b843654-f537-4548-ae0f-71841ef95c02")
 			(units
 				(unit
 					(name "A")
@@ -423,7 +261,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0aefb4bb-b39b-4294-8177-87c5e06b8212")
+			(tstamps "b2109b52-5523-4086-a177-2f401dee916d")
 			(units
 				(unit
 					(name "A")
@@ -483,7 +321,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b06c2c28-ec42-49e8-b376-4172fae32462")
+			(tstamps "57653cd1-e9eb-493c-a034-4d888898cc91")
 			(units
 				(unit
 					(name "A")
@@ -543,7 +381,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d5ae5f56-d667-49e1-bfa6-93be5e68807e")
+			(tstamps "439b53bd-19f0-47c1-8d24-b88ee2262821")
 			(units
 				(unit
 					(name "A")
@@ -603,7 +441,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bef16b56-4514-4739-8f80-f2a642a950b5")
+			(tstamps "e5ad51bc-6f76-458a-bb6e-3dfdef549c60")
 			(units
 				(unit
 					(name "A")
@@ -657,7 +495,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7f3279c2-5dcf-43c1-b8b6-86290882a1f6")
+			(tstamps "2451824b-7377-4bb6-84af-ae3135ef4578")
 			(units
 				(unit
 					(name "A")
@@ -717,7 +555,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "23ccacea-ba9a-4f21-8920-21978cd9d24e")
+			(tstamps "1d01b031-7830-4d11-87c4-c2ed56d6ab61")
 			(units
 				(unit
 					(name "A")
@@ -771,7 +609,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7af9e79e-3684-4cac-99f2-aefc3af3baad")
+			(tstamps "49eb26fd-318f-4eeb-97ae-0b9c0871b39e")
 			(units
 				(unit
 					(name "A")
@@ -821,7 +659,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "dddb8d8b-bdd5-45f5-8870-5ce3be058865")
+			(tstamps "66de7748-2837-4121-9b8f-610ddf517507")
 			(units
 				(unit
 					(name "A")
@@ -871,7 +709,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f3df5baf-9549-4265-b472-0d66548b91fe")
+			(tstamps "b8284ea2-048b-4b91-8882-0334ced9728f")
 			(units
 				(unit
 					(name "A")
@@ -921,7 +759,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "11ad2389-ea43-4237-9afd-cd74ed03b785")
+			(tstamps "924f9bd3-525c-4abf-8f60-2b3f998690b9")
 			(units
 				(unit
 					(name "A")
@@ -971,7 +809,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "21b3431a-38d1-4f57-8f5d-7cf062ed5230")
+			(tstamps "0688e09b-8352-4a50-85f5-eadb6f8a2501")
 			(units
 				(unit
 					(name "A")
@@ -1021,7 +859,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "99ccde19-c736-4180-aa83-bb5016841ee9")
+			(tstamps "c0ec1840-6487-4651-a7d7-9e90bfb55051")
 			(units
 				(unit
 					(name "A")
@@ -1071,7 +909,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0df563c5-8f38-4bad-9a02-7950d1558c05")
+			(tstamps "25c61864-95f8-4aee-9a14-fa2a6c8898e6")
 			(units
 				(unit
 					(name "A")
@@ -1121,7 +959,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7accfba2-133f-4816-af84-faaeb845c026")
+			(tstamps "b538c8e9-060e-42d1-b48e-ce4c199cbcaa")
 			(units
 				(unit
 					(name "A")
@@ -1171,7 +1009,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "65473748-82a7-4d97-b3d9-13256aa44511")
+			(tstamps "c40d9a34-a453-42a2-9dcf-b304f1a6c5e4")
 			(units
 				(unit
 					(name "A")
@@ -1221,7 +1059,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a9e20f96-de53-4be3-8bdd-4acaf8c60ee0")
+			(tstamps "ab4764e1-6208-4194-984e-d8cff9e09709")
 			(units
 				(unit
 					(name "A")
@@ -1267,7 +1105,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "1a9ed8f2-ddd0-4bc7-8636-2fa9f52aeb12")
+			(tstamps "7a6d4e98-965d-4f26-9ecf-9c76c746192e")
 			(units
 				(unit
 					(name "A")
@@ -1962,21 +1800,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "C3")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C4")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C5")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
 				(ref "D1")
 				(pin "1")
 				(pinfunction "VDD_1")
@@ -2165,21 +1988,6 @@
 			)
 			(node
 				(ref "C2")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C3")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C4")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C5")
 				(pin "2")
 				(pintype "passive")
 			)

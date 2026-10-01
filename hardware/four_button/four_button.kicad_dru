@@ -31,16 +31,16 @@
 # Exception: D5 (documented in design_rules.md)
 (rule "osc_corner_keepout_pad"
 	(constraint disallow pad)
-	(condition "A.Type == 'Pad' && A.Pad_Type != 'NPTH, mechanical' && !A.memberOfFootprint('D5') && ((A.Position_X >= 0mm && A.Position_X <= 12mm) || (A.Position_X >= 68mm && A.Position_X <= 80mm)) && ((A.Position_Y >= 0mm && A.Position_Y <= 12mm) || (A.Position_Y >= 68mm && A.Position_Y <= 80mm))"))
+	(condition "A.Type == 'Pad' && A.Pad_Type != 'NPTH, mechanical' && !A.memberOfFootprint('D5') && ((A.Position_X >= 71.0368mm && A.Position_X <= 83.0368mm) || (A.Position_X >= 139.0368mm && A.Position_X <= 151.0368mm)) && ((A.Position_Y >= 71.4686mm && A.Position_Y <= 83.4686mm) || (A.Position_Y >= 139.4686mm && A.Position_Y <= 151.4686mm))"))
 
 (rule "osc_corner_keepout_via"
 	(constraint disallow via)
-	(condition "A.Type == 'Via' && !A.intersectsCourtyard('D5') && ((A.Position_X >= 0mm && A.Position_X <= 12mm) || (A.Position_X >= 68mm && A.Position_X <= 80mm)) && ((A.Position_Y >= 0mm && A.Position_Y <= 12mm) || (A.Position_Y >= 68mm && A.Position_Y <= 80mm))"))
+	(condition "A.Type == 'Via' && !A.intersectsCourtyard('D5') && ((A.Position_X >= 71.0368mm && A.Position_X <= 83.0368mm) || (A.Position_X >= 139.0368mm && A.Position_X <= 151.0368mm)) && ((A.Position_Y >= 71.4686mm && A.Position_Y <= 83.4686mm) || (A.Position_Y >= 139.4686mm && A.Position_Y <= 151.4686mm))"))
 
 (rule "osc_corner_keepout_track"
 	(constraint disallow track)
-	(condition "A.Type == 'Track' && !A.intersectsCourtyard('D5') && (((((A.Start_X >= 0mm && A.Start_X <= 12mm) || (A.Start_X >= 68mm && A.Start_X <= 80mm))) && (((A.Start_Y >= 0mm && A.Start_Y <= 12mm) || (A.Start_Y >= 68mm && A.Start_Y <= 80mm)))) || ((((A.End_X >= 0mm && A.End_X <= 12mm) || (A.End_X >= 68mm && A.End_X <= 80mm))) && (((A.End_Y >= 0mm && A.End_Y <= 12mm) || (A.End_Y >= 68mm && A.End_Y <= 80mm)))))"))
+	(condition "A.Type == 'Track' && !A.intersectsCourtyard('D5') && (((((A.Start_X >= 71.0368mm && A.Start_X <= 83.0368mm) || (A.Start_X >= 139.0368mm && A.Start_X <= 151.0368mm))) && (((A.Start_Y >= 71.4686mm && A.Start_Y <= 83.4686mm) || (A.Start_Y >= 139.4686mm && A.Start_Y <= 151.4686mm)))) || ((((A.End_X >= 71.0368mm && A.End_X <= 83.0368mm) || (A.End_X >= 139.0368mm && A.End_X <= 151.0368mm))) && (((A.End_Y >= 71.4686mm && A.End_Y <= 83.4686mm) || (A.End_Y >= 139.4686mm && A.End_Y <= 151.4686mm)))))"))
 
 (rule "osc_corner_keepout_footprint"
 	(constraint disallow footprint)
-	(condition "A.Type == 'Footprint' && A.Library_Link != '*MountingHole*' && A.Reference != 'D5' && ((A.Position_X >= 0mm && A.Position_X <= 12mm) || (A.Position_X >= 68mm && A.Position_X <= 80mm)) && ((A.Position_Y >= 0mm && A.Position_Y <= 12mm) || (A.Position_Y >= 68mm && A.Position_Y <= 80mm))"))
+	(condition "A.Type == 'Footprint' && A.Library_Link != '*MountingHole*' && A.Reference != 'D5' && ((A.Position_X >= 71.0368mm && A.Position_X <= 83.0368mm) || (A.Position_X >= 139.0368mm && A.Position_X <= 151.0368mm)) && ((A.Position_Y >= 71.4686mm && A.Position_Y <= 83.4686mm) || (A.Position_Y >= 139.4686mm && A.Position_Y <= 151.4686mm))"))
